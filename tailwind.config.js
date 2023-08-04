@@ -1,20 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./src/app/**/*.{js,ts,jsx,tsx,mdx}'],
-  mode: 'JIT',
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
-  },
-  plugins: [require('prettier-plugin-tailwindcss')],
-};
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   mode: 'JIT',
