@@ -1,4 +1,4 @@
-import { getDictionary } from '../../../dictionary';
+import { getDictionary } from '@/utils/getDictionary';
 
 export default async function Home({ params }) {
   const lang = await getDictionary(params.lang);
