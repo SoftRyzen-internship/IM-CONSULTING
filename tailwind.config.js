@@ -23,14 +23,6 @@ module.exports = {
       colors: {
         white: '#FFFFFF',
         red: '#FF5757',
-        whiteTransparent: 'rgba(255, 255, 255, 0.5)',
-        whitePlaceholder: 'rgba(255, 255, 255, 0.2)',
-        bgInput: 'rgba(255, 255, 255, 0.05)',
-        bgBtn: 'rgba(255, 255, 255, 0.1)',
-        bgMain: '#000000',
-        bgMenu: 'rgba(1, 10, 5, 0.75)',
-        slideOverlay: 'rgba(2, 15, 8, 0.75)',
-        bgSkeleton: 'rgba(199, 199, 199, 0.3)',
       },
 
       fontFamily: {
@@ -40,11 +32,6 @@ module.exports = {
       fontSize: {
         little: ['12px', '24px'], // class="text-little"
         small: ['18px', '24px'], // class="text-small"
-        middle: ['28px', '28px'], // class='text-middle'
-        big: ['98px', '98px'], // class="text-big"
-
-        mainMob: ['14px', '20px'],
-        mainTab: ['16px', '20px'],
       },
 
       content: {

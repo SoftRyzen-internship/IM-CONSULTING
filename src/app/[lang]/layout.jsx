@@ -6,9 +6,7 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export async function generateMetadata({ params }, parent) {
-  const lang = params.lang;
-
+export async function generateMetadata({ params }) {
   const metaDictionary = await getMetaByLang(params.lang);
 
   return {
