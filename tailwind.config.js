@@ -30,12 +30,12 @@ module.exports = {
       },
 
       fontSize: {
-        little: ['12px', '24px'], // class="text-little"
-        small: ['18px', '24px'], // class="text-small"
+        // little: ['12px', '24px'], // class="text-little"
+        // small: ['18px', '24px'], // class="text-small"
       },
 
       content: {
-        crossIcon: 'url("/icons/error-cross.svg")',
+        // crossIcon: 'url("/icons/error-cross.svg")',
       },
     },
   },

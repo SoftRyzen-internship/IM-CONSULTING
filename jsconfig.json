@@ -4,6 +4,9 @@
       "@/*": ["./src/*"],
       "public/*": ["./public/*"],
       "dictionaries/*": ["./dictionaries/*"]
-    }
-  }
+    },
+    "resolveJsonModule": true
+  },
+  "include": ["**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules"]
 }

@@ -1,6 +1,10 @@
 import { Inter } from 'next/font/google';
 
+import { Header } from '@/layout';
+
 import { getMetaByLang } from '@/utils/getMetaData';
+import { getDictionary } from '@/utils/getDictionary';
+import { i18n } from 'i18n';
 
 import './globals.css';
 
@@ -15,10 +19,20 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function RootLayout({ children, params }) {
+export async function generateStaticParams() {
+  return i18n.locales.map(locale => ({ locale: locale }));
+}
+
+export default async function RootLayout({ children, params: { lang } }) {
+  const localeData = await getDictionary(lang);
+
   return (
-    <html lang={params.lang}>
-      <body className={inter.className}>{children}</body>
+    <html lang={lang}>
+      <body className={inter.className}>
+        <Header data={localeData.title} />
+
+        <main className="flex flex-col items-center">{children}</main>
+      </body>
     </html>
   );
 }
