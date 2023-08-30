@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base { */
-body {
-  @apply font-medium leading-normal bg-white;
-}
+@layer base {
+  body {
+    @apply font-medium leading-normal bg-white;
+  }
 
-section {
-  @apply w-full;
+  section {
+    @apply w-full;
+  }
 }
-/* } */
