@@ -1,11 +1,11 @@
 import { Container } from '@/components/Container';
 
-export const Header = () => {
+export const Hero = () => {
   return (
-    <header>
+    <section>
       <Container>
-        <p>It is header</p>
+        <p>It is hero section</p>
       </Container>
-    </header>
+    </section>
   );
 };

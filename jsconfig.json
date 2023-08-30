@@ -2,8 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
-      "public/*": ["./public/*"],
-      "dictionaries/*": ["./dictionaries/*"]
+      "public/*": ["./public/*"]
     },
     "resolveJsonModule": true
   },

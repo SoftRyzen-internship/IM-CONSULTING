@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./src/**/*.{js,jsx,mdx}'],
   mode: 'JIT',
   theme: {
     screens: {
@@ -39,5 +39,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('prettier-plugin-tailwindcss')],
+  // plugins: [require('prettier-plugin-tailwindcss')],
 };
