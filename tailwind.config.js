@@ -7,7 +7,7 @@ module.exports = {
     screens: {
       sm: '480px',
       md: '768px',
-      xl: '1280px',
+      xl: '1440px',
     },
     extend: {
       container: {
@@ -40,8 +40,20 @@ module.exports = {
       },
 
       fontSize: {
-        // little: ['12px', '24px'], // class="text-little"
-        // small: ['18px', '24px'], // class="text-small"
+        8: ['8px'],
+        12: ['12px'],
+        14: ['14px'],
+        16: ['16px'],
+        18: ['18px'],
+        20: ['20px'],
+        24: ['24px'],
+        28: ['28px'],
+        32: ['32px'],
+        36: ['36px'],
+        42: ['42px'],
+        55: ['55px'],
+        66: ['66px'],
+        97: ['97px'],
       },
 
       content: {
