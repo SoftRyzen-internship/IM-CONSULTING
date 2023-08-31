@@ -21,8 +21,17 @@ module.exports = {
       },
 
       colors: {
+        accent: '#FDC638',
+        orange: '#F4A922',
+        darkOrange: '#FFB800',
+        lightOrange: '#FFD466',
+        secondary: '#474747',
+        bgColor: '#F0F0F0',
         white: '#FFFFFF',
-        red: '#FF5757',
+        black: '#171717',
+        gray: '#D9D9D9',
+        lightGray: '#BABABA',
+        red: '#FF4E4E',
       },
 
       fontFamily: {
