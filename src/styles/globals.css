@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-medium leading-normal bg-white;
+    @apply font-formular text-black font-medium leading-normal bg-white;
   }
 
   section {
