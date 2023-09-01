@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,mdx}'],
@@ -20,6 +21,10 @@ module.exports = {
         },
       },
 
+      fontFamily: {
+        formular: ['var(--font-formular)', ...fontFamily.serif],
+      },
+
       colors: {
         accent: '#FDC638',
         orange: '#F4A922',
@@ -34,9 +39,9 @@ module.exports = {
         red: '#FF4E4E',
       },
 
-      fontFamily: {
-        formular: ['Formular', 'sans-serif'],
-      },
+      // fontFamily: {
+      //   formular: ['Formular', 'sans-serif'],
+      // },
 
       fontSize: {
         8: ['8px'],
