@@ -35,7 +35,6 @@ module.exports = {
       },
 
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
         formular: ['Formular', 'sans-serif'],
       },
 
