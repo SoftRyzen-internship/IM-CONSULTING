@@ -8,7 +8,7 @@ module.exports = {
     screens: {
       sm: '480px',
       md: '768px',
-      xl: '1440px',
+      xl: '1280px',
     },
     extend: {
       container: {
@@ -17,7 +17,7 @@ module.exports = {
           DEFAULT: '1.25rem',
           sm: '1.25rem',
           md: '2rem',
-          xl: '1.437rem',
+          xl: '2rem',
         },
       },
 
@@ -39,25 +39,14 @@ module.exports = {
         red: '#FF4E4E',
       },
 
-      // fontFamily: {
-      //   formular: ['Formular', 'sans-serif'],
-      // },
-
       fontSize: {
-        8: ['8px'],
-        12: ['12px'],
-        14: ['14px'],
-        16: ['16px'],
-        18: ['18px'],
-        20: ['20px'],
-        24: ['24px'],
-        28: ['28px'],
-        32: ['32px'],
-        36: ['36px'],
-        42: ['42px'],
-        55: ['55px'],
-        66: ['66px'],
-        97: ['97px'],
+        font16: ['16px', { letterSpacing: '-0.64px' }],
+        font16Long: ['16px', { letterSpacing: '0.64px' }],
+        font20: ['20px', { letterSpacing: '-0.8px' }],
+        font24: ['24px', { letterSpacing: '-0.96px' }],
+        font28Long: ['28px', { letterSpacing: '1.12px' }],
+        font36: ['36px', { letterSpacing: '-1.44px' }],
+        font36Long: ['36px', { letterSpacing: '1.44px' }],
       },
 
       content: {

@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-formular text-16 md:text-20 xl:text-24 font-normal leading-tight text-black bg-white;
+    @apply font-formular text-font16 md:text-font20 xl:text-font24 font-normal leading-tight text-black bg-white;
   }
 
   section {
