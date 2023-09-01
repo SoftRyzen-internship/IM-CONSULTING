@@ -40,13 +40,13 @@ module.exports = {
       },
 
       fontSize: {
-        font16: ['16px', { letterSpacing: '-0.64px' }],
+        font16: ['16px', { letterSpacing: '-0.64px' }], // className="text-font16"
         font16Long: ['16px', { letterSpacing: '0.64px' }],
         font20: ['20px', { letterSpacing: '-0.8px' }],
         font24: ['24px', { letterSpacing: '-0.96px' }],
-        font28Long: ['28px', { letterSpacing: '1.12px' }],
-        font36: ['36px', { letterSpacing: '-1.44px' }],
-        font36Long: ['36px', { letterSpacing: '1.44px' }],
+        font28Long: ['28px', { letterSpacing: '1.12px', fontWeight: 400 }],
+        font36: ['36px', { letterSpacing: '-1.44px', fontWeight: 300 }],
+        font36Long: ['36px', { letterSpacing: '1.44px', fontWeight: 400 }],
       },
 
       content: {

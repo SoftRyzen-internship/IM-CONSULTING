@@ -1,13 +1,13 @@
 {
-  "nav": {
-    "home": "Головна",
-    "about": "Про компанію",
-    "services": "Послуги",
-    "process": "Процес",
-    "reviews": "Відгуки",
-    "contacts": "Контакти",
-    "connect": "Звʼязатися"
-  },
+  "navBar": [
+    { "label": "Головна", "link": "hero" },
+    { "label": "Про компанію", "link": "about" },
+    { "label": "Послуги", "link": "services" },
+    { "label": "Процес", "link": "process" },
+    { "label": "Відгуки", "link": "reviews" },
+    { "label": "Контакти", "link": "contacts" }
+  ],
+  "connectBtn": "Звʼязатися",
 
   "hero": {
     "name": "Ілля",
@@ -161,8 +161,7 @@
   },
 
   "footer": {
-    "title1": "IM",
-    "title2": "Consulting",
+    "title": "Consulting",
     "reserved": "All rights reserved 2023 ©",
     "made": "Made by",
     "softRyzen": "SoftRyzen"
