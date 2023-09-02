@@ -19,13 +19,11 @@ export const ConnectButton = ({ color }) => {
       <button
         type="button"
         aria-label="Кнопка Зв'язатися"
-        className="flex items-center gap-2 m-0 p-0"
+        className={"flex items-center gap-2 m-0 p-0 text-" + color}
         onClick={toggleModal}
       >
-        <Icon className={"fill-" + color} />
-        <p
-          className={"text-" + color + " text-font16 font-formular font-bold leading-[16px]"}
-        >
+        <Icon className="fill-current" />
+        <p className="text-font16 font-formular font-bold leading-[16px]">
           {data.connectBtn}
         </p>
       </button>
@@ -35,5 +33,5 @@ export const ConnectButton = ({ color }) => {
 };
 
 ConnectModal.propTypes = {
-  color: PropTypes.string.isRequired,  
+  color: PropTypes.string.isRequired,
 };
