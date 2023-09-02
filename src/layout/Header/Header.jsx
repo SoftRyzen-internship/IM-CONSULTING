@@ -1,10 +1,11 @@
 import { Container } from '@/components/Container';
+import { Logo } from '@/components/Logo';
 
 export const Header = () => {
   return (
     <header>
       <Container>
-        <p>It is header</p>
+        <Logo />
       </Container>
     </header>
   );
