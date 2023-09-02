@@ -19,7 +19,7 @@ export const ConnectButton = ({ color }) => {
       <button
         type="button"
         aria-label="Кнопка Зв'язатися"
-        className={"flex items-center gap-2 m-0 p-0 text-" + color}
+        className={"flex items-center gap-2 m-0 p-0 text-" + `${color}`}
         onClick={toggleModal}
       >
         <Icon className="fill-current" />
