@@ -32,6 +32,6 @@ export const ConnectButton = ({ color }) => {
   );
 };
 
-ConnectModal.propTypes = {
+ConnectButton.propTypes = {
   color: PropTypes.string.isRequired,
 };
