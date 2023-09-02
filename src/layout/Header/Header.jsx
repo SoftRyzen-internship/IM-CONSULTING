@@ -1,10 +1,11 @@
 import { Container } from '@/components/Container';
+import { Socials } from '@/components/Socials';
 
 export const Header = () => {
   return (
     <header>
       <Container>
-        <p>It is header</p>
+        <Socials component="header" />
       </Container>
     </header>
   );
