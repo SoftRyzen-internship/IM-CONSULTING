@@ -1,10 +1,12 @@
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
 import { Header } from '@/layout/Header';
-
 import '../styles/globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const formular = localFont({
+  src: './fonts/formular/Formular.ttf',
+  variable: '--font-formular',
+});
 
 export const metadata = {
   // metadataBase: new URL('https://example.vercel.app/'),
@@ -15,9 +17,8 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="uk">
-      <body className={inter.className}>
+      <body className={formular.variable}>
         <Header />
-
         <main className="flex flex-col items-center min-h-screen">
           {children}
         </main>
