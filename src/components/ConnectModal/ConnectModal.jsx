@@ -1,9 +1,9 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { Dialog, Transition } from '@headlessui/react';
 import Icon from 'public/icons/close.svg';
 
-export default function ConnectModal({ toggleModal, isOpen, data }) {
+export default function ConnectModal({ toggleModal, isOpen, children }) {
   return (
     <Transition
       show={isOpen}
@@ -17,7 +17,7 @@ export default function ConnectModal({ toggleModal, isOpen, data }) {
       <Dialog open={isOpen} onClose={toggleModal} className="relative z-50">
         <div className="fixed inset-0 bg-black/30" aria-hidden="true">
           <div className="fixed inset-0 flex items-center justify-center p-4">
-            <Dialog.Panel className="mx-auto max-w-sm rounded bg-white p-4">
+            <Dialog.Panel className="mx-auto max-w-sm rounded bg-white p-4 h-[400px] w-[300px]">
               <button
                 type="button"
                 aria-label="Кнопка Закрити модальне вікно"
@@ -26,13 +26,7 @@ export default function ConnectModal({ toggleModal, isOpen, data }) {
               >
                 <Icon />
               </button>
-              <p>
-                {data}
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Adipisci officiis deleniti eos debitis impedit neque, earum
-                accusamus blanditiis hic ut mollitia quaerat perferendis magnam
-                architecto dignissimos, obcaecati a quia ipsa?
-              </p>
+              {children}
             </Dialog.Panel>
           </div>
         </div>
@@ -40,3 +34,9 @@ export default function ConnectModal({ toggleModal, isOpen, data }) {
     </Transition>
   );
 }
+
+ConnectModal.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  children: PropTypes.node,
+};

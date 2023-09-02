@@ -6,7 +6,7 @@ export const Hero = () => {
     <section>
       <Container>
         <p>It is hero section</p>
-        <ConnectButton />
+        <ConnectButton color="accent" />
       </Container>
     </section>
   );
