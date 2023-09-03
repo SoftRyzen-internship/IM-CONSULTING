@@ -1,5 +1,6 @@
 import { Container } from '@/components/Container';
 import Image from 'next/image';
+import HeroImg from '../../../public/images/hero-1250.png';
 
 export const Hero = () => {
   return (
@@ -42,10 +43,12 @@ export const Hero = () => {
           </div>
           <div className="h-[235px] md:h-[403px] xl:h-[659px] w-[223px] md:w-[381px] xl:w-[625px] absolute bottom-[-7px] md:bottom-[-12px] xl:bottom-[-17px] left-1/2 md:left-[43%] xl:left-[52%] transform translate-x-[-50%] z-10 object-cover">
             <Image
-              src={`/images/hero-1250.png`}
+              src={HeroImg}
               alt="Ілля Мушковський"
-              fill
               priority
+              width={625}
+              height={659}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         </div>
