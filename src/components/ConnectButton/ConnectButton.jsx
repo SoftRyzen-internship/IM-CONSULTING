@@ -19,7 +19,7 @@ export const ConnectButton = ({ color }) => {
       <button
         type="button"
         aria-label="Кнопка Зв'язатися"
-        className={"flex items-center gap-2 m-0 p-0 text-" + `${color}`}
+        className={color === "accent" ? "flex items-center gap-2 m-0 p-0 text-accent" : "flex items-center gap-2 m-0 p-0 text-black"}
         onClick={toggleModal}
       >
         <Icon className="fill-current" />
