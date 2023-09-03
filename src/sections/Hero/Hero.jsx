@@ -7,7 +7,7 @@ export const Hero = () => {
       <Container>
         <div className="relative h-[270px] md:h-[450px]">
           <div className="flex justify-between tracking-[-0.04em] mb-[26px] md:mb-[62px]">
-            <p className="text-xs md:text-[28px] text-accent leading-[15px] max-w-[94px] md:max-w-[218px] md:leading-[28px]">
+            <p className="text-xs md:text-[28px] text-accent leading-[15px] max-w-[94px] md:max-w-[224px] md:leading-[28px]">
               Не чекай успіху - створи його разом з нами
             </p>
             <div className="text-right">
@@ -24,7 +24,7 @@ export const Hero = () => {
               </p>
             </div>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-end">
             <p className="text-bgColor text-[8px] md:text-base leading-[17px] md:leading-[40px] -tracking-[0.01em]">
               Учасників тренінгів
               <br />
@@ -32,17 +32,12 @@ export const Hero = () => {
                 10 000+
               </span>
             </p>
-            <p className="flex flex-col text-[8px] md:text-base md:leading-4 -tracking-[0.01em] text-right">
+            <p className="flex flex-col text-[8px] md:text-base md:leading-[16px] -tracking-[0.01em] text-right">
               Загальний <br className="xl:hidden" />
               надприбуток клієнтів
-              <span className="text-[12px] md:text-[28px] font-normal leading-[13px] md:leading-[28px]  tracking-[0.1em]">
-                $10&nbsp;000&nbsp;000+
+              <span className="text-[12px] md:text-[28px] font-medium leading-[13px] md:leading-[28px]  tracking-[0.1em]">
+                $10 000 000+
               </span>
-              <p className="flex flex-col text-[8px] md:text-base md:leading-4 -tracking-[0.01em] text-right">
-                <span className="text-[12px] md:text-[28px] font-medium leading-[13px] md:leading-[28px]  tracking-[0.1em]">
-                  $10 000 000+
-                </span>
-              </p>
             </p>
           </div>
           <div className="w-[223px] md:w-[381px] absolute bottom-[-7px] md:bottom-[-12px] left-1/2 md:left-[43%] transform translate-x-[-50%] z-10 object-cover">
@@ -58,7 +53,7 @@ export const Hero = () => {
       </Container>
       <div className="absolute -z-10 flex top-0 h-full w-full ">
         <div className="w-[49%] bg-black overflow-hidden relative">
-          <p class="absolute -left-7 md:left-[-200px] -top-4 md:top-0 opacity-5 text-[482px] md:text-[798px] leading-[482px] -tracking-[0.12em] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#d9d9d900] to-white">
+          <p className="absolute left-[-215px] md:left-[-299px] top-[-76px] md:top-[-214px] opacity-5 text-[482px] md:text-[798px] leading-[482px] md:leading-[976px] -tracking-[0.12em] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#d9d9d900] to-white">
             IM
           </p>
         </div>
