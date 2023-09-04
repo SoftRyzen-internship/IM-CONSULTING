@@ -13,6 +13,7 @@ import { sendMessageToTelegram } from '@/utils/sendMessageToTelegram';
 import { formSchema } from '@/utils/yupSchema';
 import { Loader } from '../Loader';
 export default function Form() {
+  const defaultFormValues = getDefaultFormValues();
   const {
     register,
     handleSubmit,
@@ -25,6 +26,7 @@ export default function Form() {
     resolver: yupResolver(formSchema),
     defaultValues: defaultFormValues,
   });
+  const { form } = data;
   const {
     name,
     email,
@@ -34,7 +36,7 @@ export default function Form() {
     sendBtnError,
     sendBtnSuccess,
     sendBtn,
-  } = data;
+  } = form;
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
   const defaultValues = {
@@ -42,7 +44,6 @@ export default function Form() {
     email: '',
     message: '',
   };
-  const defaultFormValues = getDefaultFormValues();
 
   const onClick = () => {
     if (
