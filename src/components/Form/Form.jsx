@@ -13,8 +13,6 @@ import { sendMessageToTelegram } from '@/utils/sendMessageToTelegram';
 import { formSchema } from '@/utils/yupSchema';
 import { Loader } from '../Loader';
 export default function Form() {
-  const defaultFormValues = getDefaultFormValues();
-
   const {
     register,
     handleSubmit,
@@ -27,6 +25,16 @@ export default function Form() {
     resolver: yupResolver(formSchema),
     defaultValues: defaultFormValues,
   });
+  const {
+    name,
+    email,
+    title,
+    msg,
+    msgPlaceholder,
+    sendBtnError,
+    sendBtnSuccess,
+    sendBtn,
+  } = data;
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
   const defaultValues = {
@@ -34,6 +42,8 @@ export default function Form() {
     email: '',
     message: '',
   };
+  const defaultFormValues = getDefaultFormValues();
+
   const onClick = () => {
     if (
       errors.name ||
@@ -90,7 +100,7 @@ export default function Form() {
           [
         </span>
         <h3 className="text-white text-[24px] leading-[29px] font-bold">
-          {data.form.title}
+          {title}
         </h3>
         <span className="text-accent font-light text-[24px] leading-[29px]">
           ]
@@ -102,7 +112,7 @@ export default function Form() {
             htmlFor="name"
             className="text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
           >
-            {data.form.name} *
+            {name} *
           </label>
           <input
             {...register('name', {})}
@@ -110,7 +120,7 @@ export default function Form() {
             className={`${
               errors.name ? 'text-red' : ''
             }  bg-transparent border-[1px] border-solid border-bgColor focus:outline-none p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
-            placeholder={data.form.name}
+            placeholder={name}
           />
           {errors.name && (
             <p className="text-red absolute top-[75px] right-[0] md:top-[95px] xl:top-[105px] text-[13px] font-light leading-[15px]  font-formular md:text-[16px] md:leading-[20px]">
@@ -123,7 +133,7 @@ export default function Form() {
             htmlFor="email"
             className="text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
           >
-            {data.form.email} *
+            {email} *
           </label>
           <input
             {...register('email', {})}
@@ -131,7 +141,7 @@ export default function Form() {
             className={`${
               errors.email ? 'text-red' : ''
             } bg-transparent border-[1px] border-solid border-bgColor focus:outline-none p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
-            placeholder={data.form.email}
+            placeholder={email}
           />
           {errors.email && (
             <p className="text-red absolute top-[75px] right-[0] md:top-[95px] xl:top-[105px] text-[13px] font-light leading-[15px] font-formular md:text-[16px] md:leading-[20px] ">
@@ -144,14 +154,14 @@ export default function Form() {
             htmlFor="message"
             className="text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
           >
-            {data.form.msg} *
+            {msg} *
           </label>
           <textarea
             {...register('message', {})}
             className={`${
               errors.message ? 'text-red' : ''
             } bg-transparent h-[168px] border-[1px] border-solid border-bgColor focus:outline-none p-[8px] md:p-[12px] md:h-[252px] xl:h-[265px] resize-none text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
-            placeholder={data.form.msgPlaceholder}
+            placeholder={msgPlaceholder}
           ></textarea>
           {errors.message && (
             <p className="text-red absolute top-[205px] right-[0] md:top-[300px] xl:top-[320px] text-[13px] font-light leading-[15px] font-formular md:text-[16px] md:leading-[20px]">
@@ -183,14 +193,14 @@ export default function Form() {
             <Loader />
           ) : formStatus === 'error' ? (
             <>
-              <ErrorIcon /> {data.form.sendBtnError}
+              <ErrorIcon /> {sendBtnError}
             </>
           ) : formStatus === 'success' ? (
             <>
-              <SuccessIcon /> {data.form.sendBtnSuccess}
+              <SuccessIcon /> {sendBtnSuccess}
             </>
           ) : (
-            data.form.sendBtn
+            sendBtn
           )}
         </button>
       </div>
