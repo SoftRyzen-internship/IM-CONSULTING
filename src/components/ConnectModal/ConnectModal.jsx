@@ -21,7 +21,7 @@ export const ConnectModal = ({ toggleModal, isOpen, children }) => {
                 <button
                   type="button"
                   aria-label="Закрити"
-                  className="text-bgColor block ml-auto mb-[24px] md:mb-[8px] xl:mb-[12px] w-[48px] h-[48px] duration-300 ease-out focus:text-accent"
+                  className="text-bgColor block ml-auto mb-[24px] md:mb-[8px] xl:mb-[12px] w-[48px] h-[48px] duration-300 ease-out hover:text-accent focus:text-accent"
                   onClick={toggleModal}
                 >
                   <Icon className="block mx-auto w-[16px] h-[16px] md:w-[24px] md:h-[24px] fill-current" />

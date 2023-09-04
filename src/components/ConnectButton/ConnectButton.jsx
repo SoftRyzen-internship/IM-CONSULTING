@@ -17,7 +17,7 @@ export const ConnectButton = ({ color }) => {
     <>
       <button
         type="button"
-        className={`flex items-center gap-2 m-0 p-0 transition transform duration-300 ease-out hover:scale-[1.15] focus:scale-[1.15] ${
+        className={`flex items-center gap-2 m-0 p-0 duration-300 ease-out hover:scale-[1.15] focus:scale-[1.15] ${
           color === 'accent' ? ' text-accent' : ' text-black'
         }`}
         onClick={toggleModal}
