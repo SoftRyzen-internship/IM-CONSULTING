@@ -6,6 +6,8 @@ export const Process = () => {
   return (
     <section>
       <Container>
+        <h2 className="invisible">Process Section</h2>
+        <p>{data.process.title}</p>
         <ul>
           {data.process.cards.map(item => (
             <ProcessCard
