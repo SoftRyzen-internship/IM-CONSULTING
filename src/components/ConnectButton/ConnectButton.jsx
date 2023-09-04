@@ -29,7 +29,7 @@ export const ConnectButton = ({ color }) => {
       </button>
       {isOpen && (
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
-          {/* <div>Modal Form</div> */}
+          <div>Modal Form</div>
         </ConnectModal>
       )}
     </>
