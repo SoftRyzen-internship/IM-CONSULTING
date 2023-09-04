@@ -11,3 +11,9 @@
     @apply w-full;
   }
 }
+
+@layer components {
+  .container {
+    @apply xl:pl-[236px];
+  }
+}
