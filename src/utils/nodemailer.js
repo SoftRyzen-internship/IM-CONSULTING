@@ -3,9 +3,7 @@ import nodemailer from 'nodemailer';
 const email = process.env.NEXT_PUBLIC_EMAIL;
 const pass = process.env.NEXT_PUBLIC_EMAIL_PASSWORD;
 const config = {
-  host: 'smtp.meta.ua',
-  port: 465,
-  secure: true,
+  service: 'gmail',
   auth: {
     user: email,
     pass,

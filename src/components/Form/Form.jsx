@@ -1,6 +1,7 @@
 'use client';
 import { Controller, useForm } from 'react-hook-form';
 import { useState } from 'react';
+import useFormPersist from 'react-hook-form-persist';
 
 import data from 'data/data.json';
 import ErrorIcon from 'public/icons/close.svg';
@@ -8,20 +9,41 @@ import SuccessIcon from 'public/icons/success.svg';
 import { sendEmail } from '@/utils/sendEmail';
 
 export default function Form() {
+  const defaultFormValues =
+    typeof window !== 'undefined'
+      ? {
+          name: localStorage.getItem('form')
+            ? Object.values(JSON.parse(localStorage.getItem('form')))[0]
+            : '',
+          email: localStorage.getItem('form')
+            ? Object.values(JSON.parse(localStorage.getItem('form')))[1]
+            : '',
+          message: localStorage.getItem('form')
+            ? Object.values(JSON.parse(localStorage.getItem('form')))[2]
+            : '',
+        }
+      : {
+          name: '',
+          email: '',
+          message: '',
+        };
   const {
     control,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors },
     reset,
   } = useForm({
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
+    defaultValues: defaultFormValues,
   });
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+  const defaultValues = {
+    name: '',
+    email: '',
+    message: '',
+  };
   const onClick = () => {
     if (
       errors.name ||
@@ -42,15 +64,18 @@ export default function Form() {
       handleSubmit(onSubmit)();
     }
   };
+  const storage = typeof window !== 'undefined' ? window.localStorage : '';
+  useFormPersist('form', { watch, storage: storage, setValue });
   const onSubmit = async formData => {
     setLoading(true);
     try {
       await sendEmail(formData);
       setFormStatus('success');
+      localStorage.setItem('form', JSON.stringify(defaultValues));
       setTimeout(() => {
         setFormStatus(null);
       }, 3000);
-      reset();
+      reset(defaultValues);
     } catch (error) {
       console.error(error);
       setFormStatus('error');
@@ -66,6 +91,17 @@ export default function Form() {
       onSubmit={handleSubmit(onSubmit)}
       className="w-[280px] md:w-[342px] xl:w-[500px] flex flex-col gap-[24px]"
     >
+      <div className="flex items-center gap-[20px]">
+        <span className="text-accent font-light text-[24px] leading-[29px]">
+          [
+        </span>
+        <h3 className="text-white text-[24px] leading-[29px] font-bold">
+          {data.form.title}
+        </h3>
+        <span className="text-accent font-light text-[24px] leading-[29px]">
+          ]
+        </span>
+      </div>
       <div className="flex flex-col gap-[23px] md:gap-[32px]">
         <div className="flex flex-col gap-[8px] md:gap-[12px] relative text-bgColor">
           <label
@@ -199,12 +235,12 @@ export default function Form() {
               ? 'bg-accent'
               : formStatus === 'error'
               ? 'bg-red'
-              : 'bg-accent hover:bg-darkOrange'
-          } text-white text-center w-[212px] py-[8px]  ${
+              : 'bg-accent hover:bg-darkOrange focus:bg-darkOrange'
+          } text-center w-[212px] py-[8px]  ${
             loading || formStatus === 'error'
               ? 'cursor-not-allowed'
               : 'cursor-pointer'
-          } text-[24px] text-black ont-normal line-height-[29px] tracking-[-0.04em] hover:font-medium flex gap-[8px] justify-center items-center`}
+          } text-[24px] text-black ont-normal line-height-[29px] tracking-[-0.04em] hover:font-medium focus:font-medium focus:outline-none flex gap-[8px] justify-center items-center self-end`}
           disabled={loading || formStatus === 'error' || errors.length > 0}
         >
           {loading ? (
