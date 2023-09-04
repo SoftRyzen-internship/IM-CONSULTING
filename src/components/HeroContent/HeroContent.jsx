@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
 import HeroImg from 'public/images/hero-1250.png';
-import { hero } from '@/data/data.json';
+import data from '@/data/data.json';
 
+const { hero } = data;
 const { name, surname, title, subtitle, mission, stat1, stat2 } = hero;
 const { text: stat1Text, number: stat1Number } = stat1;
 const { text: stat2Text, number: stat2Number } = stat2;
@@ -34,12 +35,14 @@ export const HeroContent = () => {
           </span>
         </div>
 
-        <p className="flex flex-col items-end text-[8px] md:text-base md:leading-[16px] xl:leading-[24px] -tracking-[0.01em] text-right ">
-          <p className="max-w-[92px] md:max-w-[186px] ">{stat2Text}</p>
+        <div className="flex flex-col items-end text-[8px] md:text-base md:leading-[16px] xl:leading-[24px] -tracking-[0.01em] text-right ">
+          <p className="max-w-[92px] md:max-w-[186px] xl:max-w-[260px] ">
+            {stat2Text}
+          </p>
           <span className="text-[12px] md:text-[28px] xl:text-[32px] font-medium leading-[13px] md:leading-[28px]  xl:leading-[32px] tracking-[0.1em]">
             {stat2Number}
           </span>
-        </p>
+        </div>
       </div>
       <div className="h-[235px] md:h-[403px] xl:h-[659px] w-[223px] md:w-[381px] xl:w-[625px] absolute bottom-[-7px] md:bottom-[-12px] xl:bottom-[-17px] left-1/2 md:left-[43%] xl:left-[52%] transform translate-x-[-50%] z-10 object-cover">
         <Image
