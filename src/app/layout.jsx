@@ -19,7 +19,7 @@ export default async function RootLayout({ children }) {
     <html lang="uk">
       <body className={formular.variable}>
         <Header />
-        <main className="flex flex-col items-center min-h-screen relative">
+        <main className="flex flex-col items-center min-h-screen">
           {children}
         </main>
       </body>
