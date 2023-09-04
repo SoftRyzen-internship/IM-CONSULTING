@@ -20,4 +20,32 @@
   .container.header {
     @apply xl:pl-[32px];
   }
+
+  .hero-bg-mob {
+    background-image: image-set(
+      url(/images/hero/hero-bg-mobile.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bg-mobile@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bg-mobile.jpg) 1x,
+      url(/images/hero/hero-bg-mobile@2x.jpg) 2x
+    );
+  }
+  .hero-bg-tab {
+    background-image: image-set(
+      url(/images/hero/hero-bg-tablet.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bg-tablet@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bg-tablet.jpg) 1x,
+      url(/images/hero/hero-bg-tablet@2x.jpg) 2x
+    );
+  }
+  .hero-bg-desk {
+    background-image: image-set(
+      url(/images/hero/hero-bg-desktop.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bg-desktop@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bg-desktop.jpg) 1x,
+      url(/images/hero/hero-bg-desktop@2x.jpg) 2x
+    );
+  }
+  .hero {
+    @apply hero-bg-mob md:hero-bg-tab xl:hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
 }
