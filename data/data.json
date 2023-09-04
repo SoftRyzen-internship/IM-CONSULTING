@@ -155,6 +155,7 @@
     "emailInvalid": "Невірний email",
     "msg": "Повідомлення",
     "msgPlaceholder": "Ваше повідомлення...",
+    "msgInvalid": "Поле обовʼязкове до заповнення",
     "sendBtn": "Надіслати",
     "sendBtnSuccess": "Надіслано",
     "sendBtnError": "Помилка"

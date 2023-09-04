@@ -1,40 +1,29 @@
 'use client';
-import { Controller, useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import data from 'data/data.json';
 import ErrorIcon from 'public/icons/close.svg';
 import SuccessIcon from 'public/icons/success.svg';
 import { sendEmail } from '@/utils/sendEmail';
-
+import { getDefaultFormValues } from '@/utils/getDefaultFormValues';
+import { sendMessageToTelegram } from '@/utils/sendMessageToTelegram';
+import { formSchema } from '@/utils/yupSchema';
 export default function Form() {
-  const defaultFormValues =
-    typeof window !== 'undefined'
-      ? {
-          name: localStorage.getItem('form')
-            ? Object.values(JSON.parse(localStorage.getItem('form')))[0]
-            : '',
-          email: localStorage.getItem('form')
-            ? Object.values(JSON.parse(localStorage.getItem('form')))[1]
-            : '',
-          message: localStorage.getItem('form')
-            ? Object.values(JSON.parse(localStorage.getItem('form')))[2]
-            : '',
-        }
-      : {
-          name: '',
-          email: '',
-          message: '',
-        };
+  const defaultFormValues = getDefaultFormValues();
+
   const {
-    control,
+    register,
     handleSubmit,
     watch,
     setValue,
     formState: { errors },
     reset,
   } = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(formSchema),
     defaultValues: defaultFormValues,
   });
   const [loading, setLoading] = useState(false);
@@ -64,12 +53,16 @@ export default function Form() {
       handleSubmit(onSubmit)();
     }
   };
-  const storage = typeof window !== 'undefined' ? window.localStorage : '';
-  useFormPersist('form', { watch, storage: storage, setValue });
+  useFormPersist('form', {
+    watch,
+    storage: typeof window !== 'undefined' ? window.localStorage : '',
+    setValue,
+  });
   const onSubmit = async formData => {
     setLoading(true);
     try {
       await sendEmail(formData);
+      await sendMessageToTelegram(formData);
       setFormStatus('success');
       localStorage.setItem('form', JSON.stringify(defaultValues));
       setTimeout(() => {
@@ -89,7 +82,7 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[280px] md:w-[342px] xl:w-[500px] flex flex-col gap-[24px]"
+      className="w-[280px] md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px]"
     >
       <div className="flex items-center gap-[20px]">
         <span className="text-accent font-light text-[24px] leading-[29px]">
@@ -106,122 +99,64 @@ export default function Form() {
         <div className="flex flex-col gap-[8px] md:gap-[12px] relative text-bgColor">
           <label
             htmlFor="name"
-            className="text-[16px] font-light leading-[20px] tracking-[-0.04em] md:text-[20px] md:leading-[24px]"
+            className="text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
           >
-            {data.form.name}
+            {data.form.name} *
           </label>
-          <Controller
-            name="name"
-            control={control}
-            defaultValue=""
-            rules={{
-              required: data.form.nameInvalid,
-              minLength: {
-                value: 3,
-                message: data.form.nameInvalid,
-              },
-              maxLength: {
-                value: 100,
-                message: data.form.nameInvalid,
-              },
-              pattern: {
-                value:
-                  /^(?!.*(\s-|-\s)|.*--|.*——|.*––|.*–\s|.*\s–|.*—\s|.*\s—)[а-яА-Яa-zA-Z\s'’\-–—ЇїІіЄєҐґ]*$/,
-                message: data.form.nameInvalid,
-              },
-            }}
-            render={({ field }) => (
-              <>
-                <input
-                  {...field}
-                  type="text"
-                  className={`${
-                    errors.name ? 'text-red' : ''
-                  }  bg-transparent border-[1px] border-solid border-bgColor text-white focus:outline-none p-[8px] md:p-[12px] text-[16px] font-light leading-[20px] tracking-[-0.04em] md:text-[20px] md:leading-[24px]`}
-                  placeholder={data.form.name}
-                />
-                {errors.name && (
-                  <p className="text-red absolute top-[75px] right-[0] md:top-[95px] text-[13px] font-light leading-[15px] tracking-[-0.04em] font-formular md:text-[16px] md:leading-[20px] ">
-                    {errors.name.message}
-                  </p>
-                )}
-              </>
-            )}
+          <input
+            {...register('name', {})}
+            type="text"
+            className={`${
+              errors.name ? 'text-red' : ''
+            }  bg-transparent border-[1px] border-solid border-bgColor focus:outline-none p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
+            placeholder={data.form.name}
           />
+          {errors.name && (
+            <p className="text-red absolute top-[75px] right-[0] md:top-[95px] xl:top-[105px] text-[13px] font-light leading-[15px]  font-formular md:text-[16px] md:leading-[20px]">
+              {errors.name.message}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-[8px] md:gap-[12px] text-bgColor relative">
           <label
             htmlFor="email"
-            className="text-[16px] font-light leading-[20px] tracking-[-0.04em] md:text-[20px] md:leading-[24px]"
+            className="text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
           >
-            {data.form.email}
+            {data.form.email} *
           </label>
-          <Controller
-            name="email"
-            control={control}
-            defaultValue=""
-            rules={{
-              required: data.form.emailInvalid,
-              minLength: {
-                value: 6,
-                message: data.form.emailInvalid,
-              },
-              maxLength: {
-                value: 63,
-                message: data.form.emailInvalid,
-              },
-              pattern: {
-                value:
-                  /^[a-zA-Z0-9_][a-zA-Z0-9_.-]*@[a-zA-Z0-9.-]+[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/,
-                message: data.form.emailInvalid,
-              },
-            }}
-            render={({ field }) => (
-              <>
-                <input
-                  {...field}
-                  type="email"
-                  className={`${
-                    errors.email ? 'text-red' : ''
-                  } bg-transparent border-[1px] border-solid border-bgColor text-white focus:outline-none p-[8px] md:p-[12px] text-[16px] font-light leading-[20px] tracking-[-0.04em] md:text-[20px] md:leading-[24px]`}
-                  placeholder={data.form.email}
-                />
-                {errors.email && (
-                  <p className="text-red absolute top-[75px] right-[0] md:top-[95px] text-[13px] font-light leading-[15px] tracking-[-0.04em] font-formular md:text-[16px] md:leading-[20px] ">
-                    {errors.email.message}
-                  </p>
-                )}
-              </>
-            )}
+          <input
+            {...register('email', {})}
+            type="email"
+            className={`${
+              errors.email ? 'text-red' : ''
+            } bg-transparent border-[1px] border-solid border-bgColor focus:outline-none p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
+            placeholder={data.form.email}
           />
+          {errors.email && (
+            <p className="text-red absolute top-[75px] right-[0] md:top-[95px] xl:top-[105px] text-[13px] font-light leading-[15px] font-formular md:text-[16px] md:leading-[20px] ">
+              {errors.email.message}
+            </p>
+          )}
         </div>
-        <div className="flex flex-col gap-[8px] md:gap-[12px] text-bgColor">
+        <div className="flex flex-col gap-[8px] md:gap-[12px] text-bgColor relative">
           <label
             htmlFor="message"
-            className="text-[16px] font-light leading-[20px] tracking-[-0.04em] md:text-[20px] md:leading-[24px]"
+            className="text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
           >
-            {data.form.msg}
+            {data.form.msg} *
           </label>
-          <Controller
-            name="message"
-            control={control}
-            defaultValue=""
-            rules={{
-              required: true,
-            }}
-            render={({ field }) => (
-              <>
-                <textarea
-                  {...field}
-                  className={`${
-                    errors.message ? 'text-red' : ''
-                  } bg-transparent h-[168px] border-[1px] border-solid border-bgColor focus:outline-none p-[8px] md:p-[12px] resize-none text-[16px] font-light leading-[20px] tracking-[-0.04em] md:text-[20px] md:leading-[24px]`}
-                  placeholder={data.form.msgPlaceholder}
-                ></textarea>
-                {errors.message && <p>{errors.message.message}</p>}
-              </>
-            )}
-          />
+          <textarea
+            {...register('message', {})}
+            className={`${
+              errors.message ? 'text-red' : ''
+            } bg-transparent h-[168px] border-[1px] border-solid border-bgColor focus:outline-none p-[8px] md:p-[12px] md:h-[252px] xl:h-[265px] resize-none text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
+            placeholder={data.form.msgPlaceholder}
+          ></textarea>
+          {errors.message && (
+            <p className="text-red absolute top-[205px] right-[0] md:top-[300px] xl:top-[320px] text-[13px] font-light leading-[15px] font-formular md:text-[16px] md:leading-[20px]">
+              {errors.message.message}
+            </p>
+          )}
         </div>
       </div>
       <div>
@@ -240,7 +175,7 @@ export default function Form() {
             loading || formStatus === 'error'
               ? 'cursor-not-allowed'
               : 'cursor-pointer'
-          } text-[24px] text-black ont-normal line-height-[29px] tracking-[-0.04em] hover:font-medium focus:font-medium focus:outline-none flex gap-[8px] justify-center items-center self-end`}
+          } text-[24px] text-black ont-normal line-height-[29px] hover:font-medium focus:font-medium focus:outline-none flex gap-[8px] justify-center items-center self-end`}
           disabled={loading || formStatus === 'error' || errors.length > 0}
         >
           {loading ? (
