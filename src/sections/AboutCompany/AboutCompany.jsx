@@ -4,7 +4,7 @@ import { Container } from '@/components/Container';
 
 export const AboutCompany = () => {
   return (
-    <section className="py-[60px] md:py-80[px] xl:py-[120px]">
+    <section className="py-[60px] md:py-80[px] xl:py-[120px] bg-white">
       <Container>
         <div className="flex flex-col gap-[48px] xl:gap-[120px]">
           <AboutCompanyFirstBlock />

@@ -1,11 +1,23 @@
+import PropTypes from 'prop-types';
+
+import { forwardRef } from 'react'; // Имп
+
 import { Container } from '@/components/Container';
 
-export const Hero = () => {
+const Hero = forwardRef(({ style }, ref) => {
   return (
-    <section>
+    <section style={style} ref={ref}>
       <Container>
         <p>It is hero section</p>
       </Container>
     </section>
   );
+});
+
+Hero.displayName = 'Hero';
+
+Hero.propTypes = {
+  style: PropTypes.object,
 };
+
+export { Hero };

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import data from '../../../data/data.json';
 
 import { AboutCompanyParagraph } from '../AboutCompanyParagraph';
@@ -50,9 +48,4 @@ export const AboutCompanyFirstBlock = () => {
       </div>
     </div>
   );
-};
-
-AboutCompanyFirstBlock.propTypes = {
-  children: PropTypes.node.isRequired,
-  background: PropTypes.string.isRequired,
 };
