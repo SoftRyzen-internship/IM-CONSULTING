@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { LinkNavBar } from '@/components';
+import { LinkNavBar } from '@/components/LinkNavBar';
 import data from '@/data/data.json';
 
 export const NavBar = ({ type }) => {
