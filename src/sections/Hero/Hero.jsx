@@ -3,9 +3,9 @@ import { NavBar } from '@/components/NavBar';
 
 export const Hero = () => {
   return (
-    <section>
+    <section id="hero">
       <Container>
-        <NavBar type="light" />
+        <NavBar type="dark" />
         <p>It is hero section</p>
       </Container>
     </section>

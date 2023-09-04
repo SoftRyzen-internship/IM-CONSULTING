@@ -17,8 +17,14 @@ export const LinkNavBar = ({ link, label, handleMenuToggle, type }) => {
         spy={true}
         href="/"
         onClick={handleClick}
-        className=""
-        activeClass={type ? '' : 'navBarLinkActive  '}
+        className={`${
+          type === 'dark'
+            ? 'xl:text-gray xl:hover:text-white xl:focus:text-white duration-300'
+            : 'xl:text-black xl:opacity-25 xl:hover:opacity-100 xl:focus:opacity-100 duration-300'
+        } text-[24px] xl:text-[16px] xl:font-bold leading-4`}
+        activeClass={`${
+          type === 'dark' ? 'xl:text-accent' : 'xl:text-orange'
+        } font-bold pointer-events-none`}
       >
         {label}
       </Link>
@@ -30,5 +36,5 @@ LinkNavBar.propTypes = {
   link: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   handleMenuToggle: PropTypes.func,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };
