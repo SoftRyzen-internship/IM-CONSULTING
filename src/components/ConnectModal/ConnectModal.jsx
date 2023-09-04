@@ -8,7 +8,7 @@ export const ConnectModal = ({ toggleModal, isOpen, children }) => {
     <Transition appear show={isOpen}>
       <Dialog open={isOpen} onClose={toggleModal} className="relative z-50">
         <div className="fixed inset-0 bg-accent/75" aria-hidden="true">
-          <div className="fixed px-[20px] py-[60px] md:py-[160px] inset-0 overflow-y-auto">
+          <div className="fixed px-[20px] py-[60px] md:py-[99px] xl:py-[60px] inset-0 overflow-y-auto">
             <Transition.Child
               enter="transition duration-300 ease-out"
               enterFrom="transform scale-50 opacity-0"
@@ -21,7 +21,7 @@ export const ConnectModal = ({ toggleModal, isOpen, children }) => {
                 <button
                   type="button"
                   aria-label="Закрити"
-                  className="text-bgColor block ml-auto mb-[24px] md:mb-[8px] xl:mb-[12px] w-[48px] h-[48px] hover:text-accent focus:text-accent"
+                  className="text-bgColor block ml-auto mb-[24px] md:mb-[8px] xl:mb-[12px] w-[48px] h-[48px] duration-300 ease-out focus:text-accent"
                   onClick={toggleModal}
                 >
                   <Icon className="block mx-auto w-[16px] h-[16px] md:w-[24px] md:h-[24px] fill-current" />
