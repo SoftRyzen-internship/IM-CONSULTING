@@ -25,7 +25,7 @@ export default function Home() {
     const heroHeight = heroRef.current.clientHeight;
 
     const parallaxBlock = document.getElementById('parallaxBlock');
-    parallaxBlock.style.top = `${heroHeight - 30}px`;
+    parallaxBlock.style.top = `${heroHeight}px`;
   }, []);
 
   return (
