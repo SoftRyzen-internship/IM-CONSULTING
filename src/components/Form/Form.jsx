@@ -4,13 +4,14 @@ import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import data from 'data/data.json';
+import data from '@/data/data.json';
 import ErrorIcon from 'public/icons/close.svg';
 import SuccessIcon from 'public/icons/success.svg';
 import { sendEmail } from '@/utils/sendEmail';
 import { getDefaultFormValues } from '@/utils/getDefaultFormValues';
 import { sendMessageToTelegram } from '@/utils/sendMessageToTelegram';
 import { formSchema } from '@/utils/yupSchema';
+import { Loader } from '../Loader';
 export default function Form() {
   const defaultFormValues = getDefaultFormValues();
 
@@ -179,7 +180,7 @@ export default function Form() {
           disabled={loading || formStatus === 'error' || errors.length > 0}
         >
           {loading ? (
-            'Відправка...'
+            <Loader />
           ) : formStatus === 'error' ? (
             <>
               <ErrorIcon /> {data.form.sendBtnError}

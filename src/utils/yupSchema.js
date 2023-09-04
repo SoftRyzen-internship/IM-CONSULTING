@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 
-import data from 'data/data.json';
+import data from '@/data/data.json';
+
 export const formSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, data.form.nameInvalid)
