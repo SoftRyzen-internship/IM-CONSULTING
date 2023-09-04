@@ -29,7 +29,15 @@ export const ConnectButton = ({ color }) => {
       </button>
       {isOpen && (
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
-          <div>Modal Form</div>
+          <div className='text-white w-[232px] md:w-[342px] xl:w-[500px] mx-auto'>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet,
+            delectus odio distinctio aliquam commodi laborum voluptatem tempore
+            doloribus vero omnis repellat quibusdam quidem nulla alias debitis
+            ipsa nobis dicta architecto corrupti quam, laudantium dignissimos
+            temporibus ipsum? Deserunt incidunt, tenetur soluta dolor maxime
+            ducimus ab beatae eveniet magnam corporis consequuntur
+            exercitationem.
+          </div>
         </ConnectModal>
       )}
     </>
