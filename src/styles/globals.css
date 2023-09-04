@@ -14,7 +14,7 @@
 
 @layer components {
   .container {
-    @apply xl:pl-[236px];
+    @apply relative xl:pl-[236px];
   }
 
   .container.header {
