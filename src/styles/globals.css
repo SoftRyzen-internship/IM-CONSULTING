@@ -16,4 +16,8 @@
   .container {
     @apply xl:pl-[236px];
   }
+
+  .container.header {
+    @apply xl:pl-[32px];
+  }
 }
