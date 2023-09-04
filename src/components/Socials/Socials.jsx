@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-import Link from 'next/link';
-
 import Telegram from 'public/icons/telegram.svg';
 import Viber from 'public/icons/viber.svg';
 
@@ -19,37 +17,34 @@ export const Socials = ({ component }) => {
   };
 
   const linkClass = {
-    header:
-      'text-black hover:text-white focus:text-white transition duration-300',
-    burgerMenu:
-      'text-accent hover:text-white focus:text-white transition duration-300',
-    footer:
-      'text-bgColor hover:text-accent focus:text-accent transition duration-300',
+    header: 'text-black hover:text-white focus:text-white duration-300',
+    burgerMenu: 'text-accent hover:text-white focus:text-white duration-300',
+    footer: 'text-bgColor hover:text-accent focus:text-accent duration-300',
   };
 
   return (
     <ul className={listClass[component]}>
       <li className={itemClass[component]}>
-        <Link
+        <a
           href="#viber"
           target="_blank"
           rel="noreferrer noopener nofollow"
-          aria-label="Viber"
+          aria-label="Посилання на Viber"
           className={linkClass[component]}
         >
           <Viber className={itemClass[component]} />
-        </Link>
+        </a>
       </li>
       <li className={itemClass[component]}>
-        <Link
+        <a
           href="#telegram"
           target="_blank"
           rel="noreferrer noopener nofollow"
-          aria-label="Telegram"
+          aria-label="Посилання на Telegram"
           className={linkClass[component]}
         >
           <Telegram className={itemClass[component]} />
-        </Link>
+        </a>
       </li>
     </ul>
   );
