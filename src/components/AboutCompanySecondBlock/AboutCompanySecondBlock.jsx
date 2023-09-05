@@ -1,17 +1,17 @@
-import data from '@/data/data.json';
+import { secondBlock } from '../../data/home';
 
 import { AboutCompanyHeading } from '../AboutCompanyHeading';
 import { AboutCompanyParagraph } from '../AboutCompanyParagraph';
 import { Title } from '../Title';
 
 export const AboutCompanySecondBlock = () => {
-  const text = data.about.secondBlock;
-
   return (
     <div className="flex flex-col gap-[36px] md:gap-[48px] xl:w-[1012px]">
-      <Title className="self-center">{text.title}</Title>
+      <Title tag="p" section="about" className="self-center">
+        {secondBlock.title}
+      </Title>
       <ul className="flex flex-col gap-[48px]">
-        {text.content.map(block => (
+        {secondBlock.content.map(block => (
           <li
             key={block.subtitle}
             className="flex flex-col gap-[12px] md:flex-row md:justify-between md:items-start"

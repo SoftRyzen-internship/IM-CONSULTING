@@ -4,7 +4,7 @@ export const AboutCompanyParagraph = ({
   children,
   background,
   block,
-  className,
+  className = '',
 }) => {
   const textColor = {
     black: 'text-white',

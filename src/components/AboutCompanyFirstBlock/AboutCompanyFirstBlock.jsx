@@ -1,14 +1,14 @@
-import data from '@/data/data.json';
+import { firstBlock } from '../../data/home';
 
 import { AboutCompanyParagraph } from '../AboutCompanyParagraph';
 import { Title } from '../Title';
 
 export const AboutCompanyFirstBlock = () => {
-  const text = data.about.firstBlock;
-
   return (
     <div className="flex flex-col gap-[36px] ">
-      <Title className="self-center">{text.title}</Title>
+      <Title tag="p" section="about" className="self-center">
+        {firstBlock.title}
+      </Title>
       <div className="flex flex-col gap-[16px] md:flex-row ">
         <AboutCompanyParagraph
           background="black"
@@ -16,17 +16,17 @@ export const AboutCompanyFirstBlock = () => {
           className="py-[12px] md:py-[60px] px-[24px] text-center
            bg-black md:w-[200px] md:h-[200px] xl:w-[241px] xl:h-[241px]"
         >
-          {text.content.mainBlock}
+          {firstBlock.content.mainBlock}
         </AboutCompanyParagraph>
         <ul className="flex flex-col gap-[16px] md:grid md:grid-cols-3 ">
-          {text.content.otherBlocks.map(paragraph => (
+          {firstBlock.content.otherBlocks.map(paragraph => (
             <li key={paragraph} className="relative">
               <AboutCompanyParagraph
                 background="yellow"
                 block="first"
                 className="flex items-center justify-center text-center
                 py-[12px] px-[24px] md:py-[26px] md:px-[16px] xl:p-[25px]
-                h-full w-full md:w-[149px] xl:w-[241px] bg-accent md:row-span-1
+                h-full w-full md:w-[152px] xl:w-[241px] bg-accent md:row-span-1
                 md:before:content-[''] md:before:absolute md:before:top-[12px] xl:before:top-[24px]
                  md:before:bg-black  md:before:opacity-10  md:before:w-full md:before:h-[1px]
                 md:after:content-[''] md:after:absolute md:after:bottom-[12px] xl:after:bottom-[24px]
