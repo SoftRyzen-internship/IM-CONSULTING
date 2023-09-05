@@ -10,7 +10,7 @@ const { text: stat2Text, number: stat2Number } = stat2;
 
 export const HeroContent = () => {
   return (
-    <div className=" h-[270px] md:h-[450px] xl:h-[539px]">
+    <>
       <div className="flex justify-between mb-[26px] md:mb-[62px] xl:mb-[232px]">
         <p className="text-xs md:text-[28px] xl:text-[24px] text-accent max-w-[94px] md:max-w-[224px] xl:max-w-[270px] leading-[15px] md:leading-[28px] xl:leading-[24px]">
           {subtitle}
@@ -44,7 +44,7 @@ export const HeroContent = () => {
           </span>
         </div>
       </div>
-      <div className="h-[235px] md:h-[403px] xl:h-[659px] w-[223px] md:w-[381px] xl:w-[625px] absolute bottom-[-7px] md:bottom-[-12px] xl:bottom-[-17px] left-1/2 md:left-[43%] xl:left-[52%] transform translate-x-[-50%] z-10 object-cover">
+      <div className="h-auto md:h-[403px] xl:h-[659px] max-md:w-[62%] md:w-[381px] xl:w-[625px] absolute bottom-[-7px] md:bottom-[-12px] xl:bottom-[-17px] left-1/2 md:left-[43%] xl:left-[52%] transform translate-x-[-50%] z-10 object-cover ">
         <Image
           src={HeroImg}
           alt={`${name} ${surname}`}
@@ -55,6 +55,6 @@ export const HeroContent = () => {
           style={{ width: '100%', height: 'auto' }}
         />
       </div>
-    </div>
+    </>
   );
 };
