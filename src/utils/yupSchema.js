@@ -21,5 +21,6 @@ export const formSchema = Yup.object().shape({
     .required(data.form.emailInvalid),
   message: Yup.string()
     .required(data.form.msgInvalid)
-    .max(300, data.form.msgInvalid),
+    .min(3, data.form.msgInvalid)
+    .max(500, data.form.msgInvalid),
 });
