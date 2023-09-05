@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 export const ProcessCard = ({ number, subtitle, text, src }) => {
   return (
     <div className="flex flex-col md:flex-row md:even:flex-row-reverse gap-[16px] md:gap-[24px] xl:gap-[32px] w-[280px] md:w-[696px] xl:w-[1012px] text-right even:text-left">
-      <div>
+      <div className="w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px] md:mt-[20px] opacity-80 bg-accent">
         <Image
           src={src}
           alt={subtitle}
           width={500}
           height={376}
-          className="w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px] md:mt-[20px] "
+          className="w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px] mix-blend-multiply"
         />
       </div>
-      <div className="w-[280px] md:w-[330px] xl:w-[480px] md:mt-[52px]">
+      <div className="w-[280px] md:w-[330px] xl:w-[480px]">
         <div
           className={`flex justify-between items-baseline ${
             number === '02' || number === '04' ? 'flex-row-reverse' : 'flex-row'
