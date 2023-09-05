@@ -85,11 +85,6 @@
   "services": {
     "title": "Послуги",
     "cards": ["Тренінги", "Консалтинг", "Коучинг"],
-    "images": [
-      "/public/images/services/Photo.jpg",
-      "/public/images/services/Photo (1).jpg",
-      "/public/images/services/Photo (2).jpg"
-    ],
     "text": [
       [
         "Хочеш зробити зі співробітників продажників, які регулярно перевиконують плани?",
