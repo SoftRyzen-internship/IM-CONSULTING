@@ -5,40 +5,6 @@ export const Reviews = () => {
     <section id="reviews">
       <Container>
         <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
-        <p>It is Reviews section</p>
       </Container>
     </section>
   );

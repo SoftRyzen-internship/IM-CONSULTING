@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 
 import { LinkNavBar } from '@/components/LinkNavBar';
+import { ConnectButton } from '@/components/ConnectButton';
 import data from '@/data/data.json';
 
-export const NavBar = ({ isDesktop }) => {
+export const NavBar = ({ menu = false }) => {
   const { navBar } = data;
 
   return (
     <div
       className={`${
-        isDesktop ? 'hidden xl:flex' : 'flex xl:hidden'
+        menu ? 'flex xl:hidden' : 'hidden xl:flex'
       } flex-col w-[168px] xl:w-[117px] gap-[50px] xl:gap-8 mx-auto relative xl:fixed xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-[608px] xl:-translate-y-1/2 z-20`}
     >
       <nav>
@@ -19,11 +20,11 @@ export const NavBar = ({ isDesktop }) => {
           ))}
         </ul>
       </nav>
-      <p className="text-red">Звʼязатися</p>
+      <ConnectButton color={menu ? 'black' : 'accent'} />
     </div>
   );
 };
 
 NavBar.propTypes = {
-  isDesktop: PropTypes.bool.isRequired,
+  menu: PropTypes.bool,
 };

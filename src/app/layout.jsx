@@ -46,7 +46,7 @@ export default async function RootLayout({ children }) {
     <html lang="uk">
       <body className={formular.variable}>
         <Header />
-        <NavBar isDesktop={true} />
+        <NavBar />
         <main className="flex flex-col items-center min-h-screen">
           {children}
         </main>
