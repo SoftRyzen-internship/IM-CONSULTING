@@ -10,7 +10,7 @@ export const ServicesCard = ({ title, image, text, btnText }) => {
       className="services-card-container relative w-[280px] h-[529px] md:w-[224px] md:h-[482px] xl:w-[324px] xl:h-[435px] xl:overflow-hidden"
       tabIndex="0"
     >
-      <div className="services-card relative bottom-[0] hidden xl:block relative z-[1]">
+      <div className="services-card transform translate-y-0 transition-transform duration-500 ease-in-out relative hidden xl:block z-[1]">
         <Image src={image} alt={title} width={324} height={435} />
         <div className="bg-accent absolute top-[0] w-[100%] h-[100%] opacity-[0.7]"></div>
         <p className="absolute bottom-[48px] left-[24px] xl:text-[42px] xl:leading-[51px]">
