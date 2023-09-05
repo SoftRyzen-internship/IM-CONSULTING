@@ -1,24 +1,20 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-
 import Image from 'next/image';
 import DownArrow from 'public/icons/downArrow.svg';
 
 export const ServicesCard = ({ title, image, text, btnText }) => {
   return (
-    <li
-      className="services-card-container relative w-[280px] h-[529px] md:w-[224px] md:h-[482px] xl:w-[324px] xl:h-[435px] xl:overflow-hidden"
-      tabIndex="0"
-    >
-      <div className="services-card transform translate-y-0 transition-transform duration-500 ease-in-out relative hidden xl:block z-[1]">
+    <li className="group relative w-[280px] h-[529px] md:w-[224px] md:h-[482px] xl:w-[324px] xl:h-[435px] xl:overflow-hidden">
+      <div className="transform translate-y-0 transition-transform duration-500 ease-in-out relative hidden xl:block z-10 group-hover:translate-y-[-100%] group-focus-within:translate-y-[-100%]">
         <Image src={image} alt={title} width={324} height={435} />
-        <div className="bg-accent absolute top-[0] w-[100%] h-[100%] opacity-[0.7]"></div>
+        <div className="bg-accent absolute top-0 w-full h-full opacity-70"></div>
         <p className="absolute bottom-[48px] left-[24px] xl:text-[42px] xl:leading-[51px]">
           {title}
         </p>
       </div>
-      <div className="bg-white flex flex-col justify-between font-normal text-14px leading-1.5 tracking-0.03em text-basic-color h-full w-full absolute top-0 left-0 bg-white xl:gap-[16px]">
-        <div className="flex flex-col gap-[24px] pt-[48px] px-[20px] md:pt[40px] md:px-[24px] xl:gap-[16px]">
+      <div className="bg-white flex flex-col justify-between h-full w-full absolute top-0 left-0 xl:gap-[16px]">
+        <div className="flex flex-col gap-[24px] pt-[48px] px-[20px] md:pt-[40px] md:px-[24px] xl:gap-[16px]">
           <h4 className="text-[36px] leading-[44px] tracking-[0.04em] md:text-[28px] md:leading-[34px] xl:text-[44px] xl:leading-[54px]">
             {title}
           </h4>
@@ -35,7 +31,8 @@ export const ServicesCard = ({ title, image, text, btnText }) => {
         </div>
         <Link
           href="/"
-          className="w-[100%] py-[16px] bg-accent hover:bg-darkOrange focus:bg-darkOrange flex justify-center items-center gap-[16px] md:gap-[12px] font-medium text-[24px] leading-[29px] md:text-[20px] md:leadinh-[24px] xl:text-[24px] xl:leading-[29px] xl:py-[20px]"
+          className="w-full py-[16px] bg-accent hover:bg-darkOrange focus:bg-darkOrange flex justify-center items-center gap-[16px]
+        md:gap-[12px] font-medium text-[24px] leading-[29px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px] xl:py-[20px]"
         >
           {btnText} <DownArrow />
         </Link>
@@ -47,6 +44,6 @@ export const ServicesCard = ({ title, image, text, btnText }) => {
 ServicesCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.arrayOf(PropTypes.string).isRequired,
   btnText: PropTypes.string.isRequired,
 };

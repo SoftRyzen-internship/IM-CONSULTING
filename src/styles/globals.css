@@ -77,8 +77,3 @@
     @apply hero-bgcolor-mob md:hero-bgcolor-tab xl:hero-bgcolor-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
 }
-
-.services-card-container:hover .services-card,
-.services-card-container:focus .services-card {
-  transform: translateY(-100%);
-}

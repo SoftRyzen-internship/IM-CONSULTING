@@ -1,5 +1,4 @@
 import data from '@/data/data.json';
-
 import { ServicesCard } from '../ServicesCard/ServicesCard';
 
 import servicesFirstPhoto from '/public/images/services/servicesFirstPhoto.jpg';
