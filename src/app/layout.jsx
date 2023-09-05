@@ -30,11 +30,6 @@ const formular = localFont({
       weight: '900',
       style: 'normal',
     },
-    {
-      path: './fonts/formular/Formular-Italic.ttf',
-      weight: '400',
-      style: 'italic',
-    },
   ],
   variable: '--font-formular',
 });
