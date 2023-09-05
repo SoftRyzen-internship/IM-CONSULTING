@@ -30,15 +30,13 @@ export const Reviews = () => {
         >
           {reviews.map(
             ({ rating, ratingText, company, post, name, review }) => (
-              <SwiperSlide
-                key={name}
-                tag="li"
-                className=" bg-slate-100 font-light pb-9"
-              >
+              <SwiperSlide key={name} tag="li" className="font-light pb-[37px]">
                 <div className="flex justify-between  text-orange">
-                  <p className=" text-[60px] leading-[73px] ">{rating}</p>
+                  <p className=" text-[60px] leading-[73px] opacity-10">
+                    {rating}
+                  </p>
                   <div className="text-right">
-                    <p className=" text-4xl leading-[44px] tracking-widest  ">
+                    <p className=" text-4xl leading-[44px] tracking-widest opacity-10 ">
                       {ratingText}
                     </p>
                     <h3 className="">

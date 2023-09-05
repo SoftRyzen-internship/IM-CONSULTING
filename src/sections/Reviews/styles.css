@@ -7,3 +7,15 @@
   cursor: move;
   cursor: grab;
 }
+
+.swiper-scrollbar {
+  --swiper-scrollbar-border-radius: 10px;
+  --swiper-scrollbar-top: auto;
+  --swiper-scrollbar-bottom: 0px;
+  --swiper-scrollbar-left: auto;
+  --swiper-scrollbar-right: 4px;
+  --swiper-scrollbar-sides-offset: 1%;
+  --swiper-scrollbar-bg-color: #bababa;
+  --swiper-scrollbar-drag-bg-color: #171717;
+  --swiper-scrollbar-size: 1px;
+}
