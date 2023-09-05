@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 
-export const Container = ({ children }) => {
-  return <div className="container">{children}</div>;
+export const Container = ({ children, className = '' }) => {
+  return <div className={`container ${className}`}>{children}</div>;
 };
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
