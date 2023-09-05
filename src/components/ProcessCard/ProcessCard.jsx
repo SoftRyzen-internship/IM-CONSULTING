@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const ProcessCard = ({ number, subtitle, text, src }) => {
   return (
-    <div className="flex flex-col md:flex-row md:even:flex-row-reverse gap-[16px] md:gap-[24px] xl:gap-[32px] w-[280px] md:w-[696px] xl:w-[1012px] text-right even:text-left">
+    <div className="flex flex-col md:flex-row-reverse md:even:flex-row gap-[16px] md:gap-[24px] xl:gap-[32px] w-[280px] md:w-[696px] xl:w-[1012px] text-right even:text-left">
       <div className="w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px] md:mt-[20px] opacity-80 bg-accent">
         <Image
           src={src}
