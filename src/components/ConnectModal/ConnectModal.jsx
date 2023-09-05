@@ -7,7 +7,10 @@ export const ConnectModal = ({ toggleModal, isOpen, children }) => {
   return (
     <Transition appear show={isOpen}>
       <Dialog open={isOpen} onClose={toggleModal} className="relative z-50">
-        <div className="fixed inset-0 bg-accent/75 backdrop-blur-[125px]" aria-hidden="true">
+        <div
+          className="fixed inset-0 bg-accent/75 backdrop-blur-[125px]"
+          aria-hidden="true"
+        >
           <div className="fixed px-[20px] py-[60px] md:py-[99px] xl:py-[60px] inset-0 overflow-y-auto">
             <Transition.Child
               enter="transition duration-300 ease-out"
