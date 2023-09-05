@@ -6,8 +6,8 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <Reviews />
       <Services />
+      <Reviews />
     </>
   );
 }
