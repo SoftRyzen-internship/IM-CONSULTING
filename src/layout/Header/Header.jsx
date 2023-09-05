@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Container } from '@/components/Container';
 import { MobileMenu } from '@/components/MobileMenu';
+import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,14 +35,10 @@ export const Header = () => {
     <header>
       <Container className="header">
         {isMobile && (
-          <button
-            type="button"
-            className="relative border-2 border-red z-50 text-red"
+          <ButtonMenuToggle
             isMenuOpen={isMenuOpen}
-            onClick={handleMenuToggle}
-          >
-            Close/open
-          </button>
+            handleMenuToggle={handleMenuToggle}
+          />
         )}
 
         {isMobile && isMenuOpen && (

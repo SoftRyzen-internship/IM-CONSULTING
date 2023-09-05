@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types';
 
 import { NavBar } from '@/layout/NavBar';
-import { Container } from '@/components/Container';
 
 export const MobileMenu = ({ handleMenuToggle }) => {
   return (
-    <div className="absolute block xl:hidden top-0 left-0 w-full bg-black pt-[76px] h-[100vh]">
-      <Container className="py-6 flex flex-col justify-start h-full overflow-y-auto">
-        <NavBar
-          className="flex flex-col"
-          handleMenuToggle={handleMenuToggle}
-          menu={true}
-        />
-      </Container>
+    <div className="absolute flex xl:hidden top-0 left-0 w-full h-[100vh] bg-black z-30">
+      <div className="w-[27%] md:w-[19%]"></div>
+      <div className="w-full bg-accent pt-[30px] pl-6">
+        <NavBar handleMenuToggle={handleMenuToggle} menu={true} />
+      </div>
     </div>
   );
 };
