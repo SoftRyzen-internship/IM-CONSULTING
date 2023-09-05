@@ -13,17 +13,19 @@ export const ServicesCard = ({ title, image, text, btnText }) => {
       <div className="services-card relative bottom-[0] hidden xl:block relative z-[1]">
         <Image src={image} alt={title} width={324} height={435} />
         <div className="bg-accent absolute top-[0] w-[100%] h-[100%] opacity-[0.7]"></div>
-        <p className="absolute bottom-[48px] left-[24px]">{title}</p>
+        <p className="absolute bottom-[48px] left-[24px] xl:text-[42px] xl:leading-[51px]">
+          {title}
+        </p>
       </div>
-      <div className="bg-white flex flex-col justify-between font-normal text-14px leading-1.5 tracking-0.03em text-basic-color h-full w-full absolute top-0 left-0 bg-white">
-        <div className="flex flex-col gap-[24px] pt-[48px] px-[20px] md:pt[40px] md:px-[24px]">
-          <h4 className="text-[36px] leading-[44px] tracking-[0.04em] md:text-[28px] md:leading-[34px]">
+      <div className="bg-white flex flex-col justify-between font-normal text-14px leading-1.5 tracking-0.03em text-basic-color h-full w-full absolute top-0 left-0 bg-white xl:gap-[16px]">
+        <div className="flex flex-col gap-[24px] pt-[48px] px-[20px] md:pt[40px] md:px-[24px] xl:gap-[16px]">
+          <h4 className="text-[36px] leading-[44px] tracking-[0.04em] md:text-[28px] md:leading-[34px] xl:text-[44px] xl:leading-[54px]">
             {title}
           </h4>
-          <div className="flex flex-col gap-[8px]">
+          <div className="flex flex-col gap-[8px] xl:gap-[4px]">
             {text.map((line, index) => (
               <p
-                className="text-[16px] leading-[20px] tracking-[0.04em] md:text-[14px] md:leading-[17px] "
+                className="text-[16px] leading-[20px] tracking-[0.04em] md:text-[14px] md:leading-[17px] xl:text-[16px] xl:leading-[20px]"
                 key={index}
               >
                 {line}
@@ -33,7 +35,7 @@ export const ServicesCard = ({ title, image, text, btnText }) => {
         </div>
         <Link
           href="/"
-          className="w-[100%] py-[16px] bg-accent flex justify-center items-center gap-[16px] md:gap-[12px] font-medium text-[24px] leading-[29px] md:text-[20px] md:leadinh-[24px]"
+          className="w-[100%] py-[16px] bg-accent hover:bg-darkOrange focus:bg-darkOrange flex justify-center items-center gap-[16px] md:gap-[12px] font-medium text-[24px] leading-[29px] md:text-[20px] md:leadinh-[24px] xl:text-[24px] xl:leading-[29px] xl:py-[20px]"
         >
           {btnText} <DownArrow />
         </Link>
