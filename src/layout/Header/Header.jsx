@@ -1,6 +1,6 @@
 import { Container } from '@/components/Container';
-import { Socials } from '@/components/Socials';
 import { Logo } from '@/components/Logo';
+import { Socials } from '@/components/Socials';
 
 export const Header = () => {
   return (
