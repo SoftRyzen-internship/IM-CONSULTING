@@ -10,6 +10,7 @@ export const ProcessCard = ({ number, subtitle, text, src }) => {
           alt={subtitle}
           width={500}
           height={376}
+          quality={100}
           className="w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px]"
         />
       </div>
@@ -24,7 +25,9 @@ export const ProcessCard = ({ number, subtitle, text, src }) => {
           </div>
           <h3>
             <span className="text-orange">[ </span>
-            <span className="mx-[12px] font-bold">{subtitle}</span>
+            <span className="mx-[12px] md:mx-[15px] xl:mx-[18px] font-bold">
+              {subtitle}
+            </span>
             <span className="text-orange"> ]</span>
           </h3>
         </div>
