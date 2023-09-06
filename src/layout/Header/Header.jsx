@@ -6,6 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
 import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
+import { Socials } from '@/components/Socials';
 import { MobileMenu } from '@/components/MobileMenu';
 
 export const Header = () => {
@@ -42,6 +43,7 @@ export const Header = () => {
     <header className="absolute top-0 left-0 right-0 pt-[14px] md:pt-[36px]">
       <Container className="header flex justify-between items-center">
         <Logo />
+        <Socials component="header" />
         {isMobile && (
           <ButtonMenuToggle
             isMenuOpen={isMenuOpen}
