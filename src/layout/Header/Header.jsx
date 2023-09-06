@@ -7,7 +7,7 @@ import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
 import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
 import { Socials } from '@/components/Socials';
-import { MobileMenu } from '@/components/MobileMenu';
+import { MobileMenu } from '@/components/MobileMenu/MobileMenu';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className="header absolute top-0 left-0 right-0 pt-[14px] md:pt-[36px]">
+    <header className="header absolute top-0 left-0 right-0 py-[14px] md:pt-[36px]">
       <Container className="flex justify-between items-center">
         <Logo />
         <Socials component="header" />

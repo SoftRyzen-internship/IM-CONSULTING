@@ -4,7 +4,7 @@ import { LinkNavBar } from '@/components/LinkNavBar';
 import { ConnectButton } from '@/components/ConnectButton';
 import data from '@/data/data.json';
 
-export const NavBar = ({ menu = false }) => {
+export const NavBar = ({ handleMenuToggle, menu = false }) => {
   const { navBar } = data;
 
   return (
@@ -16,7 +16,12 @@ export const NavBar = ({ menu = false }) => {
       <nav>
         <ul className="flex flex-col gap-6 xl:gap-2">
           {navBar.map(({ label, link }) => (
-            <LinkNavBar key={label} link={link} label={label} />
+            <LinkNavBar
+              key={label}
+              link={link}
+              label={label}
+              handleMenuToggle={handleMenuToggle}
+            />
           ))}
         </ul>
       </nav>
@@ -26,5 +31,6 @@ export const NavBar = ({ menu = false }) => {
 };
 
 NavBar.propTypes = {
+  handleMenuToggle: PropTypes.func,
   menu: PropTypes.bool,
 };

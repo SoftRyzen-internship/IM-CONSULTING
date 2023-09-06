@@ -96,4 +96,22 @@
     before:content-['['] before:pr-[14px] md:before:pr-[20px] xl:before:pr-[30px] before:text-accent
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
+
+  .menu-gradient {
+    background: linear-gradient(to right, #171717 28%, #fdc638 28%);
+  }
+  @media (min-width: 480px) {
+    .menu-gradient {
+      background: linear-gradient(to right, #171717 30%, #fdc638 30%);
+    }
+  }
+  @media (min-width: 768px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 236px),
+        #fdc638 calc(50% - 236px)
+      );
+    }
+  }
 }
