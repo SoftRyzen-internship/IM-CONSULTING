@@ -20,6 +20,12 @@ export const Header = () => {
   }, [mobile]);
 
   useEffect(() => {
+    isMenuOpen
+      ? document.body.classList.add('overflow-hidden')
+      : document.body.classList.remove('overflow-hidden');
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     const closeESC = e => {
       if (e.code === 'Escape') {
         setIsMenuOpen(false);
@@ -33,8 +39,8 @@ export const Header = () => {
   }, []);
 
   return (
-    <header>
-      <Container className="header">
+    <header className="absolute top-0 left-0 right-0 pt-[14px] md:pt-[36px]">
+      <Container className="header flex justify-between items-center">
         <Logo />
         {isMobile && (
           <ButtonMenuToggle

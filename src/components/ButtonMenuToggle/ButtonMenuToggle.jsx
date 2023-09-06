@@ -8,7 +8,7 @@ export const ButtonMenuToggle = ({ isMenuOpen, handleMenuToggle }) => {
     <button
       type="button"
       aria-label={isMenuOpen ? 'Закрити меню' : 'Відкрити меню'}
-      className="block mt-[30px] ml-auto mr-9 relative z-50 cursor-pointer duration-300"
+      className="block relative z-40 cursor-pointer duration-300"
       onClick={handleMenuToggle}
     >
       {isMenuOpen ? (
