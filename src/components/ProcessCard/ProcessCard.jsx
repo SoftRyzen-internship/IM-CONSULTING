@@ -5,8 +5,8 @@ import { Title } from '../Title';
 
 export const ProcessCard = ({ number, subtitle, text, src }) => {
   return (
-    <div className="flex flex-col md:flex-row-reverse md:even:flex-row gap-[16px] md:gap-[24px] xl:gap-[32px] w-[280px] md:w-[696px] xl:w-[1012px] text-right even:text-left">
-      <div className="w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px] md:mt-[20px] opacity-85">
+    <div className="flex flex-col md:flex-row-reverse md:even:flex-row gap-[16px] md:gap-[24px] xl:gap-[32px] max-w-[480px] md:w-[696px] md:max-w-[696px] xl:w-[1012px] xl:max-w-[1012px] text-right even:text-left">
+      <div className=" mx-auto w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px] md:mt-[20px] opacity-85">
         <Image
           src={src}
           alt={subtitle}
@@ -16,7 +16,7 @@ export const ProcessCard = ({ number, subtitle, text, src }) => {
           className="w-[280px] h-[200px] md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px]"
         />
       </div>
-      <div className="w-[280px] md:w-[330px] xl:w-[480px]">
+      <div className="max-w-[480px] md:w-[330px] xl:w-[480px]">
         <div
           className={`flex justify-between items-baseline ${
             parseInt(number) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
