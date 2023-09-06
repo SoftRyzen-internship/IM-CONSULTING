@@ -2,6 +2,7 @@ import localFont from 'next/font/local';
 
 import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
+import { NavBar } from '@/layout/NavBar';
 
 import '../styles/globals.css';
 
@@ -47,6 +48,7 @@ export default async function RootLayout({ children }) {
     <html lang="uk">
       <body className={formular.variable}>
         <Header />
+        <NavBar />
         <main className="flex flex-col items-center min-h-screen">
           {children}
         </main>
