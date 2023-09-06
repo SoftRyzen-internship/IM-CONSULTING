@@ -122,7 +122,7 @@ export default function Form() {
         ? 'bg-lightOrange'
         : loading
         ? 'bg-accent'
-        : 'bg-accent hover:bg-darkOrange focus:bg-darkOrange'
+        : 'bg-accent hover:bg-darkOrange focus:bg-darkOrange transition duration-300'
     }
     ${formStatus === 'error' ? 'bg-red' : ''}
     ${
@@ -130,7 +130,7 @@ export default function Form() {
         ? 'cursor-not-allowed'
         : 'cursor-pointer'
     }
-    text-[24px] text-black font-normal line-height-[29px] hover:font-medium focus:font-medium
+    text-[24px] text-black font-normal line-height-[29px] hover:font-medium focus:font-medium transition duration-300
     flex gap-[8px] justify-center items-center self-end text-center w-[212px] py-[8px] h-[45px]
   `}
           disabled={loading || formStatus === 'error'}
