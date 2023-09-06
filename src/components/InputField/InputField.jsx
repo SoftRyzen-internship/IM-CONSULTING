@@ -36,8 +36,10 @@ export const InputField = ({
     {errors[name] && (
       <p
         className={`${
-          type === 'textarea' ? 'top-[205px] md:top-[300px] xl:top-[316px]' : ''
-        } text-red absolute top-[75px] right-[0] md:top-[95px] xl:top-[105px] text-[13px] font-light leading-[15px] md:text-[16px] md:leading-[20px]`}
+          type === 'textarea'
+            ? 'top-[210px] md:top-[300px] xl:top-[318px]'
+            : 'top-[75px] md:top-[95px] xl:top-[105px]'
+        } text-red absolute right-[0] text-[13px] font-light leading-[15px] md:text-[16px] md:leading-[20px]`}
       >
         {errors[name].message}
       </p>

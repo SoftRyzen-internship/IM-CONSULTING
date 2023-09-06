@@ -51,19 +51,16 @@ export default function Form() {
   });
 
   useEffect(() => {
-    console.log(errors);
     if (Object.keys(errors).length > 0) {
       setFormStatus('error');
       const timer = setTimeout(() => {
         setFormStatus(null);
       }, 3000);
-      console.log(errors);
       return () => clearTimeout(timer);
     }
   }, [errors]);
 
   const onSubmit = async formData => {
-    console.log('EEE');
     setLoading(true);
     try {
       await sendEmail(formData);
@@ -87,33 +84,35 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[280px] md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px]"
+      className="w-[232px] md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px] mx-auto"
     >
-      <InputField
-        label={name}
-        type="text"
-        name="name"
-        register={register}
-        errors={errors}
-        placeholder={name}
-      />
-      <InputField
-        label={email}
-        type="email"
-        name="email"
-        register={register}
-        errors={errors}
-        placeholder={email}
-      />
-      <InputField
-        label={msg}
-        type="textarea"
-        name="message"
-        register={register}
-        errors={errors}
-        placeholder={msgPlaceholder}
-      />
-      <div>
+      <div className="flex flex-col gap-[23px] md:gap-[32px]">
+        <InputField
+          label={name}
+          type="text"
+          name="name"
+          register={register}
+          errors={errors}
+          placeholder={name}
+        />
+        <InputField
+          label={email}
+          type="email"
+          name="email"
+          register={register}
+          errors={errors}
+          placeholder={email}
+        />
+        <InputField
+          label={msg}
+          type="textarea"
+          name="message"
+          register={register}
+          errors={errors}
+          placeholder={msgPlaceholder}
+        />
+      </div>
+      <div className="flex justify-end">
         <button
           type="submit"
           className={`
