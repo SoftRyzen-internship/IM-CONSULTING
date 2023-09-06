@@ -1,10 +1,11 @@
 import { Container } from '@/components/Container';
+import { Logo } from '@/components/Logo';
 
 export const Header = () => {
   return (
     <header>
-      <Container className="header">
-        <p>It is header</p>
+      <Container>
+        <Logo />
       </Container>
     </header>
   );
