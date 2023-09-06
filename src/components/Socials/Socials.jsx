@@ -47,7 +47,7 @@ export const Socials = ({ component }) => {
 
   return (
     <ul className={listClass[component]}>
-      {socials.socials.map(social => (
+      {socials.map(social => (
         <li key={social.name} className={itemClass[component]}>
           <a
             href={social.href}
