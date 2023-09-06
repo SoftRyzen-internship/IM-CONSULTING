@@ -27,21 +27,24 @@ export default function Form() {
     mode: 'onChange',
     resolver: yupResolver(formSchema),
   });
+
   const { form } = data;
   const {
     name,
     email,
-    title,
     msg,
     msgPlaceholder,
     sendBtnError,
     sendBtnSuccess,
     sendBtn,
   } = form;
+
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
 
-  useFormPersist('form', {
+  const STORAGE_KEY = 'contact_us_form';
+
+  useFormPersist(STORAGE_KEY, {
     watch,
     storage: typeof window !== 'undefined' ? window.localStorage : '',
     setValue,
@@ -86,17 +89,6 @@ export default function Form() {
       onSubmit={handleSubmit(onSubmit)}
       className="w-[280px] md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px]"
     >
-      <div className="flex items-center gap-[20px]">
-        <span className="text-accent font-light text-[24px] leading-[29px]">
-          [
-        </span>
-        <h3 className="text-white text-[24px] leading-[29px] font-bold">
-          {title}
-        </h3>
-        <span className="text-accent font-light text-[24px] leading-[29px]">
-          ]
-        </span>
-      </div>
       <InputField
         label={name}
         type="text"
@@ -132,15 +124,14 @@ export default function Form() {
         ? 'bg-accent'
         : 'bg-accent hover:bg-darkOrange focus:bg-darkOrange'
     }
-    text-center w-[212px] py-[8px]
     ${formStatus === 'error' ? 'bg-red' : ''}
     ${
       loading || formStatus === 'error'
         ? 'cursor-not-allowed'
         : 'cursor-pointer'
     }
-    text-[24px] text-black font-normal line-height-[29px] hover:font-medium focus:font-medium focus:outline-none
-    flex gap-[8px] justify-center items-center self-end
+    text-[24px] text-black font-normal line-height-[29px] hover:font-medium focus:font-medium
+    flex gap-[8px] justify-center items-center self-end text-center w-[212px] py-[8px] h-[45px]
   `}
           disabled={loading || formStatus === 'error'}
         >
