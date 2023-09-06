@@ -1,4 +1,4 @@
-import { about } from '../../data/home/about.json';
+import about from '@/data/home/about.json';
 
 import { AboutCompanyFirstBlock } from '@/components/AboutCompanyFirstBlock';
 import { AboutCompanySecondBlock } from '@/components/AboutCompanySecondBlock';

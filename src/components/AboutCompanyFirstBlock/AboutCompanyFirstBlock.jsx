@@ -1,4 +1,4 @@
-import { about } from '../../data/home/about.json';
+import about from '@/data/home/about.json';
 
 import { AboutCompanyParagraph } from '../AboutCompanyParagraph';
 import { Title } from '../Title';
