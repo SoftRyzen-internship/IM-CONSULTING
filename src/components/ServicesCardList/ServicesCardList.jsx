@@ -1,18 +1,19 @@
 import data from '@/data/data.json';
-import { ServicesCard } from '../ServicesCard/ServicesCard';
+import { ServicesCard } from '../ServicesCard';
 
-import servicesFirstPhoto from '/public/images/services/servicesFirstPhoto.jpg';
-import servicesSecondPhoto from '/public/images/services/servicesSecondPhoto.jpg';
-import servicesThirdPhoto from '/public/images/services/servicesThirdPhoto.jpg';
+import services1 from '/public/images/services/services1.jpg';
+import services2 from '/public/images/services/services2.jpg';
+import services3 from '/public/images/services/services3.jpg';
 
 export const ServicesCardList = () => {
   const { services } = data;
   const { title, cards, text, btnText } = services;
-  const images = [servicesFirstPhoto, servicesSecondPhoto, servicesThirdPhoto];
+  const images = [services1, services2, services3];
+
   return (
     <>
       <h2 className="hidden">{title}</h2>
-      <ul className="flex flex-col gap-[16px] justify-center items-center md:flex-row md:gap-[12px]">
+      <ul className="flex flex-col gap-[16px] justify-center items-center md:flex-row md:gap-[12px] xl:gap-[20px]">
         {cards.map((cardTitle, index) => (
           <ServicesCard
             key={index}
