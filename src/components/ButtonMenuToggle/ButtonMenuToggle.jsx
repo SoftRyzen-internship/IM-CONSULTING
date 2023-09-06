@@ -8,13 +8,13 @@ export const ButtonMenuToggle = ({ isMenuOpen, handleMenuToggle }) => {
     <button
       type="button"
       aria-label={isMenuOpen ? 'Закрити меню' : 'Відкрити меню'}
-      className="block relative z-40 cursor-pointer duration-300"
+      className="relative flex items-center justify-center z-40 w-[48px] h-[48px] cursor-pointer hover:fill-white focus:fill-white transition duration-300"
       onClick={handleMenuToggle}
     >
       {isMenuOpen ? (
         <CloseMobile width={16} height={16} />
       ) : (
-        <MenuBtn width={16} height={16} />
+        <MenuBtn width={18} height={12} />
       )}
     </button>
   );
