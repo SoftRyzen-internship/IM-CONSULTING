@@ -6,7 +6,7 @@ import { Title } from '../Title';
 export const AboutCompanyFirstBlock = () => {
   return (
     <div className="flex flex-col gap-[36px] ">
-      <Title tag="p" section="about" className="self-center">
+      <Title tag="p" className="self-center title-section-about">
         {firstBlock.title}
       </Title>
       <div className="flex flex-col gap-[16px] md:flex-row ">
