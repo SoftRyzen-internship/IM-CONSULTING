@@ -17,18 +17,18 @@ export const ProcessCard = ({ number, subtitle, text, src }) => {
       <div className="w-[280px] md:w-[330px] xl:w-[480px]">
         <div
           className={`flex justify-between items-baseline ${
-            number === '02' || number === '04' ? 'flex-row-reverse' : 'flex-row'
+            parseInt(number) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
           }`}
         >
-          <div className="w-[59px] h-[59px] md:w-[94px] md:h-[88px] xl:w-[108px] xl:h-[100px] text-orange text-[48px] font-light tracking-[4.8px] opacity-10 md:text-[72px] md:tracking-[7.2px] xl:text-[82px] xl:tracking-[8.2px]">
+          <span className="w-[59px] h-[59px] md:w-[94px] md:h-[88px] xl:w-[108px] xl:h-[100px] text-orange text-[48px] font-light tracking-[4.8px] opacity-10 md:text-[72px] md:tracking-[7.2px] xl:text-[82px] xl:tracking-[8.2px]">
             {number}
-          </div>
+          </span>
           <h3>
-            <span className="text-orange">[ </span>
+            <span className="text-orange">[</span>
             <span className="mx-[12px] md:mx-[15px] xl:mx-[18px] font-bold">
               {subtitle}
             </span>
-            <span className="text-orange"> ]</span>
+            <span className="text-orange">]</span>
           </h3>
         </div>
         <p className="font-light md:text-font16 xl:text-font24">{text}</p>

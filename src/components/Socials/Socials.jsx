@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { socials } from '../../data/home';
+import socials from '@/data/home/socials.json';
 
 import Facebook from '/public/icons/facebook.svg';
 import Instagram from '/public/icons/instagram.svg';
@@ -47,7 +47,7 @@ export const Socials = ({ component }) => {
 
   return (
     <ul className={listClass[component]}>
-      {socials.map(social => (
+      {socials.socials.map(social => (
         <li key={social.name} className={itemClass[component]}>
           <a
             href={social.href}

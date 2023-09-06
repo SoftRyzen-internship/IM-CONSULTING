@@ -8,6 +8,7 @@ export const Process = () => {
   return (
     <section id={id}>
       <Container className="py-[60px] md:py-[80px] xl:py-[120px]">
+        <h2 className="sr-only">Process Section</h2>
         <ProcessContent />
       </Container>
     </section>
