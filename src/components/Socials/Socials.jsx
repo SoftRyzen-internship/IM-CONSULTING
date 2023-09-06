@@ -69,5 +69,5 @@ export const Socials = ({ component }) => {
 };
 
 Socials.propTypes = {
-  component: PropTypes.string.isRequired,
+  component: PropTypes.oneOf(['header', 'burgerMenu', 'footer']).isRequired,
 };
