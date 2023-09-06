@@ -1,4 +1,4 @@
-import { secondBlock } from '../../data/home';
+import { about } from '../../data/home/about.json';
 
 import { AboutCompanyHeading } from '../AboutCompanyHeading';
 import { AboutCompanyParagraph } from '../AboutCompanyParagraph';
@@ -8,10 +8,10 @@ export const AboutCompanySecondBlock = () => {
   return (
     <div className="flex flex-col gap-[36px] md:gap-[48px] xl:w-[1012px]">
       <Title tag="p" className="self-center title-section-about">
-        {secondBlock.title}
+        {about.secondBlock.title}
       </Title>
       <ul className="flex flex-col gap-[48px]">
-        {secondBlock.content.map(block => (
+        {about.secondBlock.content.map(block => (
           <li
             key={block.subtitle}
             className="flex flex-col gap-[12px] md:flex-row md:justify-between md:items-start"

@@ -1,4 +1,4 @@
-import { about } from '../../data/home';
+import { about } from '../../data/home/about.json';
 
 import { AboutCompanyFirstBlock } from '@/components/AboutCompanyFirstBlock';
 import { AboutCompanySecondBlock } from '@/components/AboutCompanySecondBlock';
@@ -8,7 +8,7 @@ export const AboutCompany = () => {
   return (
     <section className="py-[60px] md:py-80[px] xl:py-[120px] bg-white">
       <Container>
-        <h2 className="hidden">{about.title}</h2>
+        <h2 className="visually-hidden">{about.title}</h2>
         <div className="flex flex-col gap-[48px] xl:gap-[120px]">
           <AboutCompanyFirstBlock />
           <AboutCompanySecondBlock />

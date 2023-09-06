@@ -1,4 +1,4 @@
-import { firstBlock } from '../../data/home';
+import { about } from '../../data/home/about.json';
 
 import { AboutCompanyParagraph } from '../AboutCompanyParagraph';
 import { Title } from '../Title';
@@ -7,7 +7,7 @@ export const AboutCompanyFirstBlock = () => {
   return (
     <div className="flex flex-col gap-[36px] ">
       <Title tag="p" className="self-center title-section-about">
-        {firstBlock.title}
+        {about.firstBlock.title}
       </Title>
       <div className="flex flex-col gap-[16px] md:flex-row ">
         <AboutCompanyParagraph
@@ -16,10 +16,10 @@ export const AboutCompanyFirstBlock = () => {
           className="py-[12px] md:py-[60px] px-[24px] text-center
            bg-black md:w-[200px] md:h-[200px] xl:w-[241px] xl:h-[241px]"
         >
-          {firstBlock.content.mainBlock}
+          {about.firstBlock.content.mainBlock}
         </AboutCompanyParagraph>
         <ul className="flex flex-col gap-[16px] md:grid md:grid-cols-3 ">
-          {firstBlock.content.otherBlocks.map(paragraph => (
+          {about.firstBlock.content.otherBlocks.map(paragraph => (
             <li key={paragraph} className="relative">
               <AboutCompanyParagraph
                 background="yellow"

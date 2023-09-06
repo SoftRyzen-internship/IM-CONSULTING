@@ -21,6 +21,12 @@
     @apply xl:pl-[32px];
   }
 
+  .visually-hidden {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
   .hero-bg-mob {
     background-image: image-set(
       url(/images/hero/hero-bg-mobile.webp) type('image/webp') 1x,
