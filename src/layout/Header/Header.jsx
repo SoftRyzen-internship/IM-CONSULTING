@@ -40,8 +40,8 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className="absolute top-0 left-0 right-0 pt-[14px] md:pt-[36px]">
-      <Container className="header flex justify-between items-center">
+    <header className="header absolute top-0 left-0 right-0 pt-[14px] md:pt-[36px]">
+      <Container className="flex justify-between items-center">
         <Logo />
         <Socials component="header" />
         {isMobile && (
