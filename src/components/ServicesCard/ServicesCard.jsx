@@ -32,7 +32,7 @@ export const ServicesCard = ({ title, image, text, btnText }) => {
         </div>
         <Link
           href="/"
-          className="w-full py-[16px] tracking-[0.1em] bg-accent hover:bg-darkOrange focus:bg-darkOrange flex justify-center items-center gap-[16px]
+          className="w-full py-[16px] tracking-[0.1em] bg-accent hover:bg-darkOrange focus:bg-darkOrange transition duration-300 flex justify-center items-center gap-[16px]
         md:gap-[12px] font-medium text-[24px] leading-[29px] md:text-[20px] md:leading-[24px] md:py-[12px] xl:text-[24px] xl:leading-[29px] xl:py-[20px]"
         >
           {btnText}
