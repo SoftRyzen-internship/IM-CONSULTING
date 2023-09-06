@@ -10,49 +10,50 @@ import './styles.css';
 
 import { Scrollbar } from 'swiper/modules';
 import { Container } from '@/components/Container';
+import { ReviewCard } from '@/components/ReviewCard';
+import { labelToLink } from '@/helpers';
+
 import data from '@/data/data.json';
 const { reviews } = data;
 
 export const Reviews = () => {
-  const scrollbar = {
-    draggable: true,
+  const id = labelToLink('Відгуки');
+
+  const swiperParams = {
+    loop: true,
+    scrollbar: {
+      draggable: true,
+    },
+    modules: [Scrollbar],
+    className: 'ReviewsSwiper',
+    wrapperTag: 'ul',
+    autoHeight: true,
+    spaceBetween: 24,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1280: {
+        slidesPerView: 2,
+        spaceBetween: 32,
+      },
+    },
   };
 
   return (
-    <section id="reviews" className="py-[60px]">
+    <section id={id} className="py-[60px] md:py-[80px] xl:py-[120px]">
       <Container>
-        <h2>It is Reviews section</h2>
-        <Swiper
-          scrollbar={scrollbar}
-          modules={[Scrollbar]}
-          className="ReviewsSwiper"
-          wrapperTag="ul"
-        >
-          {reviews.map(
-            ({ rating, ratingText, company, post, name, review }) => (
-              <SwiperSlide key={name} tag="li" className="font-light pb-[37px]">
-                <div className="flex justify-between  text-orange">
-                  <p className=" text-[60px] leading-[73px] opacity-10">
-                    {rating}
-                  </p>
-                  <div className="text-right">
-                    <p className=" text-4xl leading-[44px] tracking-widest opacity-10 ">
-                      {ratingText}
-                    </p>
-                    <h3 className="">
-                      [&nbsp;
-                      <span className="text-black font-bold">{company}</span>
-                      &nbsp;]
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-right mb-2">
-                  {post} <span className="font-medium">{name}</span>
-                </p>
-                <p className="text-justify">{review}</p>
-              </SwiperSlide>
-            ),
-          )}
+        <h2 className="visually-hidden">Reviews</h2>
+        <Swiper {...swiperParams}>
+          {reviews.map(({ name, ...rest }) => (
+            <SwiperSlide
+              key={name}
+              tag="li"
+              className="font-light pb-[37px] md:pb-[61px] xl:pb-[67px] cursor-swiper"
+            >
+              <ReviewCard name={name} {...rest} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Container>
     </section>

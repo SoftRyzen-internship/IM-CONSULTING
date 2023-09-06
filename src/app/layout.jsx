@@ -1,6 +1,8 @@
 import localFont from 'next/font/local';
 
 import { Header } from '@/layout/Header';
+import { Footer } from '@/layout/Footer';
+
 import '../styles/globals.css';
 
 const formular = localFont({
@@ -48,6 +50,7 @@ export default async function RootLayout({ children }) {
         <main className="flex flex-col items-center min-h-screen">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

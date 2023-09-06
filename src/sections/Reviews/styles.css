@@ -1,21 +1,32 @@
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
 .swiper-scrollbar {
   cursor: move;
   cursor: grab;
+  position: relative;
+  --swiper-scrollbar-bottom: 0px;
+  --swiper-scrollbar-right: 3px;
+  --swiper-scrollbar-sides-offset: 1%;
+  background-color: transparent;
+  /* --swiper-scrollbar-bg-color: #bababa; */
+  /* --swiper-scrollbar-drag-bg-color: #171717; */
+  --swiper-scrollbar-size: 16px;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #bababa;
+    opacity: 1;
+  }
 }
 
-.swiper-scrollbar {
-  --swiper-scrollbar-border-radius: 10px;
-  --swiper-scrollbar-top: auto;
-  --swiper-scrollbar-bottom: 0px;
-  --swiper-scrollbar-left: auto;
-  --swiper-scrollbar-right: 4px;
-  --swiper-scrollbar-sides-offset: 1%;
-  --swiper-scrollbar-bg-color: #bababa;
-  --swiper-scrollbar-drag-bg-color: #171717;
-  --swiper-scrollbar-size: 1px;
+.swiper-scrollbar-drag {
+  position: relative;
+  background-color: transparent;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #171717;
+  }
 }
