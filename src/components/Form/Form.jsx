@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import data from '@/data/data.json';
+import form from '@/data/form.json';
 import { sendEmail } from '@/utils/sendEmail';
 import { sendMessageToTelegram } from '@/utils/sendMessageToTelegram';
 import { formSchema } from '@/utils/yupSchema';
@@ -18,7 +18,6 @@ import getButtonClasses from '@/utils/getButtonClass';
 import getButtonContent from '@/utils/getButtonContent';
 
 export default function Form() {
-  const { form } = data;
   const {
     name,
     email,
