@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import socials from '@/data/home/socials.json';
+import socials from '@/data/socials.json';
 
 import Facebook from '/public/icons/facebook.svg';
 import Instagram from '/public/icons/instagram.svg';
