@@ -4,7 +4,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { ConnectModal } from '../ConnectModal';
-import data from '@/data/data.json';
+import data from '@/data/home/navigation.json';
 import Icon from 'public/icons/connect.svg';
 import { Form } from '../Form/Form';
 

@@ -1,0 +1,13 @@
+{
+  "title": "Звʼяжіться з нами",
+  "name": "Імʼя",
+  "nameInvalid": "Невірне імʼя",
+  "email": "E-mail",
+  "emailInvalid": "Невірний email",
+  "msg": "Повідомлення",
+  "msgPlaceholder": "Ваше повідомлення...",
+  "msgInvalid": "Поле обовʼязкове до заповнення",
+  "sendBtn": "Надіслати",
+  "sendBtnSuccess": "Надіслано",
+  "sendBtnError": "Помилка"
+}
