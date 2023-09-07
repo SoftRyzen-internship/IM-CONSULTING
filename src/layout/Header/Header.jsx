@@ -5,9 +5,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
-import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
 import { Socials } from '@/components/Socials';
-import { MobileMenu } from '@/components/MobileMenu/MobileMenu';
+import ButtonMenuToggle from 'public/icons/menu.svg';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,8 +17,6 @@ export const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
 
   const mobile = useMediaQuery({ maxWidth: 1279 });
-
-  const handleMenuToggle = () => setIsMenuOpen(prev => !prev);
 
   const listenCallback = useCallback(() => {
     setScrollHeight(window?.scrollY || document.documentElement.scrollTop);
@@ -65,9 +62,9 @@ export const Header = () => {
 
   useLayoutEffect(() => {
     if (scrollHeight > 1 && isScrollUp) {
-      setShowHeader(true);
+      setTimeout(() => setShowHeader(true), 300);
     } else {
-      setShowHeader(false);
+      setTimeout(() => setShowHeader(false), 300);
     }
   }, [scrollHeight, isScrollUp]);
 
@@ -82,14 +79,7 @@ export const Header = () => {
         {!isMobile && <Socials component="header" />}
 
         {isMobile && (
-          <ButtonMenuToggle
-            isMenuOpen={isMenuOpen}
-            handleMenuToggle={handleMenuToggle}
-          />
-        )}
-
-        {isMobile && isMenuOpen && (
-          <MobileMenu handleMenuToggle={handleMenuToggle} />
+          <ButtonMenuToggle className="w-[18px] fill-black hover:fill-white focus:fill-white transition duration-300" />
         )}
       </Container>
     </header>
