@@ -124,7 +124,6 @@
       );
     }
     .header-gradient {
-      position: fixed;
       background: linear-gradient(
         to right,
         #171717 calc(50% - 9px),

@@ -13,8 +13,9 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(null);
-  const [isScrollUp, setIsScrollUp] = useState(null);
   const [lastScrollTop, setLastScrollTop] = useState(null);
+  const [isScrollUp, setIsScrollUp] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
 
   const mobile = useMediaQuery({ maxWidth: 1279 });
 
@@ -63,17 +64,19 @@ export const Header = () => {
   }, [listenCallback, scrollHeight, setScrollHeight]);
 
   useLayoutEffect(() => {
-    const header = document.querySelector('header');
-
     if (scrollHeight > 1 && isScrollUp) {
-      header.classList.add('header-gradient');
+      setShowHeader(true);
     } else {
-      header.classList.remove('header-gradient');
+      setShowHeader(false);
     }
   }, [scrollHeight, isScrollUp]);
 
   return (
-    <header className="header-gradient fixed xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] z-50">
+    <header
+      className={`${
+        showHeader ? 'header-gradient fixed' : 'absolute'
+      } xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] z-50`}
+    >
       <Container className="header flex justify-between items-center">
         <Logo />
         {!isMobile && <Socials component="header" />}
