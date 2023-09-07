@@ -31,7 +31,7 @@ export const ConnectButton = ({ color }) => {
 
       {isOpen && (
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
-          <Form />
+          <Form toggleModal={toggleModal} />
         </ConnectModal>
       )}
     </>

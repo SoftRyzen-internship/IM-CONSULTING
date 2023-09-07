@@ -17,7 +17,7 @@ import SuccessIcon from 'public/icons/success.svg';
 import getButtonClasses from '@/utils/getButtonClass';
 import getButtonContent from '@/utils/getButtonContent';
 
-export default function Form() {
+export default function Form({ toggleModal }) {
   const {
     name,
     email,
@@ -76,13 +76,20 @@ export default function Form() {
   const onSubmit = async formData => {
     setLoading(true);
     try {
+      formData.name = formData.name.trim();
+      formData.message = formData.message.trim();
       await sendEmail(formData);
       await sendMessageToTelegram(formData);
       setFormStatus('success');
       setTimeout(() => {
         setFormStatus(null);
       }, 3000);
+
       reset();
+
+      setTimeout(() => {
+        toggleModal();
+      }, 3100);
     } catch (error) {
       console.error(error);
       setFormStatus('error');
@@ -129,7 +136,9 @@ export default function Form() {
         <button
           type="submit"
           className={buttonClasses}
-          disabled={loading || formStatus === 'error'}
+          disabled={
+            loading || formStatus === 'error' || formStatus === 'success'
+          }
         >
           {buttonContent}
         </button>
