@@ -6,6 +6,5 @@
     { "label": "Процес", "link": "process" },
     { "label": "Відгуки", "link": "reviews" },
     { "label": "Контакти", "link": "contacts" }
-  ],
-  "connectBtn": "Звʼязатися"
+  ]
 }

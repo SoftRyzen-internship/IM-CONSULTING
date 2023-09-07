@@ -97,7 +97,7 @@ export const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[232px] md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px] mx-auto"
+      className="w-full md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px] mx-auto"
     >
       <div className="flex flex-col gap-[23px] md:gap-[32px]">
         <InputField

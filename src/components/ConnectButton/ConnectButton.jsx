@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { ConnectModal } from '../ConnectModal';
 import { Form } from '../Form';
 import { Title } from '../Title';
-import data from '@/data/home/navigation.json';
+import data from '@/data/buttons.json';
 import form from '@/data/form.json';
 import Icon from 'public/icons/connect.svg';
 
@@ -35,7 +35,7 @@ export const ConnectButton = ({ color }) => {
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
           <Title
             tag="h2"
-            className="modal-title mx-auto mb-[24px] md:mb-[36px] xl:mb-[48px] w-[232px] md:w-[342px] xl:w-[500px]"
+            className="modal-title mb-[24px] md:mb-[36px] xl:mb-[48px] w-[232px] md:w-[342px] xl:w-[500px]"
           >
             {form.title}
           </Title>
@@ -47,5 +47,5 @@ export const ConnectButton = ({ color }) => {
 };
 
 ConnectButton.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.oneOf(['accent', 'black']).isRequired,
 };
