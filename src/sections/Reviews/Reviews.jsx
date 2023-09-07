@@ -20,14 +20,17 @@ export const Reviews = () => {
   const id = labelToLink('Відгуки');
 
   const swiperParams = {
-    loop: true,
+    // loop: true,
     scrollbar: {
+      // el: '.swiper-scrollbar',
       draggable: true,
     },
     modules: [Scrollbar],
-    className: 'ReviewsSwiper',
+    className: 'ReviewsSwiper  ',
     wrapperTag: 'ul',
     autoHeight: true,
+    observer: true,
+    observeParents: true,
     spaceBetween: 24,
     breakpoints: {
       768: {
@@ -42,14 +45,14 @@ export const Reviews = () => {
 
   return (
     <section id={id} className="py-[60px] md:py-[80px] xl:py-[120px]">
-      <Container>
+      <Container className="">
         <h2 className="visually-hidden">Reviews</h2>
         <Swiper {...swiperParams}>
           {reviews.map(({ name, ...rest }) => (
             <SwiperSlide
               key={name}
               tag="li"
-              className="font-light pb-[37px] md:pb-[61px] xl:pb-[67px] cursor-swiper"
+              className="font-light pb-[44px] md:pb-[68px] xl:pb-[74px] cursor-swiper"
             >
               <ReviewCard name={name} {...rest} />
             </SwiperSlide>
