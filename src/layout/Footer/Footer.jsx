@@ -16,7 +16,7 @@ export const Footer = () => {
         <h2 className="text-[55px] md:text-[66px] xl:text-[97px] leading-[67px] xl:leading-[97px] tracking-[-0.15em] mb-[16px] md:mb-[36px] xl:mb-[32px] mr-[8px] xl:mr-[13px] uppercase ">
           {title}
         </h2>
-        <p>
+        <p className="font-medium">
           <span className="opacity-75">{made} </span>
           <a
             href="https://softryzen.com/"
