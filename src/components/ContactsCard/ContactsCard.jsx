@@ -7,7 +7,7 @@ export const ContactsCard = () => {
     <div className="w-[280px] md:w-[320px] xl:w-[480px]">
       <div className="mb-[64px] md:mb-[56px]">
         <Title
-          tag="h2"
+          tag="h3"
           className="contacts-title mx-auto mb-[32px] md:mb-[36px] xl:mb-[48px]"
         >
           {contacts.title}
@@ -46,7 +46,7 @@ export const ContactsCard = () => {
 
       <div>
         <Title
-          tag="h2"
+          tag="h3"
           className="contacts-title mx-auto mb-[32px] md:mb-[36px] xl:mb-[48px]"
         >
           {contacts.socials}

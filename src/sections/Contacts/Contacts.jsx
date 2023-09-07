@@ -11,6 +11,7 @@ export const Contacts = () => {
       className="bg-black text-bgColor py-[60px] md:py-[80px] xl:py-[120px]"
     >
       <Container>
+        <h2 className="visually-hidden">Contacts Section</h2>
         <ContactsContent />
       </Container>
     </section>

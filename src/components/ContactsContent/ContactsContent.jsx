@@ -9,7 +9,7 @@ export const ContactsContent = () => {
       <ContactsCard />
       <div className="max-w-[440px] md:max-w-[500px]">
         <Title
-          tag="h2"
+          tag="h3"
           className="contacts-title mb-[32px] md:mb-[36px] xl:mb-[48px] w-[280px] md:w-[342px] xl:w-[500px]"
         >
           {form.title}
