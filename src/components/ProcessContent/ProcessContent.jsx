@@ -12,7 +12,7 @@ export const ProcessContent = () => {
         {process.title}
       </Title>
 
-      <ul className="flex flex-col gap-[56px] xl:gap-[146px] items-center">
+      <ul className="flex flex-col gap-[36px] md:gap-[56px] xl:gap-[146px] items-center">
         {process.cards.map(item => (
           <ProcessCard
             key={item.number}
