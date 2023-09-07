@@ -3,11 +3,10 @@
 import { useState } from 'react';
 
 import { ConnectModal } from '../ConnectModal';
-import data from '@/data/data.json';
 import Icon from 'public/icons/consultation.svg';
 import { Form } from '../Form';
 
-export const ConsultationButton = () => {
+export const ButtonConsultation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -15,9 +14,9 @@ export const ConsultationButton = () => {
 
   return (
     <>
-      <button type="button" className="" onClick={toggleModal}>
-        <Icon className="" />
-        <span className="">{data.connectBtn}</span>
+      <button type="button" className="flex gap-[8px] md:gap=[10px] py-[16px] bg-accent w-full md:w-[500px] justify-center items-center md:ml-auto" onClick={toggleModal}>        
+        <span className="md:text-font24 font-medium">Безкоштовна консультація</span>
+        <Icon className="w-[16px] h-[16px] md:w-[24px] md:h-[24px]" />
       </button>
 
       {isOpen && (
