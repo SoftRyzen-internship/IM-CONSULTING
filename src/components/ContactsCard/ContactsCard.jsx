@@ -15,9 +15,7 @@ export const ContactsCard = () => {
 
         <ul>
           <li className="flex gap-[12px] mb-[32px] md:mb-[36px] xl:mb-[48px]">
-            <h3 className="text-accent font-light">
-              {contacts.phoneText}
-            </h3>
+            <h3 className="text-accent font-light">{contacts.phoneText}</h3>
             <ul>
               {contacts.phone.map(item => (
                 <li key={item}>
@@ -37,7 +35,7 @@ export const ContactsCard = () => {
             <h3 className="text-accent">{contacts.emailText}</h3>
             <a
               href={`mailto:${contacts.email}`}
-              className="hover:text-accent focus:text-accent transition duration-300"             
+              className="hover:text-accent focus:text-accent transition duration-300"
               rel="noreferrer noopener nofollow"
             >
               {contacts.email}
