@@ -10,7 +10,7 @@ export const ContactsContent = () => {
       <div>
         <Title
           tag="h2"
-          className="contacts-title mx-auto mb-[32px] md:mb[36px] xl:mb-[48px] w-[280px] md:w-[342px] xl:w-[500px]"
+          className="contacts-title mx-auto mb-[32px] md:mb-[36px] xl:mb-[48px] w-[280px] md:w-[342px] xl:w-[500px]"
         >
           {data.form.title}
         </Title>

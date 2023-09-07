@@ -8,12 +8,13 @@ export const ContactsCard = () => {
       <div className="mb-[64px] md:mb-[56px]">
         <Title
           tag="h2"
-          className="contacts-title mx-auto mb-[32px] md:mb[36px] xl:mb-[48px]"
+          className="contacts-title mx-auto mb-[32px] md:mb-[36px] xl:mb-[48px]"
         >
           {data.contacts.title}
         </Title>
+
         <ul>
-          <li className="flex gap-[12px] mb-[32px] md:mb[36px] xl:mb-[48px]">
+          <li className="flex gap-[12px] mb-[32px] md:mb-[36px] xl:mb-[48px]">
             <h3 className="text-accent font-light">
               {data.contacts.phoneText}
             </h3>
@@ -22,7 +23,7 @@ export const ContactsCard = () => {
                 <li key={item}>
                   <a
                     href={`tel:${item}`}
-                    className="font-light first:mb-[4px] md:first:mb-[8px} hover:text-accent focus:text-accent transition duration-300"
+                    className="font-light first:mb-[4px] md:first:mb-[8px] hover:text-accent focus:text-accent transition duration-300"
                     target="_blank"
                     rel="noreferrer noopener nofollow"
                   >
@@ -32,7 +33,7 @@ export const ContactsCard = () => {
               ))}
             </ul>
           </li>
-          <li className="flex gap-[12px] mb-[32px] md:mb[36px] xl:mb-[48px]">
+          <li className="flex gap-[12px] mb-[32px] md:mb-[36px] xl:mb-[48px]">
             <h3 className="text-accent">{data.contacts.emailText}</h3>
             <a
               href={`mailto:${data.contacts.email}`}
@@ -49,7 +50,7 @@ export const ContactsCard = () => {
       <div>
         <Title
           tag="h2"
-          className="contacts-title mx-auto mb-[32px] md:mb[36px] xl:mb-[48px]"
+          className="contacts-title mx-auto mb-[32px] md:mb-[36px] xl:mb-[48px]"
         >
           {data.contacts.socials}
         </Title>

@@ -3,7 +3,7 @@ import about from '@/data/home/about.json';
 import { AboutCompanyFirstBlock } from '@/components/AboutCompanyFirstBlock';
 import { AboutCompanySecondBlock } from '@/components/AboutCompanySecondBlock';
 import { Container } from '@/components/Container';
-import { labelToLink } from '@/helpers';
+import { labelToLink } from '@/utils/labelToLink';
 
 export const AboutCompany = () => {
   const id = labelToLink('Про компанію');

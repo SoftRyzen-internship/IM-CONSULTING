@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 
 import { ConnectModal } from '../ConnectModal';
 import { Form } from '../Form';
-import data from '@/data/data.json';
+import { Title } from '../Title';
+import data from '@/data/home/navigation.json';
+import form from '@/data/form.json';
 import Icon from 'public/icons/connect.svg';
 
 export const ConnectButton = ({ color }) => {
@@ -31,11 +33,12 @@ export const ConnectButton = ({ color }) => {
 
       {isOpen && (
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
-          <h2 className="text-white text-font20 md:text-font24 font-light mb-[24px] md:mb[36px] xl:mb-[48px] mx-auto w-[232px] md:w-[342px] xl:w-[500px]">
-            <span className="text-accent">[</span>
-            <span className="mx-[12px] font-bold">{data.form.title}</span>
-            <span className="text-accent">]</span>
-          </h2>
+          <Title
+            tag="h2"
+            className="modal-title mx-auto mb-[24px] md:mb-[36px] xl:mb-[48px] w-[232px] md:w-[342px] xl:w-[500px]"
+          >
+            {form.title}
+          </Title>
           <Form />
         </ConnectModal>
       )}

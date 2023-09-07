@@ -102,4 +102,10 @@
     before:content-['['] before:pr-[18px] before:text-accent before:font-light
     after:content-[']'] after:pl-[18px] after:text-accent after:font-light;
   }
+
+  .modal-title {
+    @apply text-font20 md:text-font24 font-bold text-white
+    before:content-['['] before:pr-[15px] md:before:pr-[18px] before:text-accent before:font-light
+    after:content-[']'] after:pl-[15px] md:after:pl-[18px] after:text-accent after:font-light;
+  }
 }

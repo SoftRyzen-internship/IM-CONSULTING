@@ -1,9 +1,8 @@
 import Image from 'next/image';
 
 import HeroImg from 'public/images/hero/hero-1250.png';
-import data from '@/data/data.json';
+import hero from '@/data/home/hero.json';
 
-const { hero } = data;
 const { name, surname, title, subtitle, mission, stat1, stat2 } = hero;
 const { text: stat1Text, number: stat1Number } = stat1;
 const { text: stat2Text, number: stat2Number } = stat2;

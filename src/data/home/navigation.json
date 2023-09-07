@@ -1,0 +1,11 @@
+{
+  "navBar": [
+    { "label": "Головна", "link": "hero" },
+    { "label": "Про компанію", "link": "about" },
+    { "label": "Послуги", "link": "services" },
+    { "label": "Процес", "link": "process" },
+    { "label": "Відгуки", "link": "reviews" },
+    { "label": "Контакти", "link": "contacts" }
+  ],
+  "connectBtn": "Звʼязатися"
+}
