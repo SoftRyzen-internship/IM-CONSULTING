@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const ReviewCard = ({
   rating,
@@ -31,4 +32,13 @@ export const ReviewCard = ({
       </p>
     </>
   );
+};
+
+ReviewCard.propTypes = {
+  rating: PropTypes.number.isRequired,
+  ratingText: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  post: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  review: PropTypes.string.isRequired,
 };
