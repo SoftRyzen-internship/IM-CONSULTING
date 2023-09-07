@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
 import form from '@/data/form.json';
 import { sendEmail } from '@/utils/sendEmail';
@@ -146,3 +147,7 @@ export default function Form({ toggleModal }) {
     </form>
   );
 }
+
+Form.propTypes = {
+  toggleModal: PropTypes.func,
+};
