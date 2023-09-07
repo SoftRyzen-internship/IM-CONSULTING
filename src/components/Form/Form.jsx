@@ -14,20 +14,10 @@ import { Loader } from '../Loader';
 import { InputField } from '../InputField/InputField';
 import ErrorIcon from 'public/icons/close.svg';
 import SuccessIcon from 'public/icons/success.svg';
+import getButtonClasses from '@/utils/getButtonClass';
+import getButtonContent from '@/utils/getButtonContent';
 
 export default function Form() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-    reset,
-  } = useForm({
-    mode: 'onChange',
-    resolver: yupResolver(formSchema),
-  });
-
   const { form } = data;
   const {
     name,
@@ -41,6 +31,30 @@ export default function Form() {
 
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+
+  const buttonClasses = getButtonClasses(formStatus, loading);
+  const buttonContent = getButtonContent(
+    formStatus,
+    loading,
+    sendBtn,
+    sendBtnSuccess,
+    sendBtnError,
+    SuccessIcon,
+    Loader,
+    ErrorIcon,
+  );
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+    reset,
+  } = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(formSchema),
+  });
 
   const STORAGE_KEY = 'contact_us_form';
 
@@ -115,40 +129,10 @@ export default function Form() {
       <div className="flex justify-end">
         <button
           type="submit"
-          className={`
-    ${
-      formStatus === 'success'
-        ? 'bg-lightOrange'
-        : loading
-        ? 'bg-accent'
-        : 'bg-accent hover:bg-darkOrange focus:bg-darkOrange transition duration-300'
-    }
-    ${formStatus === 'error' ? 'bg-red' : ''}
-    ${
-      loading || formStatus === 'error'
-        ? 'cursor-not-allowed'
-        : 'cursor-pointer'
-    }
-    text-[24px] text-black font-normal line-height-[29px] hover:font-medium focus:font-medium transition duration-300
-    flex gap-[8px] justify-center items-center self-end text-center w-[212px] py-[8px] h-[45px]
-  `}
+          className={buttonClasses}
           disabled={loading || formStatus === 'error'}
         >
-          {formStatus === 'success' && (
-            <>
-              <SuccessIcon /> {sendBtnSuccess}
-            </>
-          )}
-          {loading && <Loader />}
-          {formStatus === 'error' && (
-            <>
-              <ErrorIcon /> {sendBtnError}
-            </>
-          )}
-          {formStatus !== 'success' &&
-            !loading &&
-            formStatus !== 'error' &&
-            sendBtn}
+          {buttonContent}
         </button>
       </div>
     </form>
