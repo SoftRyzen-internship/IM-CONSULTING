@@ -102,7 +102,11 @@
   }
   @media (min-width: 480px) {
     .menu-gradient {
-      background: linear-gradient(to right, #171717 30%, #fdc638 30%);
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 136px),
+        #fdc638 calc(50% - 136px)
+      );
     }
   }
   @media (min-width: 768px) {
