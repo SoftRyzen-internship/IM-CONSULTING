@@ -3,9 +3,7 @@
   cursor: grab;
   position: relative;
   --swiper-scrollbar-bottom: 8px;
-  /* --swiper-scrollbar-right: 0px; */
   --swiper-scrollbar-height: 8px;
-  /* --swiper-scrollbar-sides-offset: 1%; */
   background-color: transparent;
   --swiper-scrollbar-size: 8px;
   &::before {

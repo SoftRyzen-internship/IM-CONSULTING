@@ -5,32 +5,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-
-import './styles.css';
+import './swiper-scrollbar.css';
 
 import { Scrollbar } from 'swiper/modules';
 import { Container } from '@/components/Container';
 import { ReviewCard } from '@/components/ReviewCard';
-import { labelToLink } from '@/helpers';
+import { labelToLink } from '@/utils/labelToLink';
 
-import data from '@/data/data.json';
-const { reviews } = data;
+import reviews from '@/data/home/reviews.json';
 
 export const Reviews = () => {
   const id = labelToLink('Відгуки');
 
   const swiperParams = {
-    // loop: true,
+    loop: true,
     scrollbar: {
-      // el: '.swiper-scrollbar',
       draggable: true,
     },
     modules: [Scrollbar],
-    className: 'ReviewsSwiper  ',
     wrapperTag: 'ul',
     autoHeight: true,
-    observer: true,
-    observeParents: true,
     spaceBetween: 24,
     breakpoints: {
       768: {
