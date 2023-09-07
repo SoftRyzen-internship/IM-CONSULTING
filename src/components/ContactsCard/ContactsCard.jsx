@@ -5,10 +5,10 @@ export const ContactsCard = () => {
   return (
     <div className="mx-auto w-[280px] md:w-[320px] xl:w-[480px]">
       <div className="mb-[64px] md:mb-[56px]">
-        <h2 className="mx-auto text-font24 font-light leading-[32px] mb-[32px] md:mb[36px] xl:mb-[48px]">
-          <span className="text-accent">[ </span>
+        <h2 className="mx-auto text-font24 font-light mb-[32px] md:mb[36px] xl:mb-[48px]">
+          <span className="text-accent">[</span>
           <span className="mx-[12px] font-bold">{data.contacts.title}</span>
-          <span className="text-accent"> ]</span>
+          <span className="text-accent">]</span>
         </h2>
         <ul>
           <li className="flex gap-[12px] mb-[32px] md:mb[36px] xl:mb-[48px]">
@@ -45,10 +45,10 @@ export const ContactsCard = () => {
       </div>
 
       <div>
-        <h2 className="mx-auto text-font24 font-light leading-[32px] mb-[32px] md:mb[36px] xl:mb-[48px]">
-          <span className="text-accent">[ </span>
+        <h2 className="mx-auto text-font24 font-light mb-[32px] md:mb[36px] xl:mb-[48px]">
+          <span className="text-accent">[</span>
           <span className="mx-[12px] font-bold">{data.contacts.socials}</span>
-          <span className="text-accent"> ]</span>
+          <span className="text-accent">]</span>
         </h2>
         <Socials component="footer" />
       </div>

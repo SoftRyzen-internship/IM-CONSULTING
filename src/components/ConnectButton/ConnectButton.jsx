@@ -31,6 +31,11 @@ export const ConnectButton = ({ color }) => {
 
       {isOpen && (
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
+          <h2 className="text-white text-font20 md:text-font24 font-light mb-[24px] md:mb[36px] xl:mb-[48px] mx-auto w-[232px] md:w-[342px] xl:w-[500px]">
+            <span className="text-accent">[</span>
+            <span className="mx-[12px] font-bold">{data.form.title}</span>
+            <span className="text-accent">]</span>
+          </h2>
           <Form />
         </ConnectModal>
       )}
