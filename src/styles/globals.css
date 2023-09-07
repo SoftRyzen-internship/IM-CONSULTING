@@ -137,6 +137,11 @@
       background: none;
     }
   }
+
+  .process-title {
+    @apply before:content-['['] before:pr-[12px] md:before:pr-[15px] xl:before:pr-[18px] before:text-orange before:font-light
+    after:content-[']'] after:pl-[12px] md:after:pl-[15px] xl:after:pl-[18px] after:text-orange after:font-light;
+  }
 }
 
 @keyframes fadein {
