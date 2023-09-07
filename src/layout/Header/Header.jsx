@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { Container } from '@/components/Container';
@@ -12,9 +12,24 @@ import { MobileMenu } from '@/components/MobileMenu/MobileMenu';
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [scrollHeight, setScrollHeight] = useState(null);
+  const [isScrollUp, setIsScrollUp] = useState(null);
+  const [lastScrollTop, setLastScrollTop] = useState(null);
+
   const mobile = useMediaQuery({ maxWidth: 1279 });
 
   const handleMenuToggle = () => setIsMenuOpen(prev => !prev);
+
+  const listenCallback = useCallback(() => {
+    setScrollHeight(window?.scrollY || document.documentElement.scrollTop);
+
+    if (scrollHeight > lastScrollTop) {
+      setIsScrollUp(false);
+    } else if (scrollHeight < lastScrollTop) {
+      setIsScrollUp(true);
+    }
+    setLastScrollTop(scrollHeight <= 0 ? 0 : scrollHeight);
+  }, [lastScrollTop, scrollHeight]);
 
   useEffect(() => {
     setIsMobile(mobile);
@@ -39,8 +54,26 @@ export const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    document.addEventListener('scroll', listenCallback);
+
+    return () => {
+      document.removeEventListener('scroll', listenCallback);
+    };
+  }, [listenCallback, scrollHeight, setScrollHeight]);
+
+  useLayoutEffect(() => {
+    const header = document.querySelector('header');
+
+    if (scrollHeight > 1 && isScrollUp) {
+      header.classList.add('header-gradient');
+    } else {
+      header.classList.remove('header-gradient');
+    }
+  }, [scrollHeight, isScrollUp]);
+
   return (
-    <header className="fixed xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] z-50">
+    <header className="header-gradient fixed xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] z-50">
       <Container className="header flex justify-between items-center">
         <Logo />
         {!isMobile && <Socials component="header" />}

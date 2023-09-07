@@ -100,6 +100,11 @@
   .menu-gradient {
     background: linear-gradient(to right, #171717 28%, #fdc638 28%);
   }
+
+  .header-gradient {
+    background: linear-gradient(to right, #171717 50%, #fdc638 50%);
+  }
+
   @media (min-width: 480px) {
     .menu-gradient {
       background: linear-gradient(
@@ -109,6 +114,7 @@
       );
     }
   }
+
   @media (min-width: 768px) {
     .menu-gradient {
       background: linear-gradient(
@@ -116,6 +122,19 @@
         #171717 calc(50% - 236px),
         #fdc638 calc(50% - 236px)
       );
+    }
+    .header-gradient {
+      position: fixed;
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 9px),
+        #fdc638 calc(50% - 9px)
+      );
+    }
+  }
+  @media (min-width: 1280px) {
+    .header-gradient {
+      background: none;
     }
   }
 }
