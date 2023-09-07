@@ -1,26 +1,26 @@
 import * as Yup from 'yup';
 
-import data from '@/data/data.json';
+import form from '@/data/form.json';
 
 export const formSchema = Yup.object().shape({
   name: Yup.string()
-    .required(data.form.nameInvalid)
-    .min(3, data.form.nameInvalid)
-    .max(70, data.form.nameInvalid)
+    .required(form.nameInvalid)
+    .min(3, form.nameInvalid)
+    .max(70, form.nameInvalid)
     .matches(
       /^(?!.*(\s-|-\s)|.*--|.*——|.*––|.*–\s|.*\s–|.*—\s|.*\s—)[а-яА-Яa-zA-Z\s'’\-–—ЇїІіЄєҐґ]*$/,
-      data.form.nameInvalid,
+      form.nameInvalid,
     ),
   email: Yup.string()
-    .required(data.form.emailInvalid)
-    .min(6, data.form.emailInvalid)
-    .max(63, data.form.emailInvalid)
+    .required(form.emailInvalid)
+    .min(6, form.emailInvalid)
+    .max(63, form.emailInvalid)
     .matches(
       /^[a-zA-Z0-9_][a-zA-Z0-9_.-]*@[a-zA-Z0-9.-]+[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/,
-      data.form.emailInvalid,
+      form.emailInvalid,
     ),
   message: Yup.string()
-    .required(data.form.msgInvalid)
-    .min(3, data.form.msgInvalid)
-    .max(500, data.form.msgInvalid),
+    .required(form.msgInvalid)
+    .min(3, form.msgInvalid)
+    .max(500, form.msgInvalid),
 });
