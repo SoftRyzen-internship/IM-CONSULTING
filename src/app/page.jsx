@@ -1,7 +1,7 @@
-import { AboutCompany } from '@/sections/AboutCompany';
 import { Hero } from '@/sections/Hero';
-import { Reviews } from '@/sections/Reviews';
+import { AboutCompany } from '@/sections/AboutCompany';
 import { Services } from '@/sections/Services';
+import { Reviews } from '@/sections/Reviews';
 
 export default async function Home() {
   return (
