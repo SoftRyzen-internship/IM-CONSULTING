@@ -1,43 +1,30 @@
 'use client';
+
+import PropTypes from 'prop-types';
+
 import { Container } from '@/components/Container';
-import { HeroForPagesContent } from '@/components/HeroForPagesContent/HeroForPagesContent';
-import { labelToLink } from '@/helpers';
+import { ServicesHeroContent } from '@/components/ServicesHeroContent/ServicesHeroContent';
 
-export const ServicesHero = () => {
-  function getCurrentPage() {
-    if (typeof window !== 'undefined') {
-      // Получаем полный путь текущего URL
-      const currentPath = window.location.pathname;
-
-      // Далее, вы можете провести проверки на основе этого пути,
-      // чтобы определить, какая страница сейчас открыта.
-      // Например, проверьте, содержит ли путь определенные ключевые слова.
-
-      if (currentPath.includes('/trainings')) {
-        return 'Trainings';
-      } else if (currentPath.includes('/couching')) {
-        return 'Головна';
-      } else if (currentPath.includes('/consalting')) {
-        return 'Головна';
-      } else if (currentPath.includes('/')) {
-        return 'Головна';
-      } else {
-        // Если не удалось определить страницу, верните значение по умолчанию или обработайте по-другому.
-        return 'Неизвестная страница';
-      }
-    }
-  }
-
-  // Пример использования getCurrentPage
-  const currentPage = getCurrentPage();
-  console.log(`Текущая страница: ${currentPage}`);
-  const id = labelToLink('Головна');
-
+export const ServicesHero = ({ currentPage }) => {
   return (
-    <section id={id} className="services-hero-bg relative h-auto ">
-      <Container className="relative pt-[104px] md:pt-[120px] xl:pt-[141px] pb-[56px] md:pb-[126px] xl:pb-[200px] overflow-hidden">
-        <HeroForPagesContent />
+    <section
+      className={`${
+        currentPage === '/trainings'
+          ? 'trainings-hero-bg'
+          : currentPage === '/couching'
+          ? 'couching-hero-bg'
+          : currentPage === '/consulting'
+          ? 'consulting-hero-bg'
+          : 'trainings-hero-bg'
+      } relative h-auto w-[100%] max-w-[100%]`}
+    >
+      <Container className="relative pt-[110px] md:pt-[120px] xl:pt-[141px] pb-[56px] md:pb-[126px] xl:pb-[200px] overflow-hidden">
+        <ServicesHeroContent currentPage={currentPage} />
       </Container>
     </section>
   );
+};
+
+ServicesHero.propTypes = {
+  currentPage: PropTypes.string.isRequired,
 };
