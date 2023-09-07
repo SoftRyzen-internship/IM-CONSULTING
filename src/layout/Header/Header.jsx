@@ -88,8 +88,11 @@ export const Header = () => {
           />
         )}
 
-        {isMobile && isMenuOpen && (
-          <MobileMenu handleMenuToggle={handleMenuToggle} />
+        {isMobile && (
+          <MobileMenu
+            handleMenuToggle={handleMenuToggle}
+            isMenuOpen={isMenuOpen}
+          />
         )}
       </Container>
     </header>

@@ -98,7 +98,8 @@
   }
 
   .menu-gradient {
-    background: linear-gradient(to right, #171717 28%, #fdc638 28%);
+    background: linear-gradient(to right, #171717 88px, #fdc638 88px);
+    animation: fadein 300ms ease-in-out;
   }
 
   .header-gradient {
@@ -109,8 +110,8 @@
     .menu-gradient {
       background: linear-gradient(
         to right,
-        #171717 calc(50% - 136px),
-        #fdc638 calc(50% - 136px)
+        #171717 calc(50% - 152px),
+        #fdc638 calc(50% - 152px)
       );
     }
   }
@@ -135,5 +136,14 @@
     .header-gradient {
       background: none;
     }
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
