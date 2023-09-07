@@ -15,7 +15,7 @@ import { InputField } from '../InputField/InputField';
 import ErrorIcon from 'public/icons/close.svg';
 import SuccessIcon from 'public/icons/success.svg';
 
-export default function Form() {
+export const Form = () => {
   const {
     register,
     handleSubmit,
@@ -153,4 +153,4 @@ export default function Form() {
       </div>
     </form>
   );
-}
+};

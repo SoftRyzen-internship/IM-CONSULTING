@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { ConnectModal } from '../ConnectModal';
 import data from '@/data/data.json';
 import Icon from 'public/icons/connect.svg';
-import Form from '../Form/Form';
+import { Form } from '../Form/Form';
 
 export const ConnectButton = ({ color }) => {
   const [isOpen, setIsOpen] = useState(false);
