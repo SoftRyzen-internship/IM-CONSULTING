@@ -1,8 +1,8 @@
 import localFont from 'next/font/local';
 
 import { Header } from '@/layout/Header';
-import { Footer } from '@/layout/Footer';
 import { NavBar } from '@/layout/NavBar';
+import { Footer } from '@/layout/Footer';
 
 import '../styles/globals.css';
 

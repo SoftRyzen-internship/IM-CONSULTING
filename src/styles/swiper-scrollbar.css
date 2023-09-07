@@ -2,9 +2,9 @@
   cursor: move;
   cursor: grab;
   position: relative;
+  background-color: transparent;
   --swiper-scrollbar-bottom: 8px;
   --swiper-scrollbar-height: 8px;
-  background-color: transparent;
   --swiper-scrollbar-size: 8px;
   &::before {
     content: '';
