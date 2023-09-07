@@ -96,4 +96,37 @@
     before:content-['['] before:pr-[14px] md:before:pr-[20px] xl:before:pr-[30px] before:text-accent
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
+  .services-hero-bg-mob {
+    background-image: image-set(
+      url(/images/heroForPages/services-hero-bg-mobile.webp) type('image/webp')
+        1x,
+      url(/images/heroForPages/services-hero-bg-mobile@2x.webp)
+        type('image/webp') 2x,
+      url(/images/heroForPages/services-hero-bg-mobile.jpg) 1x,
+      url(/images/heroForPages/services-hero-bg-mobile@2x.jpg) 2x
+    );
+  }
+  .services-hero-bg-tab {
+    background-image: image-set(
+      url(/images/heroForPages/services-hero-bg-tablet.webp) type('image/webp')
+        1x,
+      url(/images/heroForPages/services-hero-bg-tablet@2x.webp)
+        type('image/webp') 2x,
+      url(/images/heroForPages/services-hero-bg-tablet.jpg) 1x,
+      url(/images/heroForPages/services-hero-bg-tablet@2x.jpg) 2x
+    );
+  }
+  .services-hero-bg-desk {
+    background-image: image-set(
+      url(/images/heroForPages/services-hero-bg-desktop.webp) type('image/webp')
+        1x,
+      url(/images/heroForPages/services-hero-bg-desktop@2x.webp)
+        type('image/webp') 2x,
+      url(/images/heroForPages/services-hero-bg-desktop.jpg) 1x,
+      url(/images/heroForPages/services-hero-bg-desktop@2x.jpg) 2x
+    );
+  }
+  .services-hero-bg {
+    @apply services-hero-bg-mob md:services-hero-bg-tab xl:services-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
 }
