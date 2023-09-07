@@ -1,6 +1,6 @@
 import { Container } from '@/components/Container';
 import { ProcessContent } from '@/components/ProcessContent';
-import { labelToLink } from '@/helpers';
+import { labelToLink } from '@/utils/labelToLink';
 
 export const Process = () => {
   const id = labelToLink('Процес');

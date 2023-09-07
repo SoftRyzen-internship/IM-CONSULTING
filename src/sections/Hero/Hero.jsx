@@ -1,6 +1,7 @@
 import { Container } from '@/components/Container';
 import { HeroContent } from '@/components/HeroContent';
-import { labelToLink } from '@/helpers';
+
+import { labelToLink } from '@/utils/labelToLink';
 
 export const Hero = () => {
   const id = labelToLink('Головна');
