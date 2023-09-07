@@ -7,7 +7,7 @@ const links = ['/trainings', '/consalting', '/couching'];
 
 export const ServicesCard = ({ title, image, text, btnText, index }) => {
   return (
-    <li className="group relative w-[280px] h-[529px] md:w-[224px] md:h-[482px] xl:w-[324px] xl:h-[435px] xl:overflow-hidden">
+    <li className="group relative w-full h-[529px] md:w-[224px] md:h-[482px] xl:w-[324px] xl:h-[435px] xl:overflow-hidden">
       <div className="transform translate-y-0 transition-transform duration-500 ease-in-out relative hidden xl:block xl:w-[324px] z-10 group-hover:translate-y-[-100%] group-focus-within:translate-y-[-100%]">
         <Image src={image} alt={title} width={324} height={435} />
         <p className="absolute bottom-[48px] left-[24px] tracking-[0.04em] text-[42px] leading-[51px]">
