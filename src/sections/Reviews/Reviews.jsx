@@ -40,7 +40,7 @@ export const Reviews = () => {
   return (
     <section id={id} className="py-[60px] md:py-[80px] xl:py-[120px]">
       <Container className="">
-        <h2 className="visually-hidden">Reviews</h2>
+        <h2 className="visually-hidden">Відгуки</h2>
         <Swiper {...swiperParams}>
           {reviews.map(({ name, ...rest }) => (
             <SwiperSlide
