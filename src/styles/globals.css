@@ -96,4 +96,9 @@
     before:content-['['] before:pr-[14px] md:before:pr-[20px] xl:before:pr-[30px] before:text-accent
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
+
+  .process-title {
+    @apply before:content-['['] before:pr-[12px] md:before:pr-[15px] xl:before:pr-[18px] before:text-orange before:font-light
+    after:content-[']'] after:pl-[12px] md:after:pl-[15px] xl:after:pl-[18px] after:text-orange after:font-light;
+  }
 }

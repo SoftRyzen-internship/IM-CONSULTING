@@ -1,6 +1,7 @@
 import { Hero } from '@/sections/Hero';
 import { AboutCompany } from '@/sections/AboutCompany';
 import { Services } from '@/sections/Services';
+import { Process } from '@/sections/Process';
 import { Reviews } from '@/sections/Reviews';
 
 export default async function Home() {
@@ -9,6 +10,7 @@ export default async function Home() {
       <Hero />
       <AboutCompany />
       <Services />
+      <Process />
       <Reviews />
     </>
   );
