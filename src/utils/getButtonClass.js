@@ -21,7 +21,7 @@ export default function getButtonClasses(formStatus, loading) {
   classes +=
     'text-[24px] text-black font-normal line-height-[29px] hover:font-medium focus:font-medium transition duration-300 ';
   classes +=
-    'flex gap-[8px] justify-center items-center self-end text-center w-[212px] py-[8px] h-[45px]';
+    'flex gap-[8px] justify-center items-center text-center w-[212px] py-[8px] h-[45px]';
 
   return classes;
 }
