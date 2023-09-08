@@ -7,7 +7,7 @@ import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
 import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
 import { Socials } from '@/components/Socials';
-import { MobileMenu } from '@/components/MobileMenu/MobileMenu';
+import { MobileMenu } from '@/components/MobileMenu';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

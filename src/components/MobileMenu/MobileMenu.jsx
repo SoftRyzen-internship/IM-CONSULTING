@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { NavBar } from '@/layout/NavBar';
@@ -5,6 +8,12 @@ import { Socials } from '../Socials';
 import { Container } from '../Container';
 
 export const MobileMenu = ({ handleMenuToggle, isMenuOpen }) => {
+  useEffect(() => {
+    isMenuOpen
+      ? document.body.classList.add('overflow-hidden')
+      : document.body.classList.remove('overflow-hidden');
+  }, [isMenuOpen]);
+
   return (
     <div
       className={`${
