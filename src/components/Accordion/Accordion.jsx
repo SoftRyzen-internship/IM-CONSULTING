@@ -6,7 +6,11 @@ export const Accordion = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const onTitleClick = index => {
-    setActiveIndex(index === activeIndex ? null : index);
+    if (index === activeIndex) {
+      return;
+    } else {
+      setActiveIndex(index);
+    }
   };
   return (
     <ol className="accordion">
