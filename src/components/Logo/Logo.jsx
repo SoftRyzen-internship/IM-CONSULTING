@@ -8,7 +8,7 @@ export const Logo = () => {
     <Link
       href={routes.HOME}
       aria-label="логотип"
-      className="relative flex items-center w-[48px] h-[48px] xl:w-[52px] xl:h-[52px] p-[6px] xl:p-0 text-white hover:text-accent focus:text-accent transition duration-300 z-40"
+      className="flex items-center w-[48px] h-[48px] xl:w-[52px] xl:h-[52px] p-[6px] xl:p-0 text-white hover:text-accent focus:text-accent transition duration-300 relative z-40"
     >
       <LogoIcon className="w-[36px] h-[36px] xl:w-[52px] xl:h-[52px]" />
     </Link>

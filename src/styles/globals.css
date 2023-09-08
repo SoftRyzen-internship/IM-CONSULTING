@@ -141,6 +141,46 @@
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
 
+  .menu-gradient {
+    background: linear-gradient(to right, #171717 88px, #fdc638 88px);
+  }
+
+  .header-gradient {
+    background: linear-gradient(to right, #171717 50%, #fdc638 50%);
+  }
+
+  @media (min-width: 480px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 152px),
+        #fdc638 calc(50% - 152px)
+      );
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 264px),
+        #fdc638 calc(50% - 264px)
+      );
+    }
+    .header-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 9px),
+        #fdc638 calc(50% - 9px)
+      );
+    }
+  }
+  @media (min-width: 1280px) {
+    .header-gradient {
+      background: none;
+    }
+  }
+
   .contacts-title {
     @apply text-font24 font-bold
     before:content-['['] before:pr-[18px] before:text-accent before:font-light
