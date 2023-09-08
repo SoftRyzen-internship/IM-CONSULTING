@@ -10,12 +10,12 @@ import reviews from '@/data/home/reviews.json';
 
 export const ReviewSwiper = () => {
   const swiperParams = {
-    loop: true,
     scrollbar: {
       draggable: true,
     },
     modules: [Scrollbar],
     wrapperTag: 'ul',
+    className: 'review-swiper',
     spaceBetween: 24,
     breakpoints: {
       768: {
@@ -30,18 +30,14 @@ export const ReviewSwiper = () => {
   };
 
   return (
-    <Swiper {...swiperParams}>
-      {reviews.map(({ name, ...rest }) => (
-        <SwiperSlide
-          key={name}
-          tag="li"
-          className="font-light pb-[46px] md:pb-[71px] xl:pb-[75px] cursor-swiper "
-        >
-          <ReviewCard name={name} {...rest} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="overflow-x-clip">
+      <Swiper {...swiperParams}>
+        {reviews.map(({ name, ...rest }) => (
+          <SwiperSlide key={name} tag="li" className="font-light cursor-swiper">
+            <ReviewCard name={name} {...rest} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
-
-ReviewSwiper.propTypes = {};

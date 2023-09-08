@@ -17,7 +17,7 @@ export const ReviewCard = ({
 
   return (
     <>
-      <div className="flex justify-between  text-orange cursor-swiper">
+      <div className="flex justify-between  text-orange ">
         <p className="text-[60px] md:text-[66px] xl:text-[116px] leading-[73px] md:leading-[81px] xl:leading-[142px] md:tracking-widest opacity-10">
           {rating}
         </p>
@@ -25,17 +25,19 @@ export const ReviewCard = ({
           <p className="text-[36px] xl:text-[56px]  leading-[44px] xl:leading-[68px]  tracking-widest opacity-10 ">
             {ratingText}
           </p>
-          {company && (
-            <Title
-              tag="h3"
-              className="review-title text-font16 xl:text-font24 multiline-ellipsis-2"
-            >
-              <span className="text-black font-bold">{company}</span>
-            </Title>
-          )}
+          <div className="h-[40px]">
+            {company && (
+              <Title
+                tag="h3"
+                className="review-title text-font16 xl:text-font24 multiline-ellipsis-2 "
+              >
+                <span className="text-black font-bold ">{company}</span>
+              </Title>
+            )}
+          </div>
         </div>
       </div>
-      <p className="text-font16 text-right mb-2 multiline-ellipsis-2">
+      <p className="text-font16 text-right mb-2 multiline-ellipsis-2 h-[40px]">
         {post} <span className="font-medium whitespace-nowrap">{name}</span>
       </p>
       <p className="text-font16 xl:text-[24px] xl:leading-[30px] text-justify">
