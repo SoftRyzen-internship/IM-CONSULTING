@@ -101,6 +101,18 @@
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
 
+  .contacts-title {
+    @apply text-font24 font-bold
+    before:content-['['] before:pr-[18px] before:text-accent before:font-light
+    after:content-[']'] after:pl-[18px] after:text-accent after:font-light;
+  }
+
+  .modal-title {
+    @apply text-font20 md:text-font24 font-bold text-white
+    before:content-['['] before:pr-[15px] md:before:pr-[18px] before:text-accent before:font-light
+    after:content-[']'] after:pl-[15px] md:after:pl-[18px] after:text-accent after:font-light;
+  }
+
   .process-title {
     @apply before:content-['['] before:pr-[12px] md:before:pr-[15px] xl:before:pr-[18px] before:text-orange before:font-light
     after:content-[']'] after:pl-[12px] md:after:pl-[15px] xl:after:pl-[18px] after:text-orange after:font-light;
