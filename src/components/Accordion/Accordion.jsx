@@ -1,19 +1,24 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 // import { ButtonConsultation } from '../ButtonConsultation';
 
 export const Accordion = ({ items }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+	const [activeIndex, setActiveIndex] = useState(0);
+	const itemRef = useRef(null);
 
   const onTitleClick = index => {
     if (index === activeIndex) {
       return;
     } else {
-      setActiveIndex(index);
+			setActiveIndex(index);
+			const el = itemRef.current;
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     }
   };
   return (
-    <ol className="text-bgColor leading-[1.33]">
+    <ol className="text-bgColor leading-[1.33]" ref={itemRef}>
       {items.map((item, index) => {
         const isActive = index === activeIndex;
         return (
