@@ -77,8 +77,6 @@ export function Form({ toggleModal }) {
   const onSubmit = async formData => {
     setLoading(true);
     try {
-      formData.name = formData.name.trim();
-      formData.message = formData.message.trim();
       await sendEmail(formData);
       await sendMessageToTelegram(formData);
       setFormStatus('success');
