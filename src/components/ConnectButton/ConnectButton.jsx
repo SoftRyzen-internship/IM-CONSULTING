@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { ConnectModal } from '../ConnectModal';
 import { Form } from '../Form';
 import { Title } from '../Title';
+
 import data from '@/data/buttons.json';
 import form from '@/data/form.json';
 import Icon from 'public/icons/connect.svg';
