@@ -17,13 +17,13 @@ export const ButtonConsultation = () => {
     <>
       <button
         type="button"
-        className="flex gap-[8px] md:gap=[10px] py-[20px] bg-accent w-full md:w-[500px] justify-center items-center md:ml-auto"
+        className="flex gap-[8px] md:gap-[10px] py-[16px] bg-accent w-full md:w-[500px] justify-center items-center md:ml-auto"
         onClick={toggleModal}
       >
-        <span className="md:text-font24 font-medium">
+        <span className="md:text-font24 font-medium md:tracking-[2.4px]">
           {data.consultationBtn}
         </span>
-        <Icon className="w-[16px] h-[16px] md:w-[24px] md:h-[24px]" />
+        <Icon className="w-[16px] h-[28px] md:w-[24px] md:h-[36px]" />
       </button>
 
       {isOpen && (
