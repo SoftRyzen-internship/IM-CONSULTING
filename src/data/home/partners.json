@@ -1,74 +1,75 @@
-{ 
+{
+  "title": "Наші партнери",
   "partners": [
-    {           
+    {
       "src": "/images/partners/partner1.png",
       "alt": ""
     },
-    {           
+    {
       "src": "/images/partners/partner2.png",
       "alt": ""
     },
-    {           
+    {
       "src": "/images/partners/partner3.png",
       "alt": ""
     },
-    {          
+    {
       "src": "/images/partners/partner4.png",
       "alt": ""
     },
-    {            
+    {
       "src": "/images/partners/partner5.png",
       "alt": ""
     },
-    {         
+    {
       "src": "/images/partners/partner6.png",
       "alt": ""
     },
-    {           
+    {
       "src": "/images/partners/partner7.png",
       "alt": ""
     },
-    {           
+    {
       "src": "/images/partners/partner8.png",
       "alt": ""
     },
-    {            
+    {
       "src": "/images/partners/partner9.png",
       "alt": ""
     },
-    {          
+    {
       "src": "/images/partners/partner10.png",
       "alt": ""
     },
-    {            
+    {
       "src": "/images/partners/partner11.png",
       "alt": ""
     },
-    {           
+    {
       "src": "/images/partners/partner12.png",
       "alt": ""
     },
-    {          
+    {
       "src": "/images/partners/partner13.png",
       "alt": ""
     },
-    {         
+    {
       "src": "/images/partners/partner14.png",
       "alt": ""
     },
-    {            
+    {
       "src": "/images/partners/partner15.png",
       "alt": ""
     },
-    {            
+    {
       "src": "/images/partners/partner16.png",
       "alt": ""
     },
-    {          
+    {
       "src": "/images/partners/partner17.png",
       "alt": ""
     },
-    {           
+    {
       "src": "/images/partners/partner18.png",
       "alt": ""
     }

@@ -11,12 +11,16 @@ import data from '@/data/home/partners.json';
 export const PartnersSwiper = () => {
   const swiperParams = {
     loop: true,
-    autoplay: true,    
+    autoplay: true,
     modules: [Autoplay],
     wrapperTag: 'ul',
-    slidesPerView: 3,
+    slidesPerView: 3,    
     spaceBetween: 20,
     breakpoints: {
+      480: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
       768: {
         slidesPerView: 5,
         spaceBetween: 32,
@@ -34,9 +38,16 @@ export const PartnersSwiper = () => {
         <SwiperSlide
           key={partner.alt}
           tag="li"
-          className=""
-        >
-          <Image src={partner.src} alt={partner.alt} width={105} height={24}/>          
+          className="h-[24px] md:h-[36px] xl:h-[48px] my-[60px] md:my-[80px] xl:my-[120px]"
+        >         
+            <Image
+              src={partner.src}
+              alt={partner.alt}
+              width={108}
+              height={24} 
+              quality={100}
+              className="w-full h-[24px] md:h-[36px] xl:h-[48px]"             
+            />          
         </SwiperSlide>
       ))}
     </Swiper>
