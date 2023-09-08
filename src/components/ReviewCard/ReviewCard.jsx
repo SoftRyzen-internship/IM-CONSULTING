@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Title } from '../Title';
+import { truncateText } from '@/utils/truncateText';
+const MAX_SYMBOLS_PER_REVIEW = 584;
 
 export const ReviewCard = ({
   rating,
@@ -11,6 +13,8 @@ export const ReviewCard = ({
   name,
   review,
 }) => {
+  const reviewNormalized = truncateText(review, MAX_SYMBOLS_PER_REVIEW);
+
   return (
     <>
       <div className="flex justify-between  text-orange cursor-swiper">
@@ -21,19 +25,21 @@ export const ReviewCard = ({
           <p className="text-[36px] xl:text-[56px]  leading-[44px] xl:leading-[68px]  tracking-widest opacity-10 ">
             {ratingText}
           </p>
-          <Title
-            tag="h3"
-            className="review-title text-font16 xl:text-font24 multiline-ellipsis"
-          >
-            <span className="text-black font-bold">{company}</span>
-          </Title>
+          {company && (
+            <Title
+              tag="h3"
+              className="review-title text-font16 xl:text-font24 multiline-ellipsis-2"
+            >
+              <span className="text-black font-bold">{company}</span>
+            </Title>
+          )}
         </div>
       </div>
-      <p className="text-font16 text-right mb-2 multiline-ellipsis">
-        {post} <span className="font-medium">{name}</span>
+      <p className="text-font16 text-right mb-2 multiline-ellipsis-2">
+        {post} <span className="font-medium whitespace-nowrap">{name}</span>
       </p>
-      <p className="text-font16 xl:text-[24px] xl:leading-[30px] text-justify multiline-ellipsis max-lines-18">
-        {review}
+      <p className="text-font16 xl:text-[24px] xl:leading-[30px] text-justify">
+        {reviewNormalized}
       </p>
     </>
   );
@@ -42,7 +48,7 @@ export const ReviewCard = ({
 ReviewCard.propTypes = {
   rating: PropTypes.string.isRequired,
   ratingText: PropTypes.string.isRequired,
-  company: PropTypes.string.isRequired,
+  company: PropTypes.string,
   post: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   review: PropTypes.string.isRequired,
