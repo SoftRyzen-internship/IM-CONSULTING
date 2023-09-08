@@ -1,12 +1,13 @@
 import { Accordion } from '@/components/Accordion';
 import { Container } from '@/components/Container';
-import consulting from '@/data/services/consulting.json';
+import { title, items } from '@/data/services/trainingsInfo.json';
 
-export const Test = () => {
+export const TrainingsInfo = () => {
   return (
     <section className="bg-black py-[60px] md:py-[80px] xl:py-[120px]">
       <Container>
-        <Accordion items={consulting} />
+        <h2 className="visually-hidden">{title}</h2>
+        <Accordion items={items} />
       </Container>
     </section>
   );

@@ -96,47 +96,4 @@
     before:content-['['] before:pr-[14px] md:before:pr-[20px] xl:before:pr-[30px] before:text-accent
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
-
-  .accordion {
-    @apply text-bgColor leading-[1.33];
-  }
-  .accordion-item {
-    @apply relative z-[1] bg-black pt-2 -mt-2 md:pt-3 md:-mt-[14px];
-  }
-  .accordion-title-box {
-    @apply cursor-pointer text-[#4D4D4D] pt-2 md:pt-3 border-t border-[#4D4D4D] flex justify-between gap-4 xl:justify-start xl:gap-[482px] transition-all duration-[750ms] ease-in;
-  }
-  .accordion-title-box.active {
-    @apply text-accent border-accent md:justify-start md:gap-[309px] xl:gap-[482px];
-  }
-  .accordion-count {
-    @apply text-[12px] md:text-[24px] tracking-[1.2px] md:tracking-[2.4px];
-  }
-  .accordion-title {
-    @apply font-medium md:text-[32px] xl:text-[36px] md:tracking-[-1.28px] xl:tracking-[0];
-  }
-  .accordion-content-box {
-    box-sizing: content-box;
-    overflow: hidden;
-    max-height: 0;
-    transition: all 750ms linear;
-  }
-  .accordion-content-box.active {
-    max-height: 2000px;
-  }
-  .accordion-content {
-    @apply pt-6 pb-8 space-y-6 md:pt-9 md:pb-12 md:space-y-9 xl:pt-12 xl:pb-[60px] xl:space-y-12;
-  }
-  .accordion-content-item {
-    @apply space-y-3 pb-3 tracking-[-0.64px] md:text-[24px] md:tracking-[-0.96px];
-  }
-  .accordion-content-item:not(:last-child) {
-    @apply border-b border-[#4D4D4D];
-  }
-  .accordion-subtitle {
-    @apply text-accent border-accent mb-2 md:mb-4;
-  }
-  .accordion-text {
-    @apply font-light;
-  }
 }
