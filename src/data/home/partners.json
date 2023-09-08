@@ -3,75 +3,111 @@
   "partners": [
     {
       "src": "/images/partners/partner1.png",
-      "alt": ""
+      "alt": "",
+      "width": "430",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner2.png",
-      "alt": ""
+      "alt": "",
+      "width": "420",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner3.png",
-      "alt": ""
+      "alt": "",
+      "width": "164",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner4.png",
-      "alt": ""
+      "alt": "",
+      "width": "96",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner5.png",
-      "alt": ""
+      "alt": "",
+      "width": "317",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner6.png",
-      "alt": ""
+      "alt": "",
+      "width": "197",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner7.png",
-      "alt": ""
+      "alt": "",
+      "width": "92",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner8.png",
-      "alt": ""
+      "alt": "",
+      "width": "511",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner9.png",
-      "alt": ""
+      "alt": "",
+      "width": "282",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner10.png",
-      "alt": ""
+      "alt": "",
+      "width": "344",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner11.png",
-      "alt": ""
+      "alt": "",
+      "width": "316",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner12.png",
-      "alt": ""
+      "alt": "",
+      "width": "333",
+      "height": "94"
     },
     {
       "src": "/images/partners/partner13.png",
-      "alt": ""
+      "alt": "",
+      "width": "161",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner14.png",
-      "alt": ""
+      "alt": "",
+      "width": "212",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner15.png",
-      "alt": ""
+      "alt": "",
+      "width": "153",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner16.png",
-      "alt": ""
+      "alt": "",
+      "width": "267",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner17.png",
-      "alt": ""
+      "alt": "",
+      "width": "393",
+      "height": "96"
     },
     {
       "src": "/images/partners/partner18.png",
-      "alt": ""
+      "alt": "",
+      "width": "193",
+      "height": "96"
     }
   ]
 }

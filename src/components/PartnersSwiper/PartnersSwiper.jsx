@@ -10,23 +10,18 @@ import data from '@/data/home/partners.json';
 
 export const PartnersSwiper = () => {
   const swiperParams = {
+    modules: [Autoplay],
     loop: true,
     autoplay: true,
-    modules: [Autoplay],
+    variableWidth: true,
     wrapperTag: 'ul',
-    slidesPerView: 3,    
+    slidesPerView: 'auto',
     spaceBetween: 20,
     breakpoints: {
-      480: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
       768: {
-        slidesPerView: 5,
         spaceBetween: 32,
       },
       1280: {
-        slidesPerView: 7,
         spaceBetween: 64,
       },
     },
@@ -38,16 +33,21 @@ export const PartnersSwiper = () => {
         <SwiperSlide
           key={partner.alt}
           tag="li"
-          className="h-[24px] md:h-[36px] xl:h-[48px] my-[60px] md:my-[80px] xl:my-[120px]"
-        >         
-            <Image
-              src={partner.src}
-              alt={partner.alt}
-              width={108}
-              height={24} 
-              quality={100}
-              className="w-full h-[24px] md:h-[36px] xl:h-[48px]"             
-            />          
+          className={`w-[${
+            partner.width * 0.25
+          }px] h-[24px] md:h-[36px] xl:h-[48px] my-[60px] md:my-[80px] xl:my-[120px]`}
+          style={{ width: partner.width * 0.25 }}
+        >
+          <Image
+            src={partner.src}
+            alt={partner.alt}
+            width={partner.width * 0.25}
+            height={partner.height}
+            quality={100}
+            className={`w-[${
+              partner.width * 0.25
+            }px] h-[24px] md:h-[36px] xl:h-[48px]`}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
