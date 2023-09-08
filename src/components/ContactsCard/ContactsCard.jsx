@@ -4,7 +4,7 @@ import contacts from '@/data/home/contacts.json';
 
 export const ContactsCard = () => {
   return (
-    <div className="w-[280px] md:w-[320px] xl:w-[480px]">
+    <div className="w-[280px] md:w-[311px] xl:w-[480px]">
       <Title
         tag="h3"
         className="contacts-title mx-auto mb-[32px] md:mb-[36px] xl:mb-[48px]"
@@ -31,10 +31,10 @@ export const ContactsCard = () => {
           </ul>
         </li>
         <li className="flex gap-[12px]">
-          <h3 className="text-accent">{contacts.emailText}</h3>
+          <h3 className="text-accent font-light">{contacts.emailText}</h3>
           <a
             href={`mailto:${contacts.email}`}
-            className="hover:text-accent focus:text-accent transition duration-300"
+            className="hover:text-accent focus:text-accent transition duration-300 font-light"
           >
             {contacts.email}
           </a>

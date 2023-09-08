@@ -5,7 +5,7 @@ import form from '@/data/form.json';
 
 export const ContactsContent = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-[64px] md:gap-[32px]">
+    <div className="flex flex-col md:flex-row gap-[64px] md:gap-[43px] xl:gap-[32px]">
       <ContactsCard />
       <div className="max-w-[440px] md:max-w-[500px]">
         <Title
