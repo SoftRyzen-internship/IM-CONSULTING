@@ -52,9 +52,6 @@ module.exports = {
       content: {
         // crossIcon: 'url("/icons/error-cross.svg")',
       },
-      backgroundImage: {
-        'hero-pattern': "url('/images/hero-bg.png')",
-      },
     },
   },
   // plugins: [require('prettier-plugin-tailwindcss')],
