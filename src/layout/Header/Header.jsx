@@ -18,6 +18,7 @@ export const Header = () => {
   const mobile = useMediaQuery({ maxWidth: 1279 });
 
   const listenCallback = useCallback(() => {
+    if (!isMobile) return;
     setScrollHeight(window?.scrollY || document.documentElement.scrollTop);
 
     if (scrollHeight > lastScrollTop) {
@@ -26,31 +27,32 @@ export const Header = () => {
       setIsScrollUp(true);
     }
     setLastScrollTop(scrollHeight <= 0 ? 0 : scrollHeight);
-  }, [lastScrollTop, scrollHeight]);
+  }, [lastScrollTop, scrollHeight, isMobile]);
 
   useEffect(() => {
     setIsMobile(mobile);
   }, [mobile]);
 
   useEffect(() => {
-    document.addEventListener('scroll', listenCallback);
+    isMobile && document.addEventListener('scroll', listenCallback);
 
     return () => {
-      document.removeEventListener('scroll', listenCallback);
+      isMobile && document.removeEventListener('scroll', listenCallback);
     };
-  }, [listenCallback, scrollHeight, setScrollHeight]);
+  }, [listenCallback, isMobile]);
 
   useEffect(() => {
+    if (!isMobile) return;
     if (scrollHeight > 350 && isScrollUp) {
       setShowHeader(true);
     } else {
       setShowHeader(false);
     }
-  }, [scrollHeight, isScrollUp]);
+  }, [scrollHeight, isScrollUp, isMobile]);
 
   return (
     <header
-      className={`${scrollHeight > 1 ? 'header-gradient' : ''} 
+      className={`${scrollHeight > 350 ? 'header-gradient' : ''} 
       ${showHeader ? 'opacity-100 translate-y-0' : ''}
       ${
         scrollHeight > 1 && !showHeader ? 'opacity-0 -translate-y-full' : ''
@@ -61,7 +63,9 @@ export const Header = () => {
         {!isMobile && <Socials component="header" />}
 
         {isMobile && (
-          <ButtonMenuToggle className="w-[18px] fill-black hover:fill-white focus:fill-white transition duration-300" />
+          <button className="w-[18px] fill-black hover:fill-white focus:fill-white transition duration-300">
+            <ButtonMenuToggle />
+          </button>
         )}
       </Container>
     </header>
