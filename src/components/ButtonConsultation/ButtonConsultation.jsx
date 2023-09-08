@@ -17,7 +17,7 @@ export const ButtonConsultation = () => {
     <>
       <button
         type="button"
-        className="flex gap-[8px] md:gap-[10px] py-[16px] bg-accent w-full md:w-[500px] justify-center items-center md:ml-auto"
+        className="flex gap-[8px] md:gap-[10px] py-[16px] w-full md:w-[500px] justify-center items-center md:ml-auto bg-accent hover:bg-darkOrange focus:bg-darkOrange transition duration-300"
         onClick={toggleModal}
       >
         <span className="md:text-font24 font-medium md:tracking-[2.4px]">
