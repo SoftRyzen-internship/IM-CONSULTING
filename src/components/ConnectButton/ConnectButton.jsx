@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { ConnectModal } from '../ConnectModal';
 import { Form } from '../Form';
 import { Title } from '../Title';
+
 import data from '@/data/buttons.json';
 import form from '@/data/form.json';
 import Icon from 'public/icons/connect.svg';
@@ -20,7 +21,7 @@ export const ConnectButton = ({ color }) => {
     <>
       <button
         type="button"
-        className={`h-[30px] xl:h-[20px] flex items-center gap-2 duration-300 ease-out hover:scale-[1.15] focus:scale-[1.15] ${
+        className={`h-[30px] xl:h-[20px] flex items-center gap-2 transition duration-300 hover:scale-[1.15] focus:scale-[1.15] ${
           color === 'accent' ? ' text-accent' : ' text-black'
         }`}
         onClick={toggleModal}
