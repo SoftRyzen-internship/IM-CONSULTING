@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useLayoutEffect, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { Container } from '@/components/Container';
@@ -9,7 +9,6 @@ import { Socials } from '@/components/Socials';
 import ButtonMenuToggle from 'public/icons/menu.svg';
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(null);
   const [lastScrollTop, setLastScrollTop] = useState(null);
@@ -34,25 +33,6 @@ export const Header = () => {
   }, [mobile]);
 
   useEffect(() => {
-    isMenuOpen
-      ? document.body.classList.add('overflow-hidden')
-      : document.body.classList.remove('overflow-hidden');
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    const closeESC = e => {
-      if (e.code === 'Escape') {
-        setIsMenuOpen(false);
-      }
-    };
-    document.addEventListener('keydown', closeESC);
-
-    return () => {
-      document.removeEventListener('keydown', closeESC);
-    };
-  }, []);
-
-  useEffect(() => {
     document.addEventListener('scroll', listenCallback);
 
     return () => {
@@ -60,19 +40,21 @@ export const Header = () => {
     };
   }, [listenCallback, scrollHeight, setScrollHeight]);
 
-  useLayoutEffect(() => {
-    if (scrollHeight > 1 && isScrollUp) {
-      setTimeout(() => setShowHeader(true), 300);
+  useEffect(() => {
+    if (scrollHeight > 350 && isScrollUp) {
+      setShowHeader(true);
     } else {
-      setTimeout(() => setShowHeader(false), 300);
+      setShowHeader(false);
     }
   }, [scrollHeight, isScrollUp]);
 
   return (
     <header
-      className={`${
-        showHeader ? 'header-gradient fixed' : 'absolute'
-      } xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] z-50`}
+      className={`${scrollHeight > 1 ? 'header-gradient' : ''} 
+      ${showHeader ? 'opacity-100 translate-y-0' : ''}
+      ${
+        scrollHeight > 1 && !showHeader ? 'opacity-0 -translate-y-full' : ''
+      } fixed xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-50`}
     >
       <Container className="header flex justify-between items-center">
         <Logo />
