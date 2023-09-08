@@ -105,4 +105,21 @@
     @apply before:content-['['] before:pr-[12px] md:before:pr-[15px] xl:before:pr-[18px] before:text-orange before:font-light
     after:content-[']'] after:pl-[12px] md:after:pl-[15px] xl:after:pl-[18px] after:text-orange after:font-light;
   }
+
+  .review-title {
+    @apply before:content-['['] before:pr-[12px] md:before:pr-[12px] xl:before:pr-[18px] before:text-orange before:font-light
+    after:content-[']'] after:pl-[12px] md:after:pl-[12px] xl:after:pl-[18px] after:text-orange after:font-light;
+  }
+
+  .multiline-ellipsis {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap;
+    -webkit-line-clamp: 2;
+  }
+
+  .multiline-ellipsis.max-lines-18 {
+    -webkit-line-clamp: 18;
+  }
 }

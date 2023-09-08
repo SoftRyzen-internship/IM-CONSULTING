@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Title } from '../Title';
+
 export const ReviewCard = ({
   rating,
   ratingText,
@@ -19,15 +21,18 @@ export const ReviewCard = ({
           <p className="text-[36px] xl:text-[56px]  leading-[44px] xl:leading-[68px]  tracking-widest opacity-10 ">
             {ratingText}
           </p>
-          <h3 className="process-title text-font16 xl:text-font24">
+          <Title
+            tag="h3"
+            className="review-title text-font16 xl:text-font24 multiline-ellipsis"
+          >
             <span className="text-black font-bold">{company}</span>
-          </h3>
+          </Title>
         </div>
       </div>
-      <p className="text-font16 text-right mb-2">
+      <p className="text-font16 text-right mb-2 multiline-ellipsis">
         {post} <span className="font-medium">{name}</span>
       </p>
-      <p className="text-font16 xl:text-[24px] xl:leading-[30px] text-justify md:pb-[0px] ">
+      <p className="text-font16 xl:text-[24px] xl:leading-[30px] text-justify multiline-ellipsis max-lines-18">
         {review}
       </p>
     </>

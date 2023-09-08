@@ -5,8 +5,8 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 
 import { ReviewCard } from '../ReviewCard';
-import reviews from '@/data/home/reviews.json';
 import '@/styles/swiper-scrollbar.css';
+import reviews from '@/data/home/reviews.json';
 
 export const ReviewSwiper = () => {
   const swiperParams = {
@@ -16,6 +16,7 @@ export const ReviewSwiper = () => {
     },
     modules: [Scrollbar],
     wrapperTag: 'ul',
+    spaceBetween: 24,
     breakpoints: {
       768: {
         slidesPerView: 2,
@@ -34,7 +35,7 @@ export const ReviewSwiper = () => {
         <SwiperSlide
           key={name}
           tag="li"
-          className="font-light pb-[44px] md:pb-[68px] xl:pb-[74px] cursor-swiper"
+          className="font-light pb-[46px] md:pb-[71px] xl:pb-[75px] cursor-swiper "
         >
           <ReviewCard name={name} {...rest} />
         </SwiperSlide>
