@@ -5,26 +5,28 @@ import PropTypes from 'prop-types';
 import { Container } from '@/components/Container';
 import { ServicesHeroContent } from '@/components/ServicesHeroContent/ServicesHeroContent';
 
-export const ServicesHero = ({ currentPage }) => {
+export const ServicesHero = ({ heroContent }) => {
+  const page = Object.keys(heroContent);
+
   return (
     <section
       className={`${
-        currentPage === '/trainings'
+        page[0] === 'trainingsHero'
           ? 'trainings-hero-bg'
-          : currentPage === '/couching'
+          : page[0] === 'coachingHero'
           ? 'couching-hero-bg'
-          : currentPage === '/consulting'
+          : page[0] === 'consultingHero'
           ? 'consulting-hero-bg'
           : 'trainings-hero-bg'
       } relative h-auto w-[100%] max-w-[100%]`}
     >
       <Container className="relative pt-[110px] md:pt-[120px] xl:pt-[141px] pb-[56px] md:pb-[126px] xl:pb-[200px] overflow-hidden">
-        <ServicesHeroContent currentPage={currentPage} />
+        <ServicesHeroContent heroContent={heroContent[page]} />
       </Container>
     </section>
   );
 };
 
 ServicesHero.propTypes = {
-  currentPage: PropTypes.string.isRequired,
+  heroContent: PropTypes.object.isRequired,
 };
