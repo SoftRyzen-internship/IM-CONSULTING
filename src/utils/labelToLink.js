@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import data from '@/data/data.json';
+import data from '@/data/home/navigation.json';
 
 export const labelToLink = label => {
   const { navBar } = data;
