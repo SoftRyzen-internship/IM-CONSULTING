@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -11,18 +10,18 @@ export const PartnersSwiper = () => {
   const settings = {
     className: 'slider variable-width',
     dots: false,
-    infinite: true,    
-    slidesToScroll: 1,
+    infinite: true,
+    slidesToScroll: 3,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 3000,
+    autoplaySpeed: 3000,
     cssEase: 'linear',
     arrows: false,
-    variableWidth: true,    
+    variableWidth: true,
   };
   return (
     <Slider {...settings}>
-      {data.partners.map(partner => (       
+      {data.partners.map(partner => (
         <Image
           key={partner.alt}
           src={partner.src}
@@ -34,9 +33,9 @@ export const PartnersSwiper = () => {
             partner.width * 0.375
           }px] xl:w-[${
             partner.width * 0.5
-          }px] h-[24px] md:h-[36px] xl:h-[48px] object-contain my-[60px] md:my-[80px] xl:my-[120px] mx-[20px] md:mx-[32px] xl:mx-[64px]`}
-        />        
+          }px] h-[24px] md:h-[36px] xl:h-[48px] object-contain object-left my-[60px] md:my-[80px] xl:my-[120px] pr-[20px] md:pr-[32px] xl:pr-[64px]`}
+        />
       ))}
     </Slider>
-  );  
+  );
 };
