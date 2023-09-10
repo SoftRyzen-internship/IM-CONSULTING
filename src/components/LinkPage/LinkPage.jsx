@@ -1,7 +1,11 @@
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
 export const LinkPage = ({ link, label, handleMenuToggle }) => {
+  const pathname = usePathname();
+  const isActive = pathname === link;
+
   const handleClick = () => {
     handleMenuToggle && handleMenuToggle();
   };
@@ -11,8 +15,11 @@ export const LinkPage = ({ link, label, handleMenuToggle }) => {
       <Link
         href={link}
         onClick={handleClick}
-        className="xl:text-gray xl:hover:text-white xl:focus:text-white text-[24px] xl:text-[16px] xl:font-bold leading-4 hover:text-white focus:text-white transition duration-300"
-        activeClass="xl:text-accent font-bold pointer-events-none"
+        className={`${
+          isActive
+            ? 'xl:text-accent font-bold xl:hover:text-bgColor xl:focus:text-bgColor pointer-events-none'
+            : 'xl:text-darkGray'
+        }  text-[24px] xl:text-[16px] xl:font-bold leading-4 hover:text-white focus:text-white transition duration-300`}
       >
         {label}
       </Link>

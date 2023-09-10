@@ -23,7 +23,7 @@ export const NavBar = ({ menu = false }) => {
     >
       <nav>
         <ul className="flex flex-col gap-6 xl:gap-2">
-          {!isHome
+          {isHome
             ? navBar.map(({ label, link }) => (
                 <LinkNavBar key={label} link={link} label={label} />
               ))

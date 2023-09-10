@@ -22,12 +22,12 @@ export const LinkNavBar = ({ link, label, handleMenuToggle }) => {
         onClick={handleClick}
         className={`${
           type === 'dark'
-            ? 'xl:text-gray xl:hover:text-white xl:focus:text-white '
-            : 'xl:text-black xl:opacity-25 xl:hover:opacity-100 xl:focus:opacity-100 '
+            ? 'xl:text-gray xl:opacity-25 xl:hover:text-bgColor xl:focus:text-bgColor xl:hover:opacity-100 xl:focus:opacity-100'
+            : 'xl:text-black'
         } text-[24px] xl:text-[16px] xl:font-bold leading-4 hover:text-white focus:text-white transition duration-300`}
         activeClass={`${
           type === 'dark' ? 'xl:!text-accent' : 'xl:!text-orange'
-        } font-bold pointer-events-none`}
+        } font-bold !opacity-100 pointer-events-none`}
       >
         {label}
       </Link>
