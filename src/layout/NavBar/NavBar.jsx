@@ -1,11 +1,19 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
 import { LinkNavBar } from '@/components/LinkNavBar';
+import { LinkPage } from '@/components/LinkPage';
 import { ConnectButton } from '@/components/ConnectButton';
+import { routes } from '../../../routes';
 import data from '@/data/home/navigation.json';
 
 export const NavBar = ({ menu = false }) => {
-  const { navBar } = data;
+  const { navBar, pages } = data;
+
+  const pathname = usePathname();
+  const isHome = pathname === routes.HOME || pathname === '/';
 
   return (
     <div
@@ -15,9 +23,13 @@ export const NavBar = ({ menu = false }) => {
     >
       <nav>
         <ul className="flex flex-col gap-6 xl:gap-2">
-          {navBar.map(({ label, link }) => (
-            <LinkNavBar key={label} link={link} label={label} />
-          ))}
+          {!isHome
+            ? navBar.map(({ label, link }) => (
+                <LinkNavBar key={label} link={link} label={label} />
+              ))
+            : pages.map(({ label, link }) => (
+                <LinkPage key={label} link={link} label={label} />
+              ))}
         </ul>
       </nav>
       <ConnectButton color={menu ? 'black' : 'accent'} />
