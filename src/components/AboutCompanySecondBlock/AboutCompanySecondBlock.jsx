@@ -7,7 +7,7 @@ import { Title } from '../Title';
 export const AboutCompanySecondBlock = () => {
   return (
     <div className="flex flex-col gap-[36px] md:gap-[48px] xl:w-[1012px]">
-      <Title tag="p" className="self-center title-section-about">
+      <Title tag="p" className="self-center title-section-about md:text-justify">
         {about.secondBlock.title}
       </Title>
       <ul className="flex flex-col gap-[48px]">
