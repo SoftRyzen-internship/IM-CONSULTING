@@ -1,5 +1,7 @@
 'use client';
 
+import { useState, useCallback, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
@@ -10,10 +12,39 @@ import { routes } from '../../../routes';
 import data from '@/data/home/navigation.json';
 
 export const NavBar = ({ menu = false, handleMenuToggle }) => {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isLight, setIsLight] = useState(false);
+
   const { navBar, pages } = data;
 
+  const desktop = useMediaQuery({ minWidth: 1280 });
   const pathname = usePathname();
   const isHome = pathname === routes.HOME || pathname === '/';
+
+  const listenCallback = useCallback(() => {
+    if (!desktop) return;
+
+    const lightSections = ['Про компанію', 'Процес', 'Відгуки'];
+    const active = document.querySelector('.activeLink');
+
+    if (lightSections.includes(active.innerHTML)) {
+      setIsLight(true);
+    } else {
+      setIsLight(false);
+    }
+  }, [desktop]);
+
+  useEffect(() => {
+    setIsDesktop(desktop);
+  }, [desktop]);
+
+  useEffect(() => {
+    isDesktop && document.addEventListener('scroll', listenCallback);
+
+    return () => {
+      isDesktop && document.removeEventListener('scroll', listenCallback);
+    };
+  });
 
   return (
     <div
@@ -30,6 +61,7 @@ export const NavBar = ({ menu = false, handleMenuToggle }) => {
                   link={link}
                   label={label}
                   handleMenuToggle={handleMenuToggle}
+                  isLight={isLight}
                 />
               ))
             : pages.map(({ label, link }) => (

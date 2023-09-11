@@ -1,11 +1,7 @@
-'use client';
-
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
 
-export const LinkNavBar = ({ link, label, handleMenuToggle }) => {
-  const type = 'dark';
-
+export const LinkNavBar = ({ link, label, handleMenuToggle, isLight }) => {
   const handleClick = () => {
     handleMenuToggle && handleMenuToggle();
   };
@@ -21,13 +17,13 @@ export const LinkNavBar = ({ link, label, handleMenuToggle }) => {
         href="/"
         onClick={handleClick}
         className={`${
-          type === 'dark'
-            ? 'xl:text-gray xl:opacity-25 xl:hover:text-bgColor xl:focus:text-bgColor xl:hover:opacity-100 xl:focus:opacity-100'
-            : 'xl:text-black'
+          isLight
+            ? 'xl:text-black'
+            : 'xl:text-gray xl:opacity-25 xl:hover:text-bgColor xl:focus:text-bgColor xl:hover:opacity-100 xl:focus:opacity-100'
         } text-[24px] xl:text-[16px] xl:font-bold leading-4 hover:text-white focus:text-white transition duration-300`}
         activeClass={`${
-          type === 'dark' ? 'xl:!text-accent' : 'xl:!text-orange'
-        } font-bold !opacity-100 pointer-events-none`}
+          isLight ? 'xl:!text-orange' : 'xl:!text-accent'
+        } activeLink font-bold !opacity-100 pointer-events-none`}
       >
         {label}
       </Link>
@@ -39,4 +35,5 @@ LinkNavBar.propTypes = {
   link: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   handleMenuToggle: PropTypes.func,
+  isLight: PropTypes.bool.isRequired,
 };
