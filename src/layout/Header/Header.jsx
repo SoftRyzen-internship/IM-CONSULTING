@@ -18,6 +18,7 @@ export const Header = () => {
   const mobile = useMediaQuery({ maxWidth: 1279 });
 
   const handleMenuToggle = () => setIsMenuOpen(prev => !prev);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const listenCallback = useCallback(() => {
     if (!isMobile) return;
@@ -51,7 +52,7 @@ export const Header = () => {
       } xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-50 `}
     >
       <Container className="header flex justify-between items-center">
-        <Logo />
+        <Logo onClick={closeMenu} />
         {!isMobile && <Socials component="header" />}
 
         {isMobile && (
@@ -62,10 +63,7 @@ export const Header = () => {
         )}
 
         {isMobile && (
-          <MobileMenu
-            handleMenuToggle={handleMenuToggle}
-            isMenuOpen={isMenuOpen}
-          />
+          <MobileMenu handleMenuToggle={closeMenu} isMenuOpen={isMenuOpen} />
         )}
       </Container>
     </header>
