@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
 import form from '@/data/form.json';
 import { sendEmail } from '@/utils/sendEmail';
@@ -17,7 +18,7 @@ import SuccessIcon from 'public/icons/success.svg';
 import getButtonClasses from '@/utils/getButtonClass';
 import getButtonContent from '@/utils/getButtonContent';
 
-export default function Form() {
+export function Form({ toggleModal }) {
   const {
     name,
     email,
@@ -82,7 +83,12 @@ export default function Form() {
       setTimeout(() => {
         setFormStatus(null);
       }, 3000);
+
       reset();
+
+      setTimeout(() => {
+        toggleModal();
+      }, 3100);
     } catch (error) {
       console.error(error);
       setFormStatus('error');
@@ -97,7 +103,7 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[232px] md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px] mx-auto"
+      className="w-full md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px] mx-auto"
     >
       <div className="flex flex-col gap-[23px] md:gap-[32px]">
         <InputField
@@ -129,7 +135,9 @@ export default function Form() {
         <button
           type="submit"
           className={buttonClasses}
-          disabled={loading || formStatus === 'error'}
+          disabled={
+            loading || formStatus === 'error' || formStatus === 'success'
+          }
         >
           {buttonContent}
         </button>
@@ -137,3 +145,7 @@ export default function Form() {
     </form>
   );
 }
+
+Form.propTypes = {
+  toggleModal: PropTypes.func,
+};

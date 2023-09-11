@@ -1,0 +1,47 @@
+.review-swiper.swiper {
+  overflow: visible;
+}
+
+.swiper-scrollbar {
+  cursor: move;
+  cursor: grab;
+  position: relative;
+  background-color: transparent;
+  --swiper-scrollbar-size: 10px;
+  --swiper-scrollbar-bottom: -41px;
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-scrollbar {
+    --swiper-scrollbar-bottom: -65px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .swiper-scrollbar {
+    --swiper-scrollbar-bottom: -69px;
+  }
+}
+
+.swiper-scrollbar::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #bababa;
+  transform: translateY(5px);
+}
+
+.swiper-scrollbar-drag {
+  position: relative;
+  background-color: transparent;
+}
+
+.swiper-scrollbar-drag::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  transform: translateY(5px);
+  background-color: #171717;
+}

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import socials from '@/data/socials.json';
+import data from '@/data/home/contacts.json';
 
 import Facebook from '/public/icons/facebook.svg';
 import Instagram from '/public/icons/instagram.svg';
@@ -26,7 +26,7 @@ export const Socials = ({ component }) => {
     header:
       'text-black hover:text-white focus:text-white transition duration-300',
     burgerMenu:
-      'text-accent hover:text-white focus:text-white transition duration-300',
+      'text-white hover:text-accent focus:text-accent transition duration-300',
     footer:
       'text-bgColor hover:text-accent focus:text-accent transition duration-300',
   };
@@ -47,7 +47,7 @@ export const Socials = ({ component }) => {
 
   return (
     <ul className={listClass[component]}>
-      {socials.map(social => (
+      {data.socials.links.map(social => (
         <li key={social.name} className={itemClass[component]}>
           <a
             href={social.href}

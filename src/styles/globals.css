@@ -35,6 +35,46 @@
     overflow: hidden;
   }
 
+  .menu-gradient {
+    background: linear-gradient(to right, #171717 28%, #fdc638 28%);
+  }
+
+  .header-gradient {
+    background: linear-gradient(to right, #171717 50%, #fdc638 50%);
+  }
+
+  @media (min-width: 480px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 136px),
+        #fdc638 calc(50% - 136px)
+      );
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 236px),
+        #fdc638 calc(50% - 236px)
+      );
+    }
+    .header-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 9px),
+        #fdc638 calc(50% - 9px)
+      );
+    }
+  }
+  @media (min-width: 1280px) {
+    .header-gradient {
+      background: none;
+    }
+  }
+
   .hero-bg-mob {
     background-image: image-set(
       url(/images/hero/hero-bg-mobile.webp) type('image/webp') 1x,
@@ -91,14 +131,83 @@
     @apply hero-bgcolor-mob md:hero-bgcolor-tab xl:hero-bgcolor-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
 
+  .cursor-swiper {
+    cursor: url('/icons/cursor-swiper.svg'), auto;
+  }
+
   .title-section-about {
     @apply text-font20 md:text-font24 xl:text-font36 font-light
     before:content-['['] before:pr-[14px] md:before:pr-[20px] xl:before:pr-[30px] before:text-accent
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
 
+  .menu-gradient {
+    background: linear-gradient(to right, #171717 88px, #fdc638 88px);
+  }
+
+  .header-gradient {
+    background: linear-gradient(to right, #171717 50%, #fdc638 50%);
+  }
+
+  @media (min-width: 480px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 152px),
+        #fdc638 calc(50% - 152px)
+      );
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 264px),
+        #fdc638 calc(50% - 264px)
+      );
+    }
+    .header-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 7px),
+        #fdc638 calc(50% - 7px)
+      );
+    }
+  }
+  @media (min-width: 1280px) {
+    .header-gradient {
+      background: none;
+    }
+  }
+
+  .contacts-title {
+    @apply text-font24 font-bold
+    before:content-['['] before:pr-[18px] before:text-accent before:font-light
+    after:content-[']'] after:pl-[18px] after:text-accent after:font-light;
+  }
+
+  .modal-title {
+    @apply text-font20 md:text-font24 font-bold text-white
+    before:content-['['] before:pr-[15px] md:before:pr-[18px] before:text-accent before:font-light
+    after:content-[']'] after:pl-[15px] md:after:pl-[18px] after:text-accent after:font-light;
+  }
+
   .process-title {
     @apply before:content-['['] before:pr-[12px] md:before:pr-[15px] xl:before:pr-[18px] before:text-orange before:font-light
     after:content-[']'] after:pl-[12px] md:after:pl-[15px] xl:after:pl-[18px] after:text-orange after:font-light;
+  }
+
+  .review-title {
+    @apply before:content-['['] before:pr-[12px] md:before:pr-[12px] xl:before:pr-[18px] before:text-orange before:font-light
+    after:content-[']'] after:pl-[12px] md:after:pl-[12px] xl:after:pl-[18px] after:text-orange after:font-light;
+  }
+
+  .multiline-ellipsis-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap;
+    -webkit-line-clamp: 2;
   }
 }
