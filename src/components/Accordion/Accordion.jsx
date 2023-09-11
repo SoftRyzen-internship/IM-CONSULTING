@@ -3,18 +3,18 @@ import { useState, useRef } from 'react';
 // import { ButtonConsultation } from '../ButtonConsultation';
 
 export const Accordion = ({ items }) => {
-	const [activeIndex, setActiveIndex] = useState(0);
-	const itemRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const itemRef = useRef(null);
 
   const onTitleClick = index => {
     if (index === activeIndex) {
       return;
     } else {
-			setActiveIndex(index);
-			const el = itemRef.current;
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+      setActiveIndex(index);
+      const el = itemRef.current;
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
   return (
