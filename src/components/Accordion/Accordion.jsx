@@ -27,7 +27,7 @@ export const Accordion = ({ items }) => {
             className="relative z-[1] bg-black pt-2 -mt-2 md:pt-3 md:-mt-[14px]"
           >
             <button
-              className={`cursor-pointer w-full pt-2 md:pt-3 border-t flex justify-between gap-4 xl:gap-[482px] transition duration-[750ms] ease-in ${
+              className={`cursor-pointer w-full pt-2 md:pt-3 border-t flex justify-between gap-4 xl:gap-[482px] transition duration-300 ease-in ${
                 isActive
                   ? 'text-accent border-accent md:justify-start md:gap-[309px]'
                   : 'text-[#4D4D4D] border-[#4D4D4D] xl:justify-start '
