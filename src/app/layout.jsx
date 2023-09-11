@@ -37,23 +37,36 @@ const formular = localFont({
   variable: '--font-formular',
 });
 
+const TITLE = 'Im Consulting';
+const DESCRIPTION =
+  'IM Consulting – ваш партнер у професійному тренінгу, консалтінгу та коучінгу. Наші експерти допомагають досягти успіху в бізнесі та особистому розвитку. Скористуйтесь нашими послугами для досягнення ваших цілей та потенціалу';
+
 export const metadata = {
-  // metadataBase: new URL('https://example.vercel.app/'),
-  title: 'Title',
-  description: 'Description',
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: 'https://im-consulting.vercel.app/',
+    siteName: TITLE,
+    locale: 'uk',
+    type: 'website',
+  },
 };
 
 export default async function RootLayout({ children }) {
   return (
-    <html lang="uk">
-      <body className={formular.variable}>
-        <Header />
-        <NavBar />
-        <main className="flex flex-col items-center min-h-screen">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <html lang="uk">
+        <body className={formular.variable}>
+          <Header />
+          <NavBar />
+          <main className="flex flex-col items-center min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </body>
+      </html>
+    </>
   );
 }

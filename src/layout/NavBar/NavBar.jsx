@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import { LinkNavBar } from '@/components/LinkNavBar';
 import { ConnectButton } from '@/components/ConnectButton';
 import data from '@/data/home/navigation.json';

@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 import HeroImg from 'public/images/hero/hero-1250.png';
 import hero from '@/data/home/hero.json';
@@ -8,9 +11,35 @@ const { text: stat1Text, number: stat1Number } = stat1;
 const { text: stat2Text, number: stat2Number } = stat2;
 
 export const HeroContent = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const faceWrapper = document.querySelector('.face-wrapper');
+      const row1 = document.querySelector('.row1');
+      const bottomLeft = document.querySelector('#bottom-left');
+      const bottomRight = document.querySelector('.bottom-right');
+
+      if (faceWrapper && row1 && bottomLeft && bottomRight) {
+        // console.log(window.scrollY);
+        faceWrapper.style.transform = `translate(-50%, ${
+          window.scrollY / 1.3
+        }px)`;
+        row1.style.transform = `translateY(${window.scrollY / 3}px)`;
+        // bottomLeft.style.opacity = window.scrollY > 0 ? 0 : 1;
+        bottomLeft.style.transform = `translateY(${window.scrollY / 3}px)`;
+        bottomRight.style.transform = `translateY(${window.scrollY / 3}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="flex justify-between mb-[26px] md:mb-[62px] xl:mb-[232px]">
+      <div className="row1 flex justify-between mb-[26px] md:mb-[62px] xl:mb-[232px]">
         <p className="text-xs md:text-[28px] xl:text-[24px] text-accent max-w-[94px] md:max-w-[224px] xl:max-w-[270px] leading-[15px] md:leading-[28px] xl:leading-[24px]">
           {subtitle}
         </p>
@@ -26,15 +55,18 @@ export const HeroContent = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-between xl:justify-end items-end">
-        <div className="xl:absolute xl:left-[32px] xl:bottom-[65px] flex flex-col text-bgColor text-[8px] md:text-base leading-[17px] md:leading-[40px] xl:leading-[24px]">
+      <div className=" flex justify-between xl:justify-end items-end">
+        <div
+          id="bottom-left"
+          className="xl:absolute xl:left-[32px] xl:bottom-[65px] flex flex-col text-bgColor text-[8px] md:text-base leading-[17px] md:leading-[40px] xl:leading-[24px]"
+        >
           <p>{stat1Text}</p>
           <span className="text-xs md:text-[28px] xl:text-[32px] md:leading-7 xl:leading-[32px] font-medium tracking-[0.1em]">
             {stat1Number}
           </span>
         </div>
 
-        <div className="flex flex-col items-end text-[8px] md:text-base md:leading-[16px] xl:leading-[24px] -tracking-[0.01em] text-right ">
+        <div className="bottom-right flex flex-col items-end text-[8px] md:text-base md:leading-[16px] xl:leading-[24px] -tracking-[0.01em] text-right ">
           <p className="max-w-[92px] md:max-w-[186px] xl:max-w-[260px] ">
             {stat2Text}
           </p>
@@ -43,7 +75,7 @@ export const HeroContent = () => {
           </span>
         </div>
       </div>
-      <div className="h-auto md:h-[403px] xl:h-[659px] max-md:w-[62%] md:w-[381px] xl:w-[625px] absolute bottom-[-7px] md:bottom-[-12px] xl:bottom-[-17px] left-1/2 md:left-[43%] xl:left-[52%] transform translate-x-[-50%] z-10 object-cover ">
+      <div className="face-wrapper h-auto md:h-[403px] xl:h-[659px] max-md:w-[62%] md:w-[381px] xl:w-[625px] absolute bottom-[-7px] md:bottom-[-12px] xl:bottom-[-17px] left-1/2 md:left-[43%] xl:left-[52%] transform translate-x-[-50%] z-10 object-cover ">
         <Image
           src={HeroImg}
           alt={`${name} ${surname}`}
