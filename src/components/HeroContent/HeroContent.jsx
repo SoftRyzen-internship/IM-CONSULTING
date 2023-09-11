@@ -19,9 +19,7 @@ export const HeroContent = () => {
 
     const handleScroll = () => {
       if (faceWrapper && row1 && bottomLeft && bottomRight) {
-        faceWrapper.style.transform = `translate(-50%, ${
-          window.scrollY / 1.3
-        }px)`;
+        faceWrapper.style.transform = `translate(-50%, ${window.scrollY}px)`;
         row1.style.transform = `translateY(${window.scrollY}px)`;
         bottomLeft.style.transform = `translateY(${window.scrollY}px)`;
         bottomRight.style.transform = `translateY(${window.scrollY}px)`;
