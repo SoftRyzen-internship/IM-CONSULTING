@@ -20,8 +20,8 @@ export const ServicesHero = ({ heroContent }) => {
           : 'trainings-hero-bg'
       } relative h-auto w-[100%] max-w-[100%]`}
     >
-      <Container className="relative pt-[110px] md:pt-[120px] xl:pt-[141px] pb-[56px] md:pb-[126px] xl:pb-[200px] overflow-hidden">
-        <ServicesHeroContent heroContent={heroContent[page]} />
+      <Container className="relative pt-[104px] md:pt-[120px] xl:pt-[141px] pb-[56px] md:pb-[126px] xl:pb-[200px] overflow-hidden">
+        <ServicesHeroContent heroContent={heroContent['hero']} />
       </Container>
     </section>
   );
