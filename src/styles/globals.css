@@ -170,8 +170,8 @@
     .header-gradient {
       background: linear-gradient(
         to right,
-        #171717 calc(50% - 9px),
-        #fdc638 calc(50% - 9px)
+        #171717 calc(50% - 7px),
+        #fdc638 calc(50% - 7px)
       );
     }
   }

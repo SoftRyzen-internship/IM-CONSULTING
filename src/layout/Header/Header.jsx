@@ -27,7 +27,7 @@ export const Header = () => {
     } else if (scrollHeight > 1 && scrollHeight > lastScrollTop) {
       setShowHeader(false);
     }
-    setLastScrollTop(scrollHeight <= 0 ? 0 : scrollHeight);
+    setLastScrollTop(scrollHeight === 0 ? 0 : scrollHeight);
   }, [lastScrollTop, isMobile]);
 
   useEffect(() => {
