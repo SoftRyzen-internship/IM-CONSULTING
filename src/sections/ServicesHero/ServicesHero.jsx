@@ -18,9 +18,9 @@ export const ServicesHero = ({ heroContent }) => {
           : page[0] === 'consultingHero'
           ? 'consulting-hero-bg'
           : 'trainings-hero-bg'
-      } relative h-auto w-[100%] max-w-[100%]`}
+      } h-[344px] md:h-[570px] xl:h-[743px] w-[100%] max-w-[100%] pt-[104px] md:pt-[120px] xl:pt-[141px] pb-[56px] md:pb-[126px] xl:pb-[200px]`}
     >
-      <Container className="relative pt-[104px] md:pt-[120px] xl:pt-[141px] pb-[56px] md:pb-[126px] xl:pb-[200px] overflow-hidden">
+      <Container className="relative overflow-hidden">
         <ServicesHeroContent heroContent={heroContent['hero']} />
       </Container>
     </section>

@@ -6,11 +6,11 @@ export const ServicesHeroContent = ({ heroContent }) => {
   return (
     <>
       <div className="flex flex-row justify-center gap-[12px] md:gap-[31px] md:justify-between">
-        <div className="flex flex-col gap-[129px] md:gap-[217px] min-w-[48%] md:min-w-[322px]">
+        <div className="flex flex-col justify-between min-w-[48%] md:min-w-[322px]">
           <h1 className="text-[20px] xl:absolute xl:left-[30px] md:text-[48px] xl:text-[72px] text-accent leading-[24px] md:leading-[59px] xl:leading-[88px] tracking-[0.1em]">
             {title}
           </h1>
-          <p className="hero-description md:w-[100%] xl:min-w-[476px] xl:absolute xl:right-[552px] font-light text-white text-[12px] md:text-[20px] xl:text-[24px] leading-[15px] md:leading-[24px] xl:leading-[29px] tracking-[-0.04em] xl:absolute xl:bottom-[203px] xl:text-end xl:pr-[35px]">
+          <p className="hero-description md:w-[100%] xl:min-w-[476px] xl:right-[552px] font-light text-white text-[12px] md:text-[20px] xl:text-[24px] leading-[15px] md:leading-[24px] xl:leading-[29px] tracking-[-0.04em] xl:absolute xl:bottom-[203px] xl:text-end xl:pr-[35px]">
             {description}
           </p>
         </div>
