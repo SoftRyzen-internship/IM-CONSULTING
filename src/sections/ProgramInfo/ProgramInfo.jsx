@@ -2,7 +2,7 @@ import { Accordion } from '@/components/Accordion';
 import { Container } from '@/components/Container';
 import trainings from '@/data/services/trainings.json';
 
-export const TrainingsInfo = () => {
+export const ProgramInfo = () => {
   return (
     <section className="bg-black py-[60px] md:py-[80px] xl:py-[120px]">
       <Container>

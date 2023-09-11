@@ -2,7 +2,7 @@ import { AboutCompany } from '@/sections/AboutCompany';
 import { Hero } from '@/sections/Hero';
 import { Reviews } from '@/sections/Reviews';
 import { Services } from '@/sections/Services';
-import { ConsultingInfo } from '@/sections/ConsultingInfo';
+import { ProgramInfo } from '@/sections/ProgramInfo';
 
 export default async function Home() {
   return (
@@ -11,7 +11,7 @@ export default async function Home() {
       <AboutCompany />
       <Services />
       <Reviews />
-      <ConsultingInfo />
+      <ProgramInfo />
     </>
   );
 }
