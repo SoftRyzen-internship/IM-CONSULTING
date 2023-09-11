@@ -130,4 +130,16 @@
     white-space: pre-wrap;
     -webkit-line-clamp: 2;
   }
+
+  .hero-bg {
+    background-attachment: fixed;
+  }
+
+  .hero-bgcolor {
+    background-attachment: fixed;
+  }
+
+  .bottom-left {
+    transition: opacity 0.3s ease-in-out;
+  }
 }
