@@ -138,8 +138,4 @@
   .hero-bgcolor {
     background-attachment: fixed;
   }
-
-  .bottom-left {
-    transition: opacity 0.3s ease-in-out;
-  }
 }
