@@ -7,7 +7,7 @@ export const ServicesHeroContent = ({ heroContent }) => {
     <>
       <div className="flex flex-row justify-evenly md:justify-between">
         <div className="flex flex-col gap-[129px] md:gap-[217px]">
-          <h1 className="text-[20px] md:w-[322px] xl:w-[auto] xl:absolute xl:left-[30px] md:text-[48px] xl:text-[72px] text-accent leading-[24px] md:leading-[59px] xl:leading-[88px] tracking-[0.1em]">
+          <h1 className="text-[20px] xl:absolute xl:left-[30px] md:text-[48px] xl:text-[72px] text-accent leading-[24px] md:leading-[59px] xl:leading-[88px] tracking-[0.1em]">
             {title}
           </h1>
           <p className="hero-description w-[134px] md:w-[100%] xl:min-w-[476px] xl:absolute xl:right-[552px] font-light text-white text-[12px] md:text-[20px] xl:text-[24px] leading-[15px] md:leading-[24px] xl:leading-[29px] tracking-[-0.04em] xl:absolute xl:bottom-[203px] xl:text-end xl:pr-[35px]">
