@@ -40,7 +40,7 @@ export const ConnectButton = ({ color }) => {
           >
             {form.title}
           </Title>
-          <Form />
+          <Form toggleModal={toggleModal} />
         </ConnectModal>
       )}
     </>

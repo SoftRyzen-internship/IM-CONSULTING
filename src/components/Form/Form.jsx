@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
 import form from '@/data/form.json';
 import { sendEmail } from '@/utils/sendEmail';
@@ -17,7 +18,7 @@ import SuccessIcon from 'public/icons/success.svg';
 import getButtonClasses from '@/utils/getButtonClass';
 import getButtonContent from '@/utils/getButtonContent';
 
-export const Form = () => {
+export function Form({ toggleModal }) {
   const {
     name,
     email,
@@ -82,7 +83,12 @@ export const Form = () => {
       setTimeout(() => {
         setFormStatus(null);
       }, 3000);
+
       reset();
+
+      setTimeout(() => {
+        toggleModal();
+      }, 3100);
     } catch (error) {
       console.error(error);
       setFormStatus('error');
@@ -129,11 +135,17 @@ export const Form = () => {
         <button
           type="submit"
           className={buttonClasses}
-          disabled={loading || formStatus === 'error'}
+          disabled={
+            loading || formStatus === 'error' || formStatus === 'success'
+          }
         >
           {buttonContent}
         </button>
       </div>
     </form>
   );
+}
+
+Form.propTypes = {
+  toggleModal: PropTypes.func,
 };
