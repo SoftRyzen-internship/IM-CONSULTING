@@ -29,9 +29,7 @@
     "react-hook-form": "^7.46.1",
     "react-hook-form-persist": "^3.0.0",
     "react-scroll": "^1.8.9",
-    "react-slick": "^0.29.0",
     "sharp": "^0.32.5",
-    "slick-carousel": "^1.8.1",
     "swiper": "^10.2.0",
     "tailwindcss": "3.3.3",
     "yup": "^1.2.0"

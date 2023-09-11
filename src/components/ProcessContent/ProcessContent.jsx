@@ -7,7 +7,7 @@ export const ProcessContent = () => {
     <div className="mx-auto max-w-[440px] md:w-[696px] md:max-w-[696px] xl:w-[1012px] xl:max-w-[1012px] ">
       <Title
         tag="p"
-        className="process-title md:text-justify mx-auto mb-[48px] md:mb-[16px] xl:mb-[24px] max-w-[480px] md:w-[696px] md:max-w-[696px] xl:w-[1012px] xl:max-w-[1012px] text-font20 md:text-font24 xl:text-font36 font-light"
+        className="process-title xl:text-justify mx-auto mb-[48px] md:mb-[16px] xl:mb-[24px] max-w-[480px] md:w-[696px] md:max-w-[696px] xl:w-[1012px] xl:max-w-[1012px] text-font20 md:text-font24 xl:text-font36 font-light"
       >
         {process.title}
       </Title>
