@@ -12,9 +12,7 @@ import { MobileMenu } from '@/components/MobileMenu';
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [scrollHeight, setScrollHeight] = useState(null);
   const [lastScrollTop, setLastScrollTop] = useState(null);
-  const [isScrollUp, setIsScrollUp] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
 
   const mobile = useMediaQuery({ maxWidth: 1279 });
@@ -23,15 +21,14 @@ export const Header = () => {
 
   const listenCallback = useCallback(() => {
     if (!isMobile) return;
-    setScrollHeight(window?.scrollY || document.documentElement.scrollTop);
-
-    if (scrollHeight > lastScrollTop) {
-      setIsScrollUp(false);
-    } else if (scrollHeight < lastScrollTop) {
-      setIsScrollUp(true);
+    const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
+    if (scrollHeight > 350 && scrollHeight < lastScrollTop) {
+      setShowHeader(true);
+    } else if (scrollHeight > 1 && scrollHeight > lastScrollTop) {
+      setShowHeader(false);
     }
     setLastScrollTop(scrollHeight <= 0 ? 0 : scrollHeight);
-  }, [lastScrollTop, scrollHeight, isMobile]);
+  }, [lastScrollTop, isMobile]);
 
   useEffect(() => {
     setIsMobile(mobile);
@@ -45,22 +42,13 @@ export const Header = () => {
     };
   }, [listenCallback, isMobile]);
 
-  useEffect(() => {
-    if (!isMobile) return;
-    if (scrollHeight > 350 && isScrollUp) {
-      setShowHeader(true);
-    } else {
-      setShowHeader(false);
-    }
-  }, [scrollHeight, isScrollUp, isMobile]);
-
   return (
     <header
-      className={`${scrollHeight > 350 ? 'header-gradient' : ''} 
-      ${showHeader ? 'opacity-100 translate-y-0' : ''}
+      className={`${lastScrollTop > 350 ? 'header-gradient fixed' : 'absolute'} 
+      ${showHeader ? ' opacity-100 translate-y-0 ' : ''}
       ${
-        scrollHeight > 1 && !showHeader ? 'opacity-0 -translate-y-full' : ''
-      } fixed xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-50`}
+        lastScrollTop > 1 && !showHeader ? ' opacity-0 -translate-y-full ' : ''
+      } xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-50 `}
     >
       <Container className="header flex justify-between items-center">
         <Logo />
