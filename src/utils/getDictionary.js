@@ -1,9 +1,11 @@
 const dictionaries = {
-  trainings: () => import('@/data/form.json').then(r => r.default),
-  coaching: () => import('@/data/footer.json').then(r => r.default),
-  consulting: () => import('@/data/buttons.json').then(r => r.default),
+  trainings: () =>
+    import('@/data/services/trainings.json').then(r => r.default),
+  coaching: () => import('@/data/services/coaching.json').then(r => r.default),
+  consulting: () =>
+    import('@/data/services/consulting.json').then(r => r.default),
 };
 
-export const getDictionary = async locale => {
-  return await dictionaries[locale]();
+export const getDictionary = async services => {
+  return await dictionaries[services]();
 };

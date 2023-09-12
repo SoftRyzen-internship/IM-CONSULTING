@@ -1,3 +1,5 @@
+import { ProgramInfo } from '@/sections/ProgramInfo';
+import { ServicesHero } from '@/sections/ServicesHero';
 import { getDictionary } from '@/utils/getDictionary';
 
 export const dynamicParams = false;
@@ -10,11 +12,10 @@ export default async function ServicesPage({ params }) {
 
   const servicesData = await getDictionary(services);
 
-  const { title } = servicesData;
-
   return (
     <>
-      <p>{title}</p>
+      <ServicesHero data={servicesData} />
+      <ProgramInfo data={servicesData} />
     </>
   );
 }
