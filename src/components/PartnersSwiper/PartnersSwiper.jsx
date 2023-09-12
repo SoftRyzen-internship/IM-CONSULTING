@@ -10,8 +10,8 @@ import data from '@/data/home/partners.json';
 
 export const PartnersSwiper = () => {
   const swiperParams = {
-    modules: [Autoplay],    
-    loop: true,    
+    modules: [Autoplay],
+    loop: true,
     slidesPerView: 4,
     autoplay: {
       delay: 2000,
@@ -27,27 +27,27 @@ export const PartnersSwiper = () => {
     },
   };
 
-  return (    
-      <Swiper {...swiperParams} className="partners-swiper">
-        {data.partners.map(partner => (
-          <SwiperSlide
-            key={partner.alt}
-            className={`w-[${partner.width * 0.25}px] md:w-[${
-              partner.width * 0.375
-            }px] xl:w-[${
-              partner.width * 0.5
-            }px] h-[24px] md:h-[36px] xl:h-[48px] my-[60px] md:my-[80px] xl:my-[120px] pr-[20px] md:pr-[32px] xl:pr-[64px]`}
-          >
-            <Image
-              src={partner.src}
-              alt={partner.alt}
-              width={partner.width}
-              height={partner.height}
-              quality={100}
-              className="h-[24px] w-min md:h-[36px] xl:h-[48px] object-contain object-left"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>   
+  return (
+    <Swiper {...swiperParams} className="partners-swiper">
+      {data.partners.map(partner => (
+        <SwiperSlide
+          key={partner.alt}
+          className={`w-[${partner.width * 0.25}px] md:w-[${
+            partner.width * 0.375
+          }px] xl:w-[${
+            partner.width * 0.5
+          }px] h-[24px] md:h-[36px] xl:h-[48px] my-[60px] md:my-[80px] xl:my-[120px] pr-[20px] md:pr-[32px] xl:pr-[64px]`}
+        >
+          <Image
+            src={partner.src}
+            alt={partner.alt}
+            width={partner.width}
+            height={partner.height}
+            quality={100}
+            className="h-[24px] w-min md:h-[36px] xl:h-[48px] object-contain object-left"
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
