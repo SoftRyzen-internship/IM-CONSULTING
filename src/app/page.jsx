@@ -11,7 +11,7 @@ export default async function Home() {
     <>
       <Hero />
       <AboutCompany />
-      <Services />      
+      <Services />
       <Process />
       <Partners />
       <Reviews />
