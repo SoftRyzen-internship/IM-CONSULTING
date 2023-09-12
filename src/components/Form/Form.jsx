@@ -85,10 +85,11 @@ export function Form({ toggleModal }) {
       }, 3000);
 
       reset();
-
-      setTimeout(() => {
-        toggleModal();
-      }, 3100);
+      if (toggleModal) {
+        setTimeout(() => {
+          toggleModal();
+        }, 3100);
+      }
     } catch (error) {
       console.error(error);
       setFormStatus('error');
