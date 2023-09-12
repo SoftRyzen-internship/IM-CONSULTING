@@ -15,7 +15,7 @@ export default async function Home() {
       <Process />
       <Reviews />
       <Contacts />
-			<ProgramInfo />
+      <ProgramInfo />
     </>
   );
 }

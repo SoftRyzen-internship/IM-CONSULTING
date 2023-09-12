@@ -1,16 +1,33 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
-// import { ButtonConsultation } from '../ButtonConsultation';
+import { ButtonConsultation } from '../ButtonConsultation';
 
 export const Accordion = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const itemRef = useRef(null);
 
   const onTitleClick = index => {
-    setActiveIndex(index === activeIndex ? null : index);
-    const el = itemRef.current;
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (index !== activeIndex) {
+      setActiveIndex(index);
+      const el = itemRef.current;
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        const scrollTop = window.scrollY;
+        let scrollOffset = 0;
+        if (window.innerWidth <= 768) {
+          scrollOffset = 72;
+        } else if (window.innerWidth <= 1024) {
+          scrollOffset = 120;
+        } else {
+          scrollOffset = 0;
+        }
+
+        const topPosition = rect.top + scrollTop - scrollOffset;
+        window.scrollTo({
+          top: topPosition,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 
@@ -54,7 +71,7 @@ export const Accordion = ({ items }) => {
             </button>
 
             <div
-              className={`subItem box-content overflow-hidden transition-all duration-1000 ${
+              className={`subItem box-content overflow-hidden transition-all duration-1000 space-y-6 md:space-y-9 xl:space-y-12 ${
                 isActive
                   ? 'pt-6 pb-8 md:pt-9 md:pb-12 xl:pt-12 xl:pb-[60px]'
                   : 'p-0'
@@ -70,10 +87,10 @@ export const Accordion = ({ items }) => {
                       {subItem.subtitle}
                     </h4>
                     <p className="font-light">{subItem.text}</p>
-                    {/* < ButtonConsultation /> */}
                   </li>
                 ))}
               </ul>
+              <ButtonConsultation />
             </div>
           </li>
         );
