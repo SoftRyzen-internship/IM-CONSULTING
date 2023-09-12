@@ -21,7 +21,6 @@ export const Header = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const listenCallback = useCallback(() => {
-    if (!isMobile) return;
     const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
     if (scrollHeight > 350 && scrollHeight < lastScrollTop) {
       setShowHeader(true);
@@ -29,27 +28,32 @@ export const Header = () => {
       setShowHeader(false);
     }
     setLastScrollTop(scrollHeight === 0 ? 0 : scrollHeight);
-  }, [lastScrollTop, isMobile]);
+  }, [lastScrollTop]);
 
   useEffect(() => {
     setIsMobile(mobile);
   }, [mobile]);
 
   useEffect(() => {
-    isMobile && document.addEventListener('scroll', listenCallback);
+    document.addEventListener('scroll', listenCallback);
 
     return () => {
-      isMobile && document.removeEventListener('scroll', listenCallback);
+      document.removeEventListener('scroll', listenCallback);
     };
-  }, [listenCallback, isMobile]);
+  }, [listenCallback]);
 
   return (
     <header
-      className={`${lastScrollTop > 350 ? 'header-gradient fixed' : 'absolute'} 
-      ${showHeader ? ' opacity-100 translate-y-0 ' : ''}
+      className={`${
+        isMobile && lastScrollTop > 350 ? 'header-gradient fixed' : 'absolute'
+      } 
+      ${isMobile && showHeader ? ' opacity-100 translate-y-0 ' : ''}
+      ${!isMobile && lastScrollTop > 620 ? 'xl:absolute' : 'xl:fixed'}
       ${
-        lastScrollTop > 1 && !showHeader ? ' opacity-0 -translate-y-full ' : ''
-      } xl:absolute top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-50 `}
+        isMobile && lastScrollTop > 1 && !showHeader
+          ? ' opacity-0 -translate-y-full '
+          : ''
+      } top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-50 `}
     >
       <Container className="header flex justify-between items-center">
         <Logo onClick={closeMenu} />
