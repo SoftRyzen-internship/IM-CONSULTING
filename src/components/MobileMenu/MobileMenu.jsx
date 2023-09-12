@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { NavBar } from '@/layout/NavBar';
+import { NavBar } from '@/components/NavBar';
 import { Socials } from '../Socials';
 import { Container } from '../Container';
 

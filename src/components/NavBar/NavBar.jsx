@@ -1,7 +1,3 @@
-'use client';
-
-import { useState, useCallback, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
@@ -11,46 +7,17 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { routes } from '../../../routes';
 import data from '@/data/home/navigation.json';
 
-export const NavBar = ({ menu = false, handleMenuToggle }) => {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [isLight, setIsLight] = useState(false);
-
+export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
   const { navBar, pages } = data;
 
-  const desktop = useMediaQuery({ minWidth: 1280 });
   const pathname = usePathname();
   const isHome = pathname === routes.HOME || pathname === '/';
-
-  const listenCallback = useCallback(() => {
-    if (!desktop) return;
-
-    const lightSections = ['Про компанію', 'Процес', 'Відгуки'];
-    const active = document.querySelector('.activeLink');
-
-    if (lightSections.includes(active?.innerHTML)) {
-      setIsLight(true);
-    } else {
-      setIsLight(false);
-    }
-  }, [desktop]);
-
-  useEffect(() => {
-    setIsDesktop(desktop);
-  }, [desktop]);
-
-  useEffect(() => {
-    isDesktop && document.addEventListener('scroll', listenCallback);
-
-    return () => {
-      isDesktop && document.removeEventListener('scroll', listenCallback);
-    };
-  }, [isDesktop, listenCallback]);
 
   return (
     <div
       className={`${
         menu ? 'flex xl:hidden' : 'hidden xl:flex'
-      } flex-col w-[168px] xl:w-[117px] gap-[50px] xl:gap-8 relative xl:fixed xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-[608px] xl:-translate-y-1/2 z-20`}
+      } flex-col w-[168px] xl:w-[117px] gap-[50px] xl:gap-8 relative xl:fixed xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-[608px] xl:-translate-y-1/2 `}
     >
       <nav>
         <ul className="flex flex-col gap-6 xl:gap-2">
@@ -61,7 +28,7 @@ export const NavBar = ({ menu = false, handleMenuToggle }) => {
                   link={link}
                   label={label}
                   handleMenuToggle={handleMenuToggle}
-                  isLight={isLight}
+                  isDark={isDark}
                 />
               ))
             : pages.map(({ label, link }) => (
@@ -77,4 +44,5 @@ export const NavBar = ({ menu = false, handleMenuToggle }) => {
 NavBar.propTypes = {
   handleMenuToggle: PropTypes.func,
   menu: PropTypes.bool,
+  isDark: PropTypes.bool.isRequired,
 };
