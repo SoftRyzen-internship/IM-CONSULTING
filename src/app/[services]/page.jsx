@@ -1,4 +1,4 @@
-import { getDictionary } from '@/utils/getDictionary';
+import { getPage } from '@/utils/getPage';
 
 import { ProgramInfo } from '@/sections/ProgramInfo';
 import { ServicesHero } from '@/sections/ServicesHero';
@@ -6,7 +6,7 @@ import { ServicesHero } from '@/sections/ServicesHero';
 export default async function ServicesPage({ params }) {
   const { services } = params;
 
-  const servicesData = await getDictionary(services);
+  const servicesData = await getPage(services);
 
   return (
     <>

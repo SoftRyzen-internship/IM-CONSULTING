@@ -1,4 +1,4 @@
-const dictionaries = {
+const pages = {
   trainings: () =>
     import('@/data/services/trainings.json').then(r => r.default),
   coaching: () => import('@/data/services/coaching.json').then(r => r.default),
@@ -6,6 +6,6 @@ const dictionaries = {
     import('@/data/services/consulting.json').then(r => r.default),
 };
 
-export const getDictionary = async services => {
-  return await dictionaries[services]();
+export const getPage = async services => {
+  return await pages[services]();
 };

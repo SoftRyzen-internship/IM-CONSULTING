@@ -1,16 +1,21 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
 import { Container } from '@/components/Container';
 import { ServicesHeroContent } from '@/components/ServicesHeroContent/ServicesHeroContent';
 
 export const ServicesHero = ({ data }) => {
-  const pathname = window.location.pathname;
-  const pathSegments = pathname.split('/');
-  const backgroundClass = pathSegments[1] || 'trainings';
+  const pathname = usePathname();
 
-  const titleClass = `${backgroundClass}-bg`;
+  const backgroundClass = {
+    '/trainings': 'trainings-hero-bg',
+    '/coaching': 'coaching-hero-bg',
+    '/consulting': 'consulting-hero-bg',
+  };
+
+  const titleClass = backgroundClass[pathname];
 
   return (
     <section
