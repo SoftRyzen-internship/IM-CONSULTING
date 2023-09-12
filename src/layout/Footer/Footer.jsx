@@ -11,7 +11,13 @@ export const Footer = () => {
           <span className="opacity-75">
             {reserved} {subtitle}
           </span>
-          {title}
+
+          <a
+            href="/"
+            className="hover:text-white focus:text-white transition duration-300"
+          >
+            {title}
+          </a>
         </p>
         <h2 className="text-[55px] md:text-[66px] xl:text-[97px] leading-[67px] xl:leading-[97px] tracking-[-0.15em] mb-[16px] md:mb-[36px] xl:mb-[32px] mr-[8px] xl:mr-[13px] uppercase ">
           {title}
