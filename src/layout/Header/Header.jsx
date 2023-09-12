@@ -41,7 +41,6 @@ export const Header = () => {
         setIsDark(false);
       }
     }
-    console.log(isDark, active);
   }, [lastScrollTop, isMobile]);
 
   useEffect(() => {

@@ -11,7 +11,7 @@ import data from '@/data/buttons.json';
 import form from '@/data/form.json';
 import Icon from 'public/icons/connect.svg';
 
-export const ConnectButton = ({ color }) => {
+export const ConnectButton = ({ isDark = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -21,8 +21,8 @@ export const ConnectButton = ({ color }) => {
     <>
       <button
         type="button"
-        className={`h-[30px] xl:h-[20px] flex items-center gap-2 transition duration-300 hover:scale-[1.15] focus:scale-[1.15] ${
-          color === 'accent' ? ' text-accent' : ' text-black'
+        className={`text-black h-[30px] xl:h-[20px] flex items-center gap-2 transition duration-300 hover:scale-[1.15] focus:scale-[1.15] ${
+          isDark ? ' xl:text-accent' : 'xl:text-orange'
         }`}
         onClick={toggleModal}
       >
@@ -48,5 +48,5 @@ export const ConnectButton = ({ color }) => {
 };
 
 ConnectButton.propTypes = {
-  color: PropTypes.oneOf(['accent', 'black']).isRequired,
+  isDark: PropTypes.bool,
 };

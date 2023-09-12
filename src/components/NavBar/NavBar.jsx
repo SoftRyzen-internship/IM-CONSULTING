@@ -36,7 +36,7 @@ export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
               ))}
         </ul>
       </nav>
-      <ConnectButton color={menu ? 'black' : 'accent'} />
+      <ConnectButton isDark={isDark} />
     </div>
   );
 };
