@@ -90,6 +90,7 @@ export const Accordion = ({ items }) => {
                   </li>
                 ))}
               </ul>
+
               <ButtonConsultation />
             </div>
           </li>
