@@ -10,8 +10,7 @@ import data from '@/data/home/partners.json';
 
 export const PartnersSwiper = () => {
   const swiperParams = {
-    modules: [Autoplay],
-    infinite: true,
+    modules: [Autoplay],    
     loop: true,    
     slidesPerView: 4,
     autoplay: {
