@@ -1,12 +1,8 @@
-import { ProgramInfo } from '@/sections/ProgramInfo';
-import { ServicesHero } from '@/sections/ServicesHero';
 import { getDictionary } from '@/utils/getDictionary';
 
-export const dynamicParams = false;
+import { ProgramInfo } from '@/sections/ProgramInfo';
+import { ServicesHero } from '@/sections/ServicesHero';
 
-export async function generateStaticParams({ params: { services } }) {
-  return [{ services: services }];
-}
 export default async function ServicesPage({ params }) {
   const { services } = params;
 

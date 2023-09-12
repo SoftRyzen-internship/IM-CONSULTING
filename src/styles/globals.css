@@ -171,7 +171,7 @@
       url(/images/servicesHero/consulting-hero-bg-desktop@2x.jpg) 2x
     );
   }
-  .consulting-hero-bg {
+  .consulting-bg {
     @apply consulting-hero-bg-mob md:consulting-hero-bg-tab xl:consulting-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
   .trainings-hero-bg-mob {
@@ -204,7 +204,7 @@
       url(/images/servicesHero/trainings-hero-bg-desktop@2x.jpg) 2x
     );
   }
-  .trainings-hero-bg {
+  .trainings-bg {
     @apply trainings-hero-bg-mob md:trainings-hero-bg-tab xl:trainings-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
   .couching-hero-bg-mob {
@@ -237,7 +237,7 @@
       url(/images/servicesHero/couching-hero-bg-desktop@2x.jpg) 2x
     );
   }
-  .couching-hero-bg {
+  .couching-bg {
     @apply couching-hero-bg-mob md:couching-hero-bg-tab xl:couching-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
   .hero-subtitle {
