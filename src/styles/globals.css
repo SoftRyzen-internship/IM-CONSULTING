@@ -17,7 +17,8 @@
     @apply xl:pl-[236px];
   }
 
-  .container.header {
+  .container.header,
+  .container.partners {
     @apply xl:pl-[32px];
   }
 
