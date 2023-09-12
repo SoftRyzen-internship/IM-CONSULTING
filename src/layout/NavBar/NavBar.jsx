@@ -44,7 +44,7 @@ export const NavBar = ({ menu = false, handleMenuToggle }) => {
     return () => {
       isDesktop && document.removeEventListener('scroll', listenCallback);
     };
-  });
+  }, [isDesktop, listenCallback]);
 
   return (
     <div
