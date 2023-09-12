@@ -2,7 +2,7 @@ import services from '@/data/home/services.json';
 
 import { Container } from '@/components/Container';
 import { ServicesCardList } from '@/components/ServicesCardList';
-import { labelToLink } from '@/helpers';
+import { labelToLink } from '@/utils/labelToLink';
 
 export const Services = () => {
   const id = labelToLink('Послуги');

@@ -1,0 +1,33 @@
+{
+  "sectionTitle": "Зв'язатися з нами",
+  "title": "Контакти",
+  "phoneText": "Телефон:",
+  "phone": ["+380972985583", "+380954918716"],
+  "emailText": "E-mail:",
+  "email": "ilyamushkovskiy@gmail.com",
+  "socials": {
+    "title": "Соціальні мережі",
+    "links": [
+      {
+        "name": "Telegram",
+        "aria-label": "Посилання на Telegram",
+        "href": "https://t.me/+380972985583"
+      },
+      {
+        "name": "Viber",
+        "aria-label": "Посилання на Viber",
+        "href": "viber://chat?number=380972985583"
+      },
+      {
+        "name": "Instagram",
+        "aria-label": "Посилання на Instagram",
+        "href": "https://www.instagram.com/ilya_mushkovskiy/"
+      },
+      {
+        "name": "Facebook",
+        "aria-label": "Посилання на Facebook",
+        "href": "https://www.facebook.com/profile.php?id=100022350586759"
+      }
+    ]
+  }
+}

@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
-import data from '@/data/data.json';
+import form from '@/data/form.json';
 import { sendEmail } from '@/utils/sendEmail';
 import { sendMessageToTelegram } from '@/utils/sendMessageToTelegram';
 import { formSchema } from '@/utils/yupSchema';
@@ -14,21 +15,10 @@ import { Loader } from '../Loader';
 import { InputField } from '../InputField/InputField';
 import ErrorIcon from 'public/icons/close.svg';
 import SuccessIcon from 'public/icons/success.svg';
+import getButtonClasses from '@/utils/getButtonClass';
+import getButtonContent from '@/utils/getButtonContent';
 
-export default function Form() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-    reset,
-  } = useForm({
-    mode: 'onChange',
-    resolver: yupResolver(formSchema),
-  });
-
-  const { form } = data;
+export function Form({ toggleModal }) {
   const {
     name,
     email,
@@ -41,6 +31,30 @@ export default function Form() {
 
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+
+  const buttonClasses = getButtonClasses(formStatus, loading);
+  const buttonContent = getButtonContent(
+    formStatus,
+    loading,
+    sendBtn,
+    sendBtnSuccess,
+    sendBtnError,
+    SuccessIcon,
+    Loader,
+    ErrorIcon,
+  );
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+    reset,
+  } = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(formSchema),
+  });
 
   const STORAGE_KEY = 'contact_us_form';
 
@@ -69,7 +83,12 @@ export default function Form() {
       setTimeout(() => {
         setFormStatus(null);
       }, 3000);
+
       reset();
+
+      setTimeout(() => {
+        toggleModal();
+      }, 3100);
     } catch (error) {
       console.error(error);
       setFormStatus('error');
@@ -84,7 +103,7 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[232px] md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px] mx-auto"
+      className="w-full md:w-[342px] xl:w-[500px] flex flex-col gap-[51px] md:gap-[68px] xl:gap-[80px] mx-auto"
     >
       <div className="flex flex-col gap-[23px] md:gap-[32px]">
         <InputField
@@ -115,42 +134,18 @@ export default function Form() {
       <div className="flex justify-end">
         <button
           type="submit"
-          className={`
-    ${
-      formStatus === 'success'
-        ? 'bg-lightOrange'
-        : loading
-        ? 'bg-accent'
-        : 'bg-accent hover:bg-darkOrange focus:bg-darkOrange transition duration-300'
-    }
-    ${formStatus === 'error' ? 'bg-red' : ''}
-    ${
-      loading || formStatus === 'error'
-        ? 'cursor-not-allowed'
-        : 'cursor-pointer'
-    }
-    text-[24px] text-black font-normal line-height-[29px] hover:font-medium focus:font-medium transition duration-300
-    flex gap-[8px] justify-center items-center self-end text-center w-[212px] py-[8px] h-[45px]
-  `}
-          disabled={loading || formStatus === 'error'}
+          className={buttonClasses}
+          disabled={
+            loading || formStatus === 'error' || formStatus === 'success'
+          }
         >
-          {formStatus === 'success' && (
-            <>
-              <SuccessIcon /> {sendBtnSuccess}
-            </>
-          )}
-          {loading && <Loader />}
-          {formStatus === 'error' && (
-            <>
-              <ErrorIcon /> {sendBtnError}
-            </>
-          )}
-          {formStatus !== 'success' &&
-            !loading &&
-            formStatus !== 'error' &&
-            sendBtn}
+          {buttonContent}
         </button>
       </div>
     </form>
   );
 }
+
+Form.propTypes = {
+  toggleModal: PropTypes.func,
+};

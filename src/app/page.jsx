@@ -1,7 +1,9 @@
-import { AboutCompany } from '@/sections/AboutCompany';
 import { Hero } from '@/sections/Hero';
-import { Reviews } from '@/sections/Reviews';
+import { AboutCompany } from '@/sections/AboutCompany';
 import { Services } from '@/sections/Services';
+import { Process } from '@/sections/Process';
+import { Reviews } from '@/sections/Reviews';
+import { Contacts } from '@/sections/Contacts';
 import { ProgramInfo } from '@/sections/ProgramInfo';
 
 export default async function Home() {
@@ -10,8 +12,10 @@ export default async function Home() {
       <Hero />
       <AboutCompany />
       <Services />
+      <Process />
       <Reviews />
-      <ProgramInfo />
+      <Contacts />
+			<ProgramInfo />
     </>
   );
 }
