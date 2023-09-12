@@ -17,7 +17,8 @@
     @apply xl:pl-[236px];
   }
 
-  .container.header {
+  .container.header,
+  .container.partners {
     @apply xl:pl-[32px];
   }
 
@@ -33,6 +34,46 @@
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+  }
+
+  .menu-gradient {
+    background: linear-gradient(to right, #171717 28%, #fdc638 28%);
+  }
+
+  .header-gradient {
+    background: linear-gradient(to right, #171717 50%, #fdc638 50%);
+  }
+
+  @media (min-width: 480px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 136px),
+        #fdc638 calc(50% - 136px)
+      );
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 236px),
+        #fdc638 calc(50% - 236px)
+      );
+    }
+    .header-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 9px),
+        #fdc638 calc(50% - 9px)
+      );
+    }
+  }
+  @media (min-width: 1280px) {
+    .header-gradient {
+      background: none;
+    }
   }
 
   .hero-bg-mob {
@@ -204,6 +245,46 @@
   }
   .hero-description {
     @apply after:content-[']'] after:pl-[12px] md:after:pl-[15px] xl:after:pl-[18px] after:text-orange after:font-medium;
+  }
+
+  .menu-gradient {
+    background: linear-gradient(to right, #171717 88px, #fdc638 88px);
+  }
+
+  .header-gradient {
+    background: linear-gradient(to right, #171717 50%, #fdc638 50%);
+  }
+
+  @media (min-width: 480px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 152px),
+        #fdc638 calc(50% - 152px)
+      );
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 264px),
+        #fdc638 calc(50% - 264px)
+      );
+    }
+    .header-gradient {
+      background: linear-gradient(
+        to right,
+        #171717 calc(50% - 7px),
+        #fdc638 calc(50% - 7px)
+      );
+    }
+  }
+  @media (min-width: 1280px) {
+    .header-gradient {
+      background: none;
+    }
   }
 
   .contacts-title {
