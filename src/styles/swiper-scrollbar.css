@@ -45,3 +45,7 @@
   transform: translateY(5px);
   background-color: #171717;
 }
+
+.partners-swiper .swiper-slide {
+  width: fit-content !important;
+}
