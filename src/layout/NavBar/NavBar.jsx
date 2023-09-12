@@ -27,7 +27,7 @@ export const NavBar = ({ menu = false, handleMenuToggle }) => {
     const lightSections = ['Про компанію', 'Процес', 'Відгуки'];
     const active = document.querySelector('.activeLink');
 
-    if (lightSections.includes(active.innerHTML)) {
+    if (lightSections.includes(active?.innerHTML)) {
       setIsLight(true);
     } else {
       setIsLight(false);

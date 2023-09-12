@@ -13,7 +13,7 @@ export const LinkNavBar = ({ link, label, handleMenuToggle, isLight }) => {
         to={link}
         smooth="easeInOutQuart"
         spy={true}
-        offset={-50}
+        offset={0}
         href="/"
         onClick={handleClick}
         className={`${
