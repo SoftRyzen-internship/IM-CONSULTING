@@ -27,9 +27,8 @@ export const PartnersSwiper = () => {
     },
   };
 
-  return (
-    <div className="partners-swiper">
-      <Swiper {...swiperParams}>
+  return (    
+      <Swiper {...swiperParams} className="partners-swiper">
         {data.partners.map(partner => (
           <SwiperSlide
             key={partner.alt}
@@ -37,7 +36,7 @@ export const PartnersSwiper = () => {
               partner.width * 0.375
             }px] xl:w-[${
               partner.width * 0.5
-            }px] h-[24px] md:h-[36px] xl:h-[48px] my-[60px] md:my-[80px] xl:my-[120px] mr-[20px] md:mr-[32px] xl:mr-[64px]`}
+            }px] h-[24px] md:h-[36px] xl:h-[48px] my-[60px] md:my-[80px] xl:my-[120px] pr-[20px] md:pr-[32px] xl:pr-[64px]`}
           >
             <Image
               src={partner.src}
@@ -49,7 +48,6 @@ export const PartnersSwiper = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
-    </div>
+      </Swiper>   
   );
 };
