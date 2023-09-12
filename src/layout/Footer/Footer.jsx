@@ -5,7 +5,7 @@ const { title, reserved, made, softRyzen, subtitle } = footer;
 
 export const Footer = () => {
   return (
-    <footer className="h-[241px] md:h-[326px] xl:h-[433px] bg-accent ">
+    <footer className="h-[241px] md:h-[326px] xl:h-[433px] bg-accent relative z-20 ">
       <Container className="relative overflow-hidden h-full text-[12px] md:text-[16px] flex flex-col items-center md:items-end justify-center">
         <p className=" mb-[8px] md:mb-[24px] font-medium">
           <span className="opacity-75">
