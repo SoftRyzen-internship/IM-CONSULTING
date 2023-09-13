@@ -7,10 +7,7 @@ export const InputField = ({
   placeholder,
 }) => (
   <div className="flex flex-col gap-[8px] md:gap-[12px] relative text-bgColor">
-    <label
-      htmlFor={name}
-      className="text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
-    >
+    <label className="text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]">
       {label} *
     </label>
 

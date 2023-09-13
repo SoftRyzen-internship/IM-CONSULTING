@@ -1,4 +1,7 @@
 'use client';
+
+import PropTypes from 'prop-types';
+
 import { useState, useRef, useEffect } from 'react';
 import { ButtonConsultation } from '../ButtonConsultation';
 
@@ -98,4 +101,8 @@ export const Accordion = ({ items }) => {
       })}
     </ol>
   );
+};
+
+Accordion.propTypes = {
+  items: PropTypes.array.isRequired,
 };
