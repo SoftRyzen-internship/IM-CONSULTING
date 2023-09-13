@@ -1,9 +1,20 @@
-import { Link } from 'react-scroll';
+import { Link, animateScroll } from 'react-scroll';
 import PropTypes from 'prop-types';
 
-export const LinkNavBar = ({ link, label, handleMenuToggle, isDark }) => {
+export const LinkNavBar = ({
+  link,
+  label,
+  handleMenuToggle,
+  isDark,
+  isMobile = true,
+}) => {
   const handleClick = () => {
-    handleMenuToggle && handleMenuToggle();
+    const scrollDown = link === 'about' ? 50 : 4;
+    if (isMobile) {
+      handleMenuToggle && handleMenuToggle();
+    } else {
+      setTimeout(() => animateScroll.scrollMore(scrollDown), 1000);
+    }
   };
 
   return (
@@ -36,4 +47,5 @@ LinkNavBar.propTypes = {
   label: PropTypes.string.isRequired,
   handleMenuToggle: PropTypes.func,
   isDark: PropTypes.bool.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };

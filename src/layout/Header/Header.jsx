@@ -15,7 +15,7 @@ export const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(null);
   const [showHeader, setShowHeader] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const mobile = useMediaQuery({ maxWidth: 1279 });
 
@@ -77,7 +77,7 @@ export const Header = () => {
           : ''
       } top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-10 `}
     >
-      <NavBar isDark={isDark} />
+      <NavBar isDark={isDark} isMobile={isMobile} />
       <Container className="header flex justify-between items-center">
         <Logo onClick={closeMenu} />
         {!isMobile && <Socials component="header" />}

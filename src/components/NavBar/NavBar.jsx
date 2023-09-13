@@ -7,7 +7,12 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { routes } from '../../../routes';
 import data from '@/data/home/navigation.json';
 
-export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
+export const NavBar = ({
+  menu = false,
+  handleMenuToggle,
+  isDark,
+  isMobile,
+}) => {
   const { navBar, pages } = data;
 
   const pathname = usePathname();
@@ -29,6 +34,7 @@ export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
                   label={label}
                   handleMenuToggle={handleMenuToggle}
                   isDark={isDark}
+                  isMobile={isMobile}
                 />
               ))
             : pages.map(({ label, link }) => (
@@ -44,5 +50,6 @@ export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
 NavBar.propTypes = {
   handleMenuToggle: PropTypes.func,
   menu: PropTypes.bool,
-  isDark: PropTypes.bool,
+  isDark: PropTypes.bool.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
