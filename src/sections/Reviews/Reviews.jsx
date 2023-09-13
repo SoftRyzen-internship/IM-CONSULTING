@@ -12,7 +12,7 @@ export const Reviews = () => {
   return (
     <section
       id={id}
-      className="pt-[60px] md:pt-[80px] xl:pt-[120px] pb-[97px] md:pb-[141px] xl:pb-[186px]"
+      className="pt-[60px] md:pt-[80px] xl:pt-[120px] pb-[97px] md:pb-[141px] xl:pb-[186px] bg-bgColor"
     >
       <Container>
         <h2 className="visually-hidden">Відгуки</h2>
