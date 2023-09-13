@@ -19,6 +19,7 @@ export const ServicesCardList = () => {
             image={images[index]}
             text={text[index]}
             btnText={btnText}
+            index={index}
           />
         ))}
       </ul>
