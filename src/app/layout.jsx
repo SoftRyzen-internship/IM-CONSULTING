@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import { Header } from '@/layout/Header';
 import { NavBar } from '@/layout/NavBar';
 import { Footer } from '@/layout/Footer';
+import { i18n } from 'i18n';
 
 import '../styles/globals.css';
 
@@ -36,6 +37,10 @@ const formular = localFont({
   ],
   variable: '--font-formular',
 });
+
+export async function generateStaticParams() {
+  return i18n.locales.map(locale => ({ locale: locale }));
+}
 
 export const metadata = {
   // metadataBase: new URL('https://example.vercel.app/'),

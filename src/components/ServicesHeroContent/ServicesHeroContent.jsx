@@ -26,5 +26,10 @@ export const ServicesHeroContent = ({ data }) => {
 };
 
 ServicesHeroContent.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  }).isRequired,
 };
