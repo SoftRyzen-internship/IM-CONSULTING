@@ -24,8 +24,6 @@ export const Header = () => {
 
   const listenCallback = useCallback(() => {
     const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
-    const darkSections = ['Головна', 'Послуги', 'Контакти'];
-    const active = document.querySelector('.activeLink');
     const hero = document.querySelector('#hero');
     const heroBg = document.querySelector('#heroBg');
 
@@ -37,7 +35,11 @@ export const Header = () => {
     setLastScrollTop(scrollHeight === 0 ? 0 : scrollHeight);
 
     if (!isMobile) {
-      if (darkSections.includes(active?.innerHTML)) {
+      if (
+        scrollHeight < 350 ||
+        (scrollHeight > 2300 && scrollHeight < 2950) ||
+        scrollHeight > 7100
+      ) {
         setIsDark(true);
       } else {
         setIsDark(false);
@@ -46,13 +48,12 @@ export const Header = () => {
         hero.classList.remove('xl:fixed');
         heroBg.classList.remove('xl:h-[707px]');
         setIsMenuOpen(false);
-      } else if (scrollHeight <= 750) {
+      } else {
         hero.classList.add('xl:fixed');
         heroBg.classList.add('xl:h-[707px]');
         setIsMenuOpen(true);
       }
     }
-    console.log(lastScrollTop, scrollHeight);
   }, [lastScrollTop, isMobile]);
 
   useEffect(() => {

@@ -34,7 +34,7 @@ export const LinkNavBar = ({
         } text-[24px] xl:text-[16px] xl:font-bold xl:opacity-25 leading-4 hover:text-white focus:text-white xl:hover:text-black xl:focus:text-black xl:hover:opacity-100 xl:focus:opacity-100 transition duration-300`}
         activeClass={`${
           isDark ? 'xl:!text-accent' : 'xl:!text-orange'
-        } activeLink font-bold !opacity-100 pointer-events-none`}
+        } font-bold !opacity-100 pointer-events-none`}
       >
         {label}
       </Link>
