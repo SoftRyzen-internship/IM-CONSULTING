@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
 import { Link, animateScroll } from 'react-scroll';
 import PropTypes from 'prop-types';
 
@@ -5,9 +8,10 @@ export const LinkNavBar = ({
   link,
   label,
   handleMenuToggle,
-  isDark,
   isMobile = true,
 }) => {
+  const [isDark, setIsDark] = useState(true);
+
   const handleClick = () => {
     const scrollDown = link === 'about' ? 50 : 4;
     if (isMobile) {
@@ -16,6 +20,24 @@ export const LinkNavBar = ({
       setTimeout(() => animateScroll.scrollMore(scrollDown), 1000);
     }
   };
+
+  const listenCallback = useCallback(() => {
+    if (isMobile) return;
+    const navBar = document.querySelector('nav');
+    if (navBar.getAttribute('dark')) {
+      setIsDark(true);
+    } else {
+      setIsDark(false);
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile) return;
+    document.addEventListener('scroll', listenCallback);
+    return () => {
+      document.removeEventListener('scroll', listenCallback);
+    };
+  }, [isMobile, listenCallback]);
 
   return (
     <li className="flex items-center cursor-pointer">
@@ -46,6 +68,5 @@ LinkNavBar.propTypes = {
   link: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   handleMenuToggle: PropTypes.func,
-  isDark: PropTypes.bool.isRequired,
   isMobile: PropTypes.bool.isRequired,
 };

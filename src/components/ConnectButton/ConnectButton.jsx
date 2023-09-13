@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import { ConnectModal } from '../ConnectModal';
 import { Form } from '../Form';
@@ -11,7 +10,7 @@ import data from '@/data/buttons.json';
 import form from '@/data/form.json';
 import Icon from 'public/icons/connect.svg';
 
-export const ConnectButton = ({ isDark = false }) => {
+export const ConnectButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -21,9 +20,7 @@ export const ConnectButton = ({ isDark = false }) => {
     <>
       <button
         type="button"
-        className={`text-black h-[30px] xl:h-[20px] flex items-center gap-2 transition duration-300 hover:scale-[1.15] focus:scale-[1.15] ${
-          isDark ? ' xl:text-accent' : 'xl:text-orange'
-        }`}
+        className="connectBtn text-black h-[30px] xl:h-[20px] flex items-center gap-2 transition duration-300 hover:scale-[1.15] focus:scale-[1.15]"
         onClick={toggleModal}
       >
         <Icon className="fill-current w-[24px] h-[24px] xl:w-[16px] xl:h-[16px]" />
@@ -45,8 +42,4 @@ export const ConnectButton = ({ isDark = false }) => {
       )}
     </>
   );
-};
-
-ConnectButton.propTypes = {
-  isDark: PropTypes.bool,
 };

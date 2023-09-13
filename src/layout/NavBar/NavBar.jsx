@@ -1,3 +1,5 @@
+'use client';
+
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 
@@ -7,7 +9,7 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { routes } from '../../../routes';
 import data from '@/data/home/navigation.json';
 
-export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
+export const NavBar = ({ menu = false, handleMenuToggle }) => {
   const { navBar, pages } = data;
 
   const pathname = usePathname();
@@ -28,7 +30,6 @@ export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
                   link={link}
                   label={label}
                   handleMenuToggle={handleMenuToggle}
-                  isDark={isDark}
                   isMobile={menu}
                 />
               ))
@@ -37,7 +38,7 @@ export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
               ))}
         </ul>
       </nav>
-      <ConnectButton isDark={isDark} />
+      <ConnectButton />
     </div>
   );
 };
@@ -45,5 +46,4 @@ export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
 NavBar.propTypes = {
   handleMenuToggle: PropTypes.func,
   menu: PropTypes.bool,
-  isDark: PropTypes.bool,
 };

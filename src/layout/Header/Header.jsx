@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { Container } from '@/components/Container';
-import { NavBar } from '@/components/NavBar';
 import { Logo } from '@/components/Logo';
 import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
 import { Socials } from '@/components/Socials';
@@ -15,7 +14,6 @@ export const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(null);
   const [showHeader, setShowHeader] = useState(false);
-  const [isDark, setIsDark] = useState(true);
 
   const mobile = useMediaQuery({ maxWidth: 1279 });
 
@@ -26,6 +24,8 @@ export const Header = () => {
     const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
     const hero = document.querySelector('#hero');
     const heroBg = document.querySelector('#heroBg');
+    const connectBtn = document.querySelector('.connectBtn');
+    const navBar = document.querySelector('nav');
 
     if (scrollHeight > 350 && scrollHeight < lastScrollTop) {
       setShowHeader(true);
@@ -40,9 +40,13 @@ export const Header = () => {
         (scrollHeight > 2300 && scrollHeight < 2950) ||
         scrollHeight > 7100
       ) {
-        setIsDark(true);
+        connectBtn.classList.add('xl:text-accent');
+        connectBtn.classList.remove('xl:text-orange');
+        navBar.setAttribute('dark', true);
       } else {
-        setIsDark(false);
+        connectBtn.classList.add('xl:text-orange');
+        connectBtn.classList.remove('xl:text-accent');
+        navBar.removeAttribute('dark');
       }
       if (scrollHeight > 750) {
         hero.classList.remove('xl:fixed');
@@ -85,7 +89,6 @@ export const Header = () => {
           : ''
       } top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-10 `}
     >
-      <NavBar isDark={isDark} />
       <Container className="header flex justify-between items-center">
         <Logo onClick={closeMenu} />
         {!isMobile && <Socials component="header" />}
