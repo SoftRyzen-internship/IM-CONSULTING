@@ -39,7 +39,7 @@ const formular = localFont({
 });
 
 export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({ locale: locale }));
+  return i18n.services.map(service => ({ service: service }));
 }
 
 export const metadata = {

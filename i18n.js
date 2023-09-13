@@ -1,4 +1,4 @@
 export const i18n = {
-  defaultLocale: 'trainings',
-  locales: ['trainings', 'consulting', 'coaching'],
+  defaultServices: 'trainings',
+  services: ['trainings', 'consulting', 'coaching'],
 };
