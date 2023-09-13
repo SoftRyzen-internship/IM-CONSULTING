@@ -26,6 +26,8 @@ export const Header = () => {
     const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
     const darkSections = ['Головна', 'Послуги', 'Контакти'];
     const active = document.querySelector('.activeLink');
+    const hero = document.querySelector('#hero');
+    const heroBg = document.querySelector('#heroBg');
 
     if (scrollHeight > 350 && scrollHeight < lastScrollTop) {
       setShowHeader(true);
@@ -39,6 +41,13 @@ export const Header = () => {
         setIsDark(true);
       } else {
         setIsDark(false);
+      }
+      if (scrollHeight > 750) {
+        hero.classList.remove('xl:fixed');
+        heroBg.classList.remove('xl:h-[707px]');
+      } else if (scrollHeight <= 750) {
+        hero.classList.add('xl:fixed');
+        heroBg.classList.add('xl:h-[707px]');
       }
     }
   }, [lastScrollTop, isMobile]);

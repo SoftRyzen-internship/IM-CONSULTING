@@ -44,5 +44,5 @@ export const NavBar = ({ menu = false, handleMenuToggle, isDark }) => {
 NavBar.propTypes = {
   handleMenuToggle: PropTypes.func,
   menu: PropTypes.bool,
-  isDark: PropTypes.bool.isRequired,
+  isDark: PropTypes.bool,
 };
