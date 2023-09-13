@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 
 import DownArrow from 'public/icons/downArrow.svg';
+const links = ['/trainings', '/consulting', '/coaching'];
 
-export const ServicesCard = ({ title, image, text, btnText }) => {
+export const ServicesCard = ({ title, image, text, btnText, index }) => {
   return (
     <li className="group relative w-full h-[529px] md:w-[224px] md:h-[482px] xl:w-[324px] xl:h-[435px] xl:overflow-hidden">
       <div className="transform translate-y-0 transition-transform duration-500 ease-in-out relative hidden xl:block xl:w-[324px] z-10 group-hover:translate-y-[-100%] group-focus-within:translate-y-[-100%]">
@@ -30,7 +31,7 @@ export const ServicesCard = ({ title, image, text, btnText }) => {
           </div>
         </div>
         <Link
-          href="/"
+          href={links[index]}
           className="w-full py-[16px] tracking-[0.1em] bg-accent hover:bg-darkOrange focus:bg-darkOrange transition duration-300 flex justify-center items-center gap-[16px]
         md:gap-[12px] font-medium text-[24px] leading-[29px] md:text-[20px] md:leading-[24px] md:py-[12px] xl:text-[24px] xl:leading-[29px] xl:py-[20px]"
         >
