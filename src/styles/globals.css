@@ -316,3 +316,15 @@
     -webkit-line-clamp: 2;
   }
 }
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 40rem #171717 inset;
+}
+.input-field:-moz-autofill,
+.input-field:-moz-autofill:hover,
+.input-field:-moz-autofill:focus {
+  color: #fff;
+  box-shadow: 0 0 0px 40rem #171717 inset;
+}
