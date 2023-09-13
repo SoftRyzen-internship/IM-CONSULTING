@@ -11,7 +11,7 @@ export default function getButtonContent(
   if (formStatus === 'success') {
     return (
       <>
-        <SuccessIcon /> {sendBtnSuccess}
+        <SuccessIcon className="w-[16px] h-[12px]" /> {sendBtnSuccess}
       </>
     );
   }
@@ -23,7 +23,7 @@ export default function getButtonContent(
   if (formStatus === 'error') {
     return (
       <>
-        <ErrorIcon /> {sendBtnError}
+        <ErrorIcon className="w-[14px] h-[14px]" /> {sendBtnError}
       </>
     );
   }
