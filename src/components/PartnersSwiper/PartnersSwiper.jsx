@@ -17,6 +17,7 @@ export const PartnersSwiper = () => {
       delay: 2000,
       disableOnInteraction: false,
     },
+    lazyPreloadPrevNext: 1,
     breakpoints: {
       480: {
         slidesPerView: 5,
@@ -34,7 +35,7 @@ export const PartnersSwiper = () => {
   };
 
   return (
-    <Swiper {...swiperParams} className="partners-swiper swiper-no-swiping swiper-lazy-preloader">
+    <Swiper {...swiperParams} className="partners-swiper swiper-no-swiping">
       {data.partners.map(partner => (
         <SwiperSlide
           key={partner.alt}
