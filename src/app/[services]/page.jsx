@@ -2,7 +2,7 @@ import { getPage } from '@/utils/getPage';
 
 import { ProgramInfo } from '@/sections/ProgramInfo';
 import { ServicesHero } from '@/sections/ServicesHero';
-import { routes } from '../../../routes';
+import { routes } from 'routes';
 
 export const dynamicParams = false;
 
