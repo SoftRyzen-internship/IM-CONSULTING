@@ -34,7 +34,7 @@ export const PartnersSwiper = () => {
   };
 
   return (
-    <Swiper {...swiperParams} className="partners-swiper swiper-no-swiping">
+    <Swiper {...swiperParams} className="partners-swiper swiper-no-swiping swiper-lazy-preloader">
       {data.partners.map(partner => (
         <SwiperSlide
           key={partner.alt}
