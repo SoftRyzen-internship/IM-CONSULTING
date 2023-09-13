@@ -2,12 +2,14 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { usePathname } from 'next/navigation';
 
 import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
 import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
 import { Socials } from '@/components/Socials';
 import { MobileMenu } from '@/components/MobileMenu';
+import { routes } from '../../../routes';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +18,8 @@ export const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
 
   const mobile = useMediaQuery({ maxWidth: 1279 });
+  const pathname = usePathname();
+  const isHome = pathname === routes.HOME || pathname === '/';
 
   const handleMenuToggle = () => setIsMenuOpen(prev => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -34,7 +38,7 @@ export const Header = () => {
     }
     setLastScrollTop(scrollHeight === 0 ? 0 : scrollHeight);
 
-    if (!isMobile) {
+    if (!isMobile && isHome) {
       if (
         scrollHeight < 350 ||
         (scrollHeight > 2300 && scrollHeight < 2950) ||
@@ -58,7 +62,7 @@ export const Header = () => {
         setIsMenuOpen(true);
       }
     }
-  }, [lastScrollTop, isMobile]);
+  }, [lastScrollTop, isMobile, isHome]);
 
   useEffect(() => {
     setIsMobile(mobile);

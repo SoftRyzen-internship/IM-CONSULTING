@@ -19,7 +19,7 @@ export const NavBar = ({ menu = false, handleMenuToggle }) => {
     <div
       className={`${
         menu ? 'flex xl:hidden' : 'hidden xl:flex'
-      } flex-col w-[168px] xl:w-[117px] gap-[50px] xl:gap-8 relative xl:fixed xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-[608px] xl:-translate-y-1/2 `}
+      } flex-col w-[168px] xl:w-[117px] gap-[50px] xl:gap-8 relative xl:fixed xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-[608px] xl:-translate-y-1/2 xl:z-10 `}
     >
       <nav>
         <ul className="flex flex-col gap-6 xl:gap-2">
@@ -34,7 +34,12 @@ export const NavBar = ({ menu = false, handleMenuToggle }) => {
                 />
               ))
             : pages.map(({ label, link }) => (
-                <LinkPage key={label} link={link} label={label} />
+                <LinkPage
+                  key={label}
+                  link={link}
+                  label={label}
+                  handleMenuToggle={handleMenuToggle}
+                />
               ))}
         </ul>
       </nav>
