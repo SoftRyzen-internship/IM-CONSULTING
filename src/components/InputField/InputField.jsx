@@ -7,10 +7,7 @@ export const InputField = ({
   placeholder,
 }) => (
   <div className="flex flex-col gap-[8px] md:gap-[12px] relative text-bgColor">
-    <label
-      htmlFor={name}
-      className="text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]"
-    >
+    <label className="text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]">
       {label} *
     </label>
 
@@ -19,7 +16,7 @@ export const InputField = ({
         {...register(name)}
         className={`${
           errors[name] ? 'text-red' : ''
-        } bg-transparent h-[168px] border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] md:h-[252px] xl:h-[265px] resize-none text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
+        } input-field bg-transparent h-[168px] border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] md:h-[252px] xl:h-[265px] resize-none text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
         placeholder={placeholder}
       ></textarea>
     ) : (
@@ -28,7 +25,7 @@ export const InputField = ({
         type={type}
         className={`${
           errors[name] ? 'text-red' : ''
-        }  bg-transparent border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
+        } input-field bg-transparent border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
         placeholder={placeholder}
       />
     )}

@@ -16,9 +16,9 @@ export const ServicesCard = ({ title, image, text, btnText, index }) => {
       </div>
       <div className="bg-white flex flex-col justify-between h-full w-full absolute top-0 left-0 xl:gap-[16px] xl:w-[324px]">
         <div className="flex flex-col gap-[24px] pt-[48px] px-[20px] md:pt-[40px] md:px-[24px] xl:gap-[16px]">
-          <h4 className="text-[36px] leading-[44px] tracking-[0.04em] md:text-[28px] md:leading-[34px] xl:text-[44px] xl:leading-[54px]">
+          <h3 className="text-[36px] leading-[44px] tracking-[0.04em] md:text-[28px] md:leading-[34px] xl:text-[44px] xl:leading-[54px]">
             {title}
-          </h4>
+          </h3>
           <div className="flex flex-col gap-[8px] xl:gap-[4px]">
             {text.map((line, index) => (
               <p
