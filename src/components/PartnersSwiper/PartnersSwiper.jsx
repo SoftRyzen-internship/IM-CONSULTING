@@ -19,6 +19,7 @@ export const PartnersSwiper = () => {
       delay: 2000,
       disableOnInteraction: false,
     },
+    lazyPreloadPrevNext: 1,
     breakpoints: {
       480: {
         slidesPerView: 5,

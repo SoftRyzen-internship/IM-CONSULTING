@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-export const ServicesHeroContent = ({ heroContent }) => {
-  const { title, subtitle, description, text } = heroContent;
+export const ServicesHeroContent = ({ data }) => {
+  const { title, subtitle, description, text } = data;
 
   return (
     <>
@@ -26,5 +26,10 @@ export const ServicesHeroContent = ({ heroContent }) => {
 };
 
 ServicesHeroContent.propTypes = {
-  heroContent: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  }).isRequired,
 };
