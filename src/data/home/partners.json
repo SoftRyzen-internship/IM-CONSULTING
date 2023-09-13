@@ -1,0 +1,113 @@
+{
+  "title": "Наші партнери",
+  "partners": [
+    {
+      "src": "/images/partners/partner1.png",
+      "alt": "Логотип компанії Dr.Reddy's",
+      "width": "430",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner2.png",
+      "alt": "Логотип компанії DRYDRY",
+      "width": "420",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner3.png",
+      "alt": "Логотип компанії Omega Pharma",
+      "width": "164",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner4.png",
+      "alt": "Логотип компанії Nowy Styl",
+      "width": "96",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner5.png",
+      "alt": "Логотип компанії Конекс",
+      "width": "317",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner6.png",
+      "alt": "Логотип компанії Gurman Family",
+      "width": "197",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner7.png",
+      "alt": "Логотип компанії Анкор",
+      "width": "92",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner8.png",
+      "alt": "Логотип компанії Nova Sloboda",
+      "width": "511",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner9.png",
+      "alt": "Логотип компанії Смакуй",
+      "width": "282",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner10.png",
+      "alt": "Логотип компанії Крон",
+      "width": "344",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner11.png",
+      "alt": "Логотип компанії Elfa Pharm",
+      "width": "316",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner12.png",
+      "alt": "Логотип компанії Житло Буд",
+      "width": "333",
+      "height": "94"
+    },
+    {
+      "src": "/images/partners/partner13.png",
+      "alt": "Логотип компанії Полімед",
+      "width": "161",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner14.png",
+      "alt": "Логотип компанії Farm Holding",
+      "width": "212",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner15.png",
+      "alt": "Логотип компанії Волинь Фарм",
+      "width": "153",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner16.png",
+      "alt": "Логотип компанії Sanitas",
+      "width": "267",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner17.png",
+      "alt": "Логотип компанії Аптека Пульс",
+      "width": "393",
+      "height": "96"
+    },
+    {
+      "src": "/images/partners/partner18.png",
+      "alt": "Логотип компанії Здорова Родина",
+      "width": "193",
+      "height": "96"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export const formSchema = Yup.object().shape({
     .min(6, form.emailInvalid)
     .max(63, form.emailInvalid)
     .matches(
-      /^[a-zA-Z0-9_][a-zA-Z0-9_.-]*@[a-zA-Z0-9.-]+[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/,
+      /^[a-zA-Z0-9_][a-zA-Z0-9_.-]*@[a-zA-Z0-9.-]+[a-zA-Z0-9-]*\.[a-zA-Z]{2,4}$/,
       form.emailInvalid,
     ),
   name: Yup.string()
