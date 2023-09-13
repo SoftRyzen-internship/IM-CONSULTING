@@ -45,11 +45,14 @@ export const Header = () => {
       if (scrollHeight > 750) {
         hero.classList.remove('xl:fixed');
         heroBg.classList.remove('xl:h-[707px]');
+        setIsMenuOpen(false);
       } else if (scrollHeight <= 750) {
         hero.classList.add('xl:fixed');
         heroBg.classList.add('xl:h-[707px]');
+        setIsMenuOpen(true);
       }
     }
+    console.log(lastScrollTop, scrollHeight);
   }, [lastScrollTop, isMobile]);
 
   useEffect(() => {
@@ -70,14 +73,18 @@ export const Header = () => {
         isMobile && lastScrollTop > 350 ? 'header-gradient fixed' : 'absolute'
       } 
       ${isMobile && showHeader ? ' opacity-100 translate-y-0 ' : ''}
-      ${!isMobile && lastScrollTop > 620 ? 'xl:absolute' : 'xl:fixed'}
+      ${
+        !isMobile && lastScrollTop < 620 && isMenuOpen
+          ? 'xl:fixed'
+          : 'xl:absolute'
+      }
       ${
         isMobile && lastScrollTop > 1 && !showHeader
           ? ' opacity-0 -translate-y-full '
           : ''
       } top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-10 `}
     >
-      <NavBar isDark={isDark} isMobile={isMobile} />
+      <NavBar isDark={isDark} />
       <Container className="header flex justify-between items-center">
         <Logo onClick={closeMenu} />
         {!isMobile && <Socials component="header" />}
