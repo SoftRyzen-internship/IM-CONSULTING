@@ -21,14 +21,20 @@ export const PartnersSwiper = () => {
       480: {
         slidesPerView: 5,
       },
-      1280: {
+      600: {
+        slidesPerView: 6,
+      },
+      768: {
         slidesPerView: 7,
+      },
+      1280: {
+        slidesPerView: 8,
       },
     },
   };
 
   return (
-    <Swiper {...swiperParams} className="partners-swiper">
+    <Swiper {...swiperParams} className="partners-swiper swiper-no-swiping">
       {data.partners.map(partner => (
         <SwiperSlide
           key={partner.alt}
