@@ -21,8 +21,6 @@ export const ContactsCard = () => {
                 <a
                   href={`tel:${item}`}
                   className="font-light first:mb-[4px] md:first:mb-[8px] hover:text-accent focus:text-accent transition duration-300"
-                  target="_blank"
-                  rel="noreferrer noopener nofollow"
                 >
                   {item}
                 </a>
