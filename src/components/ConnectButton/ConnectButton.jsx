@@ -20,7 +20,7 @@ export const ConnectButton = () => {
     <>
       <button
         type="button"
-        className="connectBtn text-black h-[30px] xl:h-[20px] flex items-center gap-2 transition duration-300 hover:scale-[1.15] focus:scale-[1.15]"
+        className="connectBtn xl:text-accent text-black h-[30px] xl:h-[20px] flex items-center gap-2 transition duration-300 hover:scale-[1.15] focus:scale-[1.15]"
         onClick={toggleModal}
       >
         <Icon className="fill-current w-[24px] h-[24px] xl:w-[16px] xl:h-[16px]" />
