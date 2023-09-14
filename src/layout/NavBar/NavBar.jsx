@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { LinkNavBar } from '@/components/LinkNavBar';
 import { LinkPage } from '@/components/LinkPage';
 import { ConnectButton } from '@/components/ConnectButton';
-import { routes } from '../../../routes';
+import { routes } from 'routes';
 import data from '@/data/home/navigation.json';
 
 export const NavBar = ({ menu = false, handleMenuToggle }) => {

@@ -9,7 +9,7 @@ import { Logo } from '@/components/Logo';
 import { ButtonMenuToggle } from '@/components/ButtonMenuToggle';
 import { Socials } from '@/components/Socials';
 import { MobileMenu } from '@/components/MobileMenu';
-import { routes } from '../../../routes';
+import { routes } from 'routes';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +23,25 @@ export const Header = () => {
 
   const handleMenuToggle = () => setIsMenuOpen(prev => !prev);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const getHeaderClassName = () => {
+    let result = '';
+    isMobile && lastScrollTop > 350
+      ? (result += ' header-gradient fixed ')
+      : (result += ' absolute ');
+
+    isMobile && showHeader && (result += ' opacity-100 translate-y-0 ');
+
+    isMobile &&
+      lastScrollTop > 1 &&
+      !showHeader &&
+      (result += ' opacity-0 -translate-y-full ');
+
+    !isMobile && lastScrollTop < 620 && isMenuOpen
+      ? (result += ' xl:fixed ')
+      : (result += ' xl:absolute ');
+    return result;
+  };
 
   const listenCallback = useCallback(() => {
     const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
@@ -78,20 +97,8 @@ export const Header = () => {
 
   return (
     <header
-      className={`${
-        isMobile && lastScrollTop > 350 ? 'header-gradient fixed' : 'absolute'
-      } 
-      ${isMobile && showHeader ? ' opacity-100 translate-y-0 ' : ''}
-      ${
-        !isMobile && lastScrollTop < 620 && isMenuOpen
-          ? 'xl:fixed'
-          : 'xl:absolute'
-      }
-      ${
-        isMobile && lastScrollTop > 1 && !showHeader
-          ? ' opacity-0 -translate-y-full '
-          : ''
-      } top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-10 `}
+      className={`${getHeaderClassName()}
+       top-0 left-0 right-0 py-[14px] md:py-[36px] transition duration-300 z-10 `}
     >
       <Container className="header flex justify-between items-center">
         <Logo onClick={closeMenu} />

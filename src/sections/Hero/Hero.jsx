@@ -16,9 +16,7 @@ export const Hero = () => {
           <HeroContent />
         </Container>
       </section>
-      <div className="xl:h-[707px] xl:w-full" id="heroBg">
-        {' '}
-      </div>
+      <div className="xl:h-[707px] xl:w-full" id="heroBg"></div>
     </>
   );
 };
