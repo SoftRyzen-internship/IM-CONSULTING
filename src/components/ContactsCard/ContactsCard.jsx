@@ -4,7 +4,7 @@ import contacts from '@/data/home/contacts.json';
 
 export const ContactsCard = () => {
   return (
-    <div className="w-[280px] md:w-[311px] xl:w-[480px]">
+    <div className="w-[280px] md:w-[311px] xl:w-[480px] flex-shrink-0">
       <Title
         tag="h3"
         className="contacts-title mx-auto mb-[32px] md:mb-[36px] xl:mb-[48px]"
