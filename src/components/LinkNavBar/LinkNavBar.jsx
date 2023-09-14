@@ -1,14 +1,43 @@
 'use client';
 
-import { Link } from 'react-scroll';
+import { useState, useEffect, useCallback } from 'react';
+import { Link, animateScroll } from 'react-scroll';
 import PropTypes from 'prop-types';
 
-export const LinkNavBar = ({ link, label, handleMenuToggle }) => {
-  const type = 'dark';
+export const LinkNavBar = ({
+  link,
+  label,
+  handleMenuToggle,
+  isMobile = true,
+}) => {
+  const [isDark, setIsDark] = useState(true);
 
   const handleClick = () => {
-    handleMenuToggle && handleMenuToggle();
+    const scrollDown = link === 'about' ? 50 : 4;
+    if (isMobile) {
+      handleMenuToggle && handleMenuToggle();
+    } else {
+      setTimeout(() => animateScroll.scrollMore(scrollDown), 1000);
+    }
   };
+
+  const listenCallback = useCallback(() => {
+    if (isMobile) return;
+    const navBar = document.querySelector('nav');
+    if (navBar.getAttribute('dark')) {
+      setIsDark(true);
+    } else {
+      setIsDark(false);
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile) return;
+    document.addEventListener('scroll', listenCallback);
+    return () => {
+      document.removeEventListener('scroll', listenCallback);
+    };
+  }, [isMobile, listenCallback]);
 
   return (
     <li className="flex items-center cursor-pointer">
@@ -17,16 +46,17 @@ export const LinkNavBar = ({ link, label, handleMenuToggle }) => {
         to={link}
         smooth="easeInOutQuart"
         spy={true}
+        offset={0}
         href="/"
         onClick={handleClick}
         className={`${
-          type === 'dark'
-            ? 'xl:text-gray xl:hover:text-white xl:focus:text-white '
-            : 'xl:text-black xl:opacity-25 xl:hover:opacity-100 xl:focus:opacity-100 '
-        } text-[24px] xl:text-[16px] xl:font-bold leading-4 hover:text-white focus:text-white transition duration-300`}
+          isDark
+            ? 'xl:text-gray xl:hover:!text-bgColor xl:focus:!text-bgColor'
+            : 'xl:text-black'
+        } text-[24px] xl:text-[16px] xl:font-bold xl:opacity-25 leading-4 hover:text-white focus:text-white xl:hover:text-black xl:focus:text-black xl:hover:opacity-100 xl:focus:opacity-100 transition duration-300`}
         activeClass={`${
-          type === 'dark' ? 'xl:!text-accent' : 'xl:!text-orange'
-        } font-bold pointer-events-none`}
+          isDark ? 'xl:!text-accent' : 'xl:!text-orange'
+        } font-bold !opacity-100 pointer-events-none`}
       >
         {label}
       </Link>
@@ -38,4 +68,5 @@ LinkNavBar.propTypes = {
   link: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   handleMenuToggle: PropTypes.func,
+  isMobile: PropTypes.bool.isRequired,
 };
