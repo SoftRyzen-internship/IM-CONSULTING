@@ -45,8 +45,6 @@ export const Header = () => {
 
   const listenCallback = useCallback(() => {
     const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
-    const hero = document.querySelector('#hero');
-    const heroBg = document.querySelector('#heroBg');
     const connectBtn = document.querySelector('.connectBtn');
     const navBar = document.querySelector('nav');
 
@@ -72,12 +70,8 @@ export const Header = () => {
         navBar.removeAttribute('dark');
       }
       if (scrollHeight > 750) {
-        hero.classList.remove('xl:fixed');
-        heroBg.classList.remove('xl:h-[707px]');
         setIsMenuOpen(false);
       } else {
-        hero.classList.add('xl:fixed');
-        heroBg.classList.add('xl:h-[707px]');
         setIsMenuOpen(true);
       }
     }
