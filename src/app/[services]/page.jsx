@@ -1,26 +1,28 @@
 import { getPage } from '@/utils/getPage';
+import { getSeoPage } from '@/utils/getSeoPage';
 
 import { ProgramInfo } from '@/sections/ProgramInfo';
 import { ServicesHero } from '@/sections/ServicesHero';
 import { routes } from 'routes';
 
-import { TITLE, DESCRIPTION } from '../layout';
-import coaching from '@/data/services/coaching.json';
-import consulting from '@/data/services/consulting.json';
-import trainings from '@/data/services/trainings.json';
-const servicesData = {
-  coaching,
-  consulting,
-  trainings,
-};
+import { BASE_URL, TITLE, DESCRIPTION } from '../layout';
 
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }) {
-  const services = params.services;
+export async function generateMetadata({ params: { services } }) {
+  const serviceSeoData = await getSeoPage(services);
+
   return {
-    title: servicesData[services]?.hero?.title || TITLE,
-    description: servicesData[services]?.hero?.description || DESCRIPTION,
+    title: serviceSeoData?.title || TITLE,
+    description: serviceSeoData?.description || DESCRIPTION,
+    openGraph: {
+      title: serviceSeoData?.title || TITLE,
+      description: serviceSeoData?.description || DESCRIPTION,
+      url: BASE_URL,
+      siteName: TITLE,
+      locale: 'uk',
+      type: 'website',
+    },
   };
 }
 
@@ -35,7 +37,7 @@ export async function generateStaticParams() {
   return staticParams;
 }
 
-export default async function ServicesPage({ params: { services } }) {
+export default async function ServicesPage1({ params: { services } }) {
   const servicesData = await getPage(services);
 
   return (

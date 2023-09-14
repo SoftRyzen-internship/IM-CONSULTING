@@ -37,6 +37,7 @@ const formular = localFont({
   variable: '--font-formular',
 });
 
+export const BASE_URL = 'http://localhost:3000/';
 export const TITLE = 'IM Consulting';
 export const DESCRIPTION =
   'IM Consulting – ваш партнер у професійному тренінгу, консалтінгу та коучінгу. Наші експерти допомагають досягти успіху в бізнесі та особистому розвитку. Скористуйтесь нашими послугами для досягнення ваших цілей та потенціалу';
@@ -47,13 +48,16 @@ export const metadata = {
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: 'https://im-consulting.vercel.app/',
+    url: BASE_URL,
     siteName: TITLE,
     locale: 'uk',
     type: 'website',
   },
-  alternates: {
-    canonical: 'https://im-consulting.vercel.app/',
+  metadatabase: new URL(BASE_URL),
+  manifest: '/meta/manifest.webmanifest',
+  robots: 'all',
+  twitter: {
+    card: 'summary_large_image',
   },
 };
 
