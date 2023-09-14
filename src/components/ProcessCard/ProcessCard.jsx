@@ -2,6 +2,8 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 import { Title } from '../Title';
+import { convertImage, toBase64 } from '@/utils/getBase64';
+const BLUR_COLOR = '#b5903b';
 
 export const ProcessCard = ({ number, subtitle, text, src }) => {
   return (
@@ -13,6 +15,10 @@ export const ProcessCard = ({ number, subtitle, text, src }) => {
         height={376}
         quality={100}
         className="mx-auto w-full h-auto md:w-[342px] md:h-[256px] xl:w-[500px] xl:h-[376px] xl:max-w-[500px] opacity-85"
+        placeholder="blur"
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(
+          convertImage(500, 376, BLUR_COLOR),
+        )}`}
       />
       <div>
         <div
