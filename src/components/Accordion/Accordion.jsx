@@ -17,9 +17,9 @@ export const Accordion = ({ items }) => {
         const rect = el.getBoundingClientRect();
         const scrollTop = window.scrollY;
         let scrollOffset = 0;
-        if (window.innerWidth <= 767.98) {
+        if (window.innerWidth <= 767) {
           scrollOffset = 72;
-        } else if (window.innerWidth <= 1279.98) {
+        } else if (window.innerWidth <= 1279) {
           scrollOffset = 120;
         } else {
           scrollOffset = 0;
@@ -112,8 +112,8 @@ Accordion.propTypes = {
         PropTypes.shape({
           subtitle: PropTypes.string.isRequired,
           text: PropTypes.string.isRequired,
-        }),
+        }).isRequired,
       ).isRequired,
-    }),
+    }).isRequired,
   ).isRequired,
 };
