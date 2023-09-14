@@ -6,6 +6,8 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
+import { convertImage, toBase64 } from '@/utils/getBase64';
+const BLUR_COLOR = '#414141';
 import data from '@/data/home/partners.json';
 
 export const PartnersSwiper = () => {
@@ -52,6 +54,10 @@ export const PartnersSwiper = () => {
             height={partner.height}
             quality={100}
             className="h-[24px] w-min md:h-[36px] xl:h-[48px] object-contain object-left"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              convertImage(partner.width, partner.height, BLUR_COLOR),
+            )}`}
           />
         </SwiperSlide>
       ))}
