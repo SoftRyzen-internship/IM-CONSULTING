@@ -7,10 +7,16 @@ export const Hero = () => {
   const id = labelToLink('Головна');
 
   return (
-    <section id={id} className="hero-bgcolor relative h-auto ">
-      <Container className="relative hero-bg pt-[74px] md:pt-[120px] xl:pt-[168px] pb-[156px] md:pb-[184px] xl:pb-[64px] overflow-hidden">
-        <HeroContent />
-      </Container>
-    </section>
+    <>
+      <section
+        id={id}
+        className="xl:fixed w-full -z-10 hero-bgcolor h-[344px] md:h-[570px] xl:h-[707px] "
+      >
+        <Container className="hero-bg pt-[74px] md:pt-[120px] xl:pt-[168px] h-full w-full">
+          <HeroContent />
+        </Container>
+      </section>
+      <div className="xl:h-[707px] xl:w-full"> </div>
+    </>
   );
 };

@@ -26,7 +26,7 @@ export const Socials = ({ component }) => {
     header:
       'text-black hover:text-white focus:text-white transition duration-300',
     burgerMenu:
-      'text-accent hover:text-white focus:text-white transition duration-300',
+      'text-white hover:text-accent focus:text-accent transition duration-300',
     footer:
       'text-bgColor hover:text-accent focus:text-accent transition duration-300',
   };

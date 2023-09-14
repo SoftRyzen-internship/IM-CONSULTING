@@ -37,8 +37,8 @@ const formular = localFont({
   variable: '--font-formular',
 });
 
-const TITLE = 'Im Consulting';
-const DESCRIPTION =
+export const TITLE = 'Im Consulting';
+export const DESCRIPTION =
   'IM Consulting – ваш партнер у професійному тренінгу, консалтінгу та коучінгу. Наші експерти допомагають досягти успіху в бізнесі та особистому розвитку. Скористуйтесь нашими послугами для досягнення ваших цілей та потенціалу';
 
 export const metadata = {
@@ -51,6 +51,9 @@ export const metadata = {
     siteName: TITLE,
     locale: 'uk',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://im-consulting.vercel.app/',
   },
 };
 

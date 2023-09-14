@@ -16,20 +16,23 @@ export const InputField = ({
 
     {type === 'textarea' ? (
       <textarea
+        id={name}
         {...register(name)}
         className={`${
           errors[name] ? 'text-red' : ''
-        } bg-transparent h-[168px] border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] md:h-[252px] xl:h-[265px] resize-none text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
+        } input-field bg-transparent h-[168px] border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] md:h-[252px] xl:h-[265px] resize-none text-[16px] font-light leading-[20px] md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
         placeholder={placeholder}
       ></textarea>
     ) : (
       <input
+        id={name}
         {...register(name)}
         type={type}
         className={`${
           errors[name] ? 'text-red' : ''
-        }  bg-transparent border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
+        } input-field bg-transparent border-[1px] border-solid border-bgColor p-[8px] md:p-[12px] text-[16px] font-light leading-[20px]  md:text-[20px] md:leading-[24px] xl:text-[24px] xl:leading-[29px]`}
         placeholder={placeholder}
+        autoComplete="true"
       />
     )}
 
