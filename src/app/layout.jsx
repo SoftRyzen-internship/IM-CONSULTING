@@ -37,7 +37,7 @@ const formular = localFont({
   variable: '--font-formular',
 });
 
-export const TITLE = 'Im Consulting';
+export const TITLE = 'IM Consulting';
 export const DESCRIPTION =
   'IM Consulting – ваш партнер у професійному тренінгу, консалтінгу та коучінгу. Наші експерти допомагають досягти успіху в бізнесі та особистому розвитку. Скористуйтесь нашими послугами для досягнення ваших цілей та потенціалу';
 
