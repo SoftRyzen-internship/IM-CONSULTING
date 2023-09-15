@@ -94,7 +94,7 @@ export const Accordion = ({ items }) => {
                 ))}
               </ul>
 
-              <ButtonConsultation />
+              <ButtonConsultation tabIdx={isActive ? 0 : -1} />
             </div>
           </li>
         );
