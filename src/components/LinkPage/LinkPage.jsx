@@ -6,7 +6,8 @@ export const LinkPage = ({ link, label, handleMenuToggle }) => {
   const pathname = usePathname();
   const isActive = pathname === link;
 
-  const handleClick = () => {
+  const handleClick = e => {
+    e.target.blur();
     handleMenuToggle && handleMenuToggle();
   };
 
