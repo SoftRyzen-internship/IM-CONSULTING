@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
-
 import { LinkNavBar } from '@/components/LinkNavBar';
 import { LinkPage } from '@/components/LinkPage';
 import { ConnectButton } from '@/components/ConnectButton';
