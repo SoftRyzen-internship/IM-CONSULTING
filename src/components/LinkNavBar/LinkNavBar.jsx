@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Link, animateScroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
 
 export const LinkNavBar = ({
@@ -12,13 +12,9 @@ export const LinkNavBar = ({
 }) => {
   const [isDark, setIsDark] = useState(true);
 
-  const handleClick = () => {
-    const scrollDown = link === 'about' ? 50 : 4;
-    if (isMobile) {
-      handleMenuToggle && handleMenuToggle();
-    } else {
-      setTimeout(() => animateScroll.scrollMore(scrollDown), 1000);
-    }
+  const handleClick = e => {
+    e.target.blur();
+    handleMenuToggle && handleMenuToggle();
   };
 
   const listenCallback = useCallback(() => {
