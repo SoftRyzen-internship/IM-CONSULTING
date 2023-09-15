@@ -37,10 +37,28 @@ const formular = localFont({
   variable: '--font-formular',
 });
 
+export const BASE_URL = 'http://localhost:3000/';
+export const TITLE = 'IM Consulting';
+export const DESCRIPTION =
+  'IM Consulting – ваш партнер у професійному тренінгу, консалтингу та коучингу. Наші експерти допомагають досягти успіху в бізнесі та особистому розвитку. Скористуйтесь нашими послугами для досягнення ваших цілей та потенціалу';
+
 export const metadata = {
-  // metadataBase: new URL('https://example.vercel.app/'),
-  title: 'Title',
-  description: 'Description',
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: BASE_URL,
+    siteName: TITLE,
+    locale: 'uk',
+    type: 'website',
+  },
+  metadatabase: new URL(BASE_URL),
+  manifest: '/meta/manifest.webmanifest',
+  robots: 'all',
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default async function RootLayout({ children }) {
