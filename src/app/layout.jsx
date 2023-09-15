@@ -63,17 +63,15 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   return (
-    <>
-      <html lang="uk">
-        <body className={formular.variable}>
-          <Header />
-          <NavBar />
-          <main className="flex flex-col items-center min-h-screen">
-            {children}
-          </main>
-          <Footer />
-        </body>
-      </html>
-    </>
+    <html lang="uk">
+      <body className={formular.variable}>
+        <Header />
+        <NavBar />
+        <main className="flex flex-col items-center min-h-screen">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
   );
 }
