@@ -37,7 +37,7 @@ export async function generateStaticParams() {
   return staticParams;
 }
 
-export default async function ServicesPage1({ params: { services } }) {
+export default async function ServicesPage({ params: { services } }) {
   const servicesData = await getPage(services);
 
   return (
