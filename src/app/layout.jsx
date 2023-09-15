@@ -59,6 +59,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
   },
+  // alternates: {
+  //   canonical: BASE_URL,
+  // },
 };
 
 export default async function RootLayout({ children }) {
