@@ -76,6 +76,13 @@
   }
 
   .hero-bg-mob {
+    background-image: url(/images/hero/hero-bg-mobile.jpg);
+    background-image: -webkit-image-set(
+      url(/images/hero/hero-bg-mobile.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bg-mobile@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bg-mobile.jpg) 1x,
+      url(/images/hero/hero-bg-mobile@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/hero/hero-bg-mobile.webp) type('image/webp') 1x,
       url(/images/hero/hero-bg-mobile@2x.webp) type('image/webp') 2x,
@@ -84,6 +91,13 @@
     );
   }
   .hero-bg-tab {
+    background-image: url(/images/hero/hero-bg-tablet.jpg);
+    background-image: -webkit-image-set(
+      url(/images/hero/hero-bg-tablet.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bg-tablet@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bg-tablet.jpg) 1x,
+      url(/images/hero/hero-bg-tablet@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/hero/hero-bg-tablet.webp) type('image/webp') 1x,
       url(/images/hero/hero-bg-tablet@2x.webp) type('image/webp') 2x,
@@ -92,6 +106,13 @@
     );
   }
   .hero-bg-desk {
+    background-image: url(/images/hero/hero-bg-desktop.jpg);
+    background-image: -webkit-image-set(
+      url(/images/hero/hero-bg-desktop.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bg-desktop@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bg-desktop.jpg) 1x,
+      url(/images/hero/hero-bg-desktop@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/hero/hero-bg-desktop.webp) type('image/webp') 1x,
       url(/images/hero/hero-bg-desktop@2x.webp) type('image/webp') 2x,
@@ -104,6 +125,13 @@
   }
 
   .hero-bgcolor-mob {
+    background-image: url(/images/hero/hero-bgcolor-mobile.jpg);
+    background-image: -webkit-image-set(
+      url(/images/hero/hero-bgcolor-mobile.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bgcolor-mobile@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bgcolor-mobile.jpg) 1x,
+      url(/images/hero/hero-bgcolor-mobile@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/hero/hero-bgcolor-mobile.webp) type('image/webp') 1x,
       url(/images/hero/hero-bgcolor-mobile@2x.webp) type('image/webp') 2x,
@@ -112,6 +140,13 @@
     );
   }
   .hero-bgcolor-tab {
+    background-image: url(/images/hero/hero-bgcolor-tablet.jpg);
+    background-image: -webkit-image-set(
+      url(/images/hero/hero-bgcolor-tablet.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bgcolor-tablet@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bgcolor-tablet.jpg) 1x,
+      url(/images/hero/hero-bgcolor-tablet@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/hero/hero-bgcolor-tablet.webp) type('image/webp') 1x,
       url(/images/hero/hero-bgcolor-tablet@2x.webp) type('image/webp') 2x,
@@ -120,6 +155,13 @@
     );
   }
   .hero-bgcolor-desk {
+    background-image: url(/images/hero/hero-bgcolor-desktop.jpg);
+    background-image: -webkit-image-set(
+      url(/images/hero/hero-bgcolor-desktop.webp) type('image/webp') 1x,
+      url(/images/hero/hero-bgcolor-desktop@2x.webp) type('image/webp') 2x,
+      url(/images/hero/hero-bgcolor-desktop.jpg) 1x,
+      url(/images/hero/hero-bgcolor-desktop@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/hero/hero-bgcolor-desktop.webp) type('image/webp') 1x,
       url(/images/hero/hero-bgcolor-desktop@2x.webp) type('image/webp') 2x,
@@ -141,6 +183,15 @@
     after:content-[']'] after:pl-[14px] md:after:pl-[20px] xl:after:pl-[30px] after:text-accent;
   }
   .consulting-hero-bg-mob {
+    background-image: url(/images/servicesHero/consulting-hero-bg-mobile.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/consulting-hero-bg-mobile.webp)
+        type('image/webp') 1x,
+      url(/images/servicesHero/consulting-hero-bg-mobile@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/consulting-hero-bg-mobile.jpg) 1x,
+      url(/images/servicesHero/consulting-hero-bg-mobile@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/consulting-hero-bg-mobile.webp)
         type('image/webp') 1x,
@@ -151,6 +202,15 @@
     );
   }
   .consulting-hero-bg-tab {
+    background-image: url(/images/servicesHero/consulting-hero-bg-tablet.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/consulting-hero-bg-tablet.webp)
+        type('image/webp') 1x,
+      url(/images/servicesHero/consulting-hero-bg-tablet@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/consulting-hero-bg-tablet.jpg) 1x,
+      url(/images/servicesHero/consulting-hero-bg-tablet@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/consulting-hero-bg-tablet.webp)
         type('image/webp') 1x,
@@ -161,6 +221,15 @@
     );
   }
   .consulting-hero-bg-desk {
+    background-image: url(/images/servicesHero/consulting-hero-bg-desktop.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/consulting-hero-bg-desktop.webp)
+        type('image/webp') 1x,
+      url(/images/servicesHero/consulting-hero-bg-desktop@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/consulting-hero-bg-desktop.jpg) 1x,
+      url(/images/servicesHero/consulting-hero-bg-desktop@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/consulting-hero-bg-desktop.webp)
         type('image/webp') 1x,
@@ -174,6 +243,15 @@
     @apply consulting-hero-bg-mob md:consulting-hero-bg-tab xl:consulting-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
   .trainings-hero-bg-mob {
+    background-image: url(/images/servicesHero/trainings-hero-bg-mobile.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/trainings-hero-bg-mobile.webp) type('image/webp')
+        1x,
+      url(/images/servicesHero/trainings-hero-bg-mobile@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/trainings-hero-bg-mobile.jpg) 1x,
+      url(/images/servicesHero/trainings-hero-bg-mobile@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/trainings-hero-bg-mobile.webp) type('image/webp')
         1x,
@@ -184,6 +262,15 @@
     );
   }
   .trainings-hero-bg-tab {
+    background-image: url(/images/servicesHero/trainings-hero-bg-tablet.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/trainings-hero-bg-tablet.webp) type('image/webp')
+        1x,
+      url(/images/servicesHero/trainings-hero-bg-tablet@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/trainings-hero-bg-tablet.jpg) 1x,
+      url(/images/servicesHero/trainings-hero-bg-tablet@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/trainings-hero-bg-tablet.webp) type('image/webp')
         1x,
@@ -194,6 +281,15 @@
     );
   }
   .trainings-hero-bg-desk {
+    background-image: url(/images/servicesHero/trainings-hero-bg-desktop.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/trainings-hero-bg-desktop.webp)
+        type('image/webp') 1x,
+      url(/images/servicesHero/trainings-hero-bg-desktop@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/trainings-hero-bg-desktop.jpg) 1x,
+      url(/images/servicesHero/trainings-hero-bg-desktop@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/trainings-hero-bg-desktop.webp)
         type('image/webp') 1x,
@@ -207,6 +303,15 @@
     @apply trainings-hero-bg-mob md:trainings-hero-bg-tab xl:trainings-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
   .coaching-hero-bg-mob {
+    background-image: url(/images/servicesHero/couching-hero-bg-mobile.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/couching-hero-bg-mobile.webp) type('image/webp')
+        1x,
+      url(/images/servicesHero/couching-hero-bg-mobile@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/couching-hero-bg-mobile.jpg) 1x,
+      url(/images/servicesHero/couching-hero-bg-mobile@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/couching-hero-bg-mobile.webp) type('image/webp')
         1x,
@@ -217,6 +322,15 @@
     );
   }
   .coaching-hero-bg-tab {
+    background-image: url(/images/servicesHero/couching-hero-bg-tablet.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/couching-hero-bg-tablet.webp) type('image/webp')
+        1x,
+      url(/images/servicesHero/couching-hero-bg-tablet@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/couching-hero-bg-tablet.jpg) 1x,
+      url(/images/servicesHero/couching-hero-bg-tablet@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/couching-hero-bg-tablet.webp) type('image/webp')
         1x,
@@ -227,6 +341,15 @@
     );
   }
   .coaching-hero-bg-desk {
+    background-image: url(/images/servicesHero/couching-hero-bg-desktop.jpg);
+    background-image: -webkit-image-set(
+      url(/images/servicesHero/couching-hero-bg-desktop.webp) type('image/webp')
+        1x,
+      url(/images/servicesHero/couching-hero-bg-desktop@2x.webp)
+        type('image/webp') 2x,
+      url(/images/servicesHero/couching-hero-bg-desktop.jpg) 1x,
+      url(/images/servicesHero/couching-hero-bg-desktop@2x.jpg) 2x
+    );
     background-image: image-set(
       url(/images/servicesHero/couching-hero-bg-desktop.webp) type('image/webp')
         1x,
