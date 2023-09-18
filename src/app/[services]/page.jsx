@@ -5,7 +5,7 @@ import { ProgramInfo } from '@/sections/ProgramInfo';
 import { ServicesHero } from '@/sections/ServicesHero';
 import { routes } from 'routes';
 
-import { BASE_URL, TITLE, DESCRIPTION } from '../layout';
+import { TITLE, DESCRIPTION } from '../layout';
 
 export const dynamicParams = false;
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params: { services } }) {
     openGraph: {
       title: serviceSeoData?.title || TITLE,
       description: serviceSeoData?.description || DESCRIPTION,
-      url: BASE_URL,
+      url: services,
       siteName: TITLE,
       locale: 'uk',
       type: 'website',
