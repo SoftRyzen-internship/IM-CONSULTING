@@ -9,7 +9,6 @@ module.exports = {
       sm: '480px',
       md: '768px',
       xl: '1280px',
-      xxl: '1535px',
     },
     extend: {
       container: {

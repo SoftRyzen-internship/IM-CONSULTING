@@ -170,18 +170,20 @@
       url(/images/servicesHero/consulting-hero-bg-desktop@2x.jpg) 2x
     );
   }
-  .consulting-hero-bg-large {
-    background-image: image-set(
-      url(/images/servicesHero/consulting-hero-bg-large.webp) type('image/webp')
-        1x,
-      url(/images/servicesHero/consulting-hero-bg-large@2x.webp)
-        type('image/webp') 2x,
-      url(/images/servicesHero/consulting-hero-bg-large.jpg) 1x,
-      url(/images/servicesHero/consulting-hero-bg-large@2x.jpg) 2x
-    );
-  }
   .consulting-hero-bg {
-    @apply consulting-hero-bg-mob md:consulting-hero-bg-tab xl:consulting-hero-bg-desk xxl:consulting-hero-bg-large relative bg-[#D9D9D9] bg-cover bg-center;
+    @apply consulting-hero-bg-mob md:consulting-hero-bg-tab xl:consulting-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
+  @media screen and (min-width: 1535px) {
+    .consulting-hero-bg {
+      background-image: image-set(
+        url(/images/servicesHero/consulting-hero-bg-large.webp)
+          type('image/webp') 1x,
+        url(/images/servicesHero/consulting-hero-bg-large@2x.webp)
+          type('image/webp') 2x,
+        url(/images/servicesHero/consulting-hero-bg-large.jpg) 1x,
+        url(/images/servicesHero/consulting-hero-bg-large@2x.jpg) 2x
+      );
+    }
   }
   .trainings-hero-bg-mob {
     background-image: image-set(
@@ -213,18 +215,20 @@
       url(/images/servicesHero/trainings-hero-bg-desktop@2x.jpg) 2x
     );
   }
-  .trainings-hero-bg-large {
-    background-image: image-set(
-      url(/images/servicesHero/trainings-hero-bg-large.webp) type('image/webp')
-        1x,
-      url(/images/servicesHero/trainings-hero-bg-large@2x.webp)
-        type('image/webp') 2x,
-      url(/images/servicesHero/trainings-hero-bg-large.jpg) 1x,
-      url(/images/servicesHero/trainings-hero-bg-large@2x.jpg) 2x
-    );
-  }
   .trainings-hero-bg {
-    @apply trainings-hero-bg-mob md:trainings-hero-bg-tab xl:trainings-hero-bg-desk xxl:trainings-hero-bg-large relative bg-[#D9D9D9] bg-cover bg-center;
+    @apply trainings-hero-bg-mob md:trainings-hero-bg-tab xl:trainings-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
+  @media screen and (min-width: 1535px) {
+    .trainings-hero-bg {
+      background-image: image-set(
+        url(/images/servicesHero/trainings-hero-bg-large.webp)
+          type('image/webp') 1x,
+        url(/images/servicesHero/trainings-hero-bg-large@2x.webp)
+          type('image/webp') 2x,
+        url(/images/servicesHero/trainings-hero-bg-large.jpg) 1x,
+        url(/images/servicesHero/trainings-hero-bg-large@2x.jpg) 2x
+      );
+    }
   }
   .coaching-hero-bg-mob {
     background-image: image-set(
@@ -256,18 +260,20 @@
       url(/images/servicesHero/couching-hero-bg-desktop@2x.jpg) 2x
     );
   }
-  .coaching-hero-bg-large {
-    background-image: image-set(
-      url(/images/servicesHero/couching-hero-bg-large.webp) type('image/webp')
-        1x,
-      url(/images/servicesHero/couching-hero-bg-large@2x.webp)
-        type('image/webp') 2x,
-      url(/images/servicesHero/couching-hero-bg-large.jpg) 1x,
-      url(/images/servicesHero/couching-hero-bg-large@2x.jpg) 2x
-    );
-  }
   .coaching-hero-bg {
-    @apply coaching-hero-bg-mob md:coaching-hero-bg-tab xl:coaching-hero-bg-desk xxl:coaching-hero-bg-large relative bg-[#D9D9D9] bg-cover bg-center;
+    @apply coaching-hero-bg-mob md:coaching-hero-bg-tab xl:coaching-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
+  }
+  @media screen and (min-width: 1535px) {
+    .coaching-hero-bg {
+      background-image: image-set(
+        url(/images/servicesHero/couching-hero-bg-large.webp) type('image/webp')
+          1x,
+        url(/images/servicesHero/couching-hero-bg-large@2x.webp)
+          type('image/webp') 2x,
+        url(/images/servicesHero/couching-hero-bg-large.jpg) 1x,
+        url(/images/servicesHero/couching-hero-bg-large@2x.jpg) 2x
+      );
+    }
   }
   .hero-subtitle {
     @apply before:content-['['] before:pr-[12px] md:before:pr-[15px] xl:before:pr-[18px] before:text-black before:font-medium;
