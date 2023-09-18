@@ -1,5 +1,5 @@
 'use client';
-
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 import { ConnectModal } from '../ConnectModal';
@@ -36,4 +36,8 @@ export const ButtonConsultation = ({ tabIdx }) => {
       )}
     </>
   );
+};
+
+ButtonConsultation.propTypes = {
+  tabIdx: PropTypes.number.isRequired,
 };
