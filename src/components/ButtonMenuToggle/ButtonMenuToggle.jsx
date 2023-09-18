@@ -8,7 +8,7 @@ export const ButtonMenuToggle = ({ isMenuOpen, handleMenuToggle }) => {
     <button
       type="button"
       aria-label={isMenuOpen ? 'Закрити меню' : 'Відкрити меню'}
-      className="relative flex items-center justify-center z-40 w-[48px] h-[48px] cursor-pointer hover:fill-white focus:fill-white transition duration-300"
+      className="relative flex items-center justify-center z-40 w-[48px] h-[48px] cursor-pointer hover:fill-white focus-visible:fill-white transition duration-300"
       onClick={handleMenuToggle}
     >
       {isMenuOpen ? (

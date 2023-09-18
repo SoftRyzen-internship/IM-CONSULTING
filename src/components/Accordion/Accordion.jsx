@@ -68,9 +68,9 @@ export const Accordion = ({ items }) => {
               <span className="text-[12px] md:text-[24px] tracking-[1.2px] md:tracking-[2.4px]">
                 {item.id}
               </span>
-              <h3 className="font-medium text-start md:text-[32px] xl:text-[36px] md:tracking-[-1.28px] xl:tracking-[0]">
+              <p className="font-medium text-start md:text-[32px] xl:text-[36px] md:tracking-[-1.28px] xl:tracking-[0]">
                 {item.title}
-              </h3>
+              </p>
             </button>
 
             <div
@@ -94,7 +94,7 @@ export const Accordion = ({ items }) => {
                 ))}
               </ul>
 
-              <ButtonConsultation />
+              <ButtonConsultation tabIdx={isActive ? 0 : -1} />
             </div>
           </li>
         );
