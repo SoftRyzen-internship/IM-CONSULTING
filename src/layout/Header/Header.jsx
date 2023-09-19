@@ -33,7 +33,7 @@ export const Header = () => {
     isMobile && showHeader && (result += ' opacity-100 translate-y-0 ');
 
     isMobile &&
-      lastScrollTop > 1 &&
+      lastScrollTop > 250 &&
       !showHeader &&
       (result += ' opacity-0 -translate-y-full ');
 
