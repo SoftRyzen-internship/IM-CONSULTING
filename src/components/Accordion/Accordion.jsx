@@ -56,6 +56,7 @@ export const Accordion = ({ items }) => {
             key={item.id}
             className="relative z-[1] bg-black pt-2 -mt-2 md:pt-3 md:-mt-[14px]"
           >
+            <h3 className="visually-hidden">{item.title}</h3>
             <button
               className={`cursor-pointer w-full pt-2 md:pt-3 border-t flex justify-between gap-4 xl:justify-start xl:gap-[482px] transition duration-300 ease-in ${
                 isActive
@@ -68,11 +69,10 @@ export const Accordion = ({ items }) => {
               <span className="text-[12px] md:text-[24px] tracking-[1.2px] md:tracking-[2.4px]">
                 {item.id}
               </span>
-              <p className="font-medium text-start md:text-[32px] xl:text-[36px] md:tracking-[-1.28px] xl:tracking-[0]">
+              <span className="font-medium text-start md:text-[32px] xl:text-[36px] md:tracking-[-1.28px] xl:tracking-[0]">
                 {item.title}
-              </p>
+              </span>
             </button>
-
             <div
               className={`subItem box-content overflow-hidden transition-all duration-1000 space-y-6 md:space-y-9 xl:space-y-12 ${
                 isActive
