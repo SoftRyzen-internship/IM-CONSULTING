@@ -10,7 +10,7 @@ import Viber from '/public/icons/viber.svg';
 
 export const Socials = ({ component }) => {
   const listClass = {
-    header: 'flex gap-[24px]',
+    header: 'hidden xl:flex gap-[24px]',
     burgerMenu: 'flex flex-col gap-[24px]',
     footer: 'flex gap-[24px]',
   };
