@@ -26,14 +26,14 @@ export const Header = () => {
 
   const getHeaderClassName = () => {
     let result = '';
-    isMobile && lastScrollTop > 350
+    isMobile && lastScrollTop > 350 && showHeader
       ? (result += ' header-gradient fixed ')
       : (result += ' absolute ');
 
     isMobile && showHeader && (result += ' opacity-100 translate-y-0 ');
 
     isMobile &&
-      lastScrollTop > 250 &&
+      lastScrollTop > 350 &&
       !showHeader &&
       (result += ' opacity-0 -translate-y-full ');
 
