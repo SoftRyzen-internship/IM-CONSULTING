@@ -45,8 +45,10 @@ export const Header = () => {
 
   const listenCallback = useCallback(() => {
     const scrollHeight = window?.scrollY || document.documentElement.scrollTop;
+    const sections = document.querySelectorAll('section');
     const connectBtn = document.querySelector('.connectBtn');
     const navBar = document.querySelector('nav');
+    const darkSections = ['hero', 'services', 'contacts'];
 
     if (scrollHeight > 350 && scrollHeight < lastScrollTop) {
       setShowHeader(true);
@@ -56,19 +58,34 @@ export const Header = () => {
     setLastScrollTop(scrollHeight === 0 ? 0 : scrollHeight);
 
     if (!isMobile && isHome) {
-      if (
-        scrollHeight < 350 ||
-        (scrollHeight > 2300 && scrollHeight < 2950) ||
-        scrollHeight > 7100
-      ) {
-        connectBtn.classList.add('xl:text-accent');
-        connectBtn.classList.remove('xl:text-orange');
-        navBar.setAttribute('dark', true);
-      } else {
-        connectBtn.classList.add('xl:text-orange');
-        connectBtn.classList.remove('xl:text-accent');
-        navBar.removeAttribute('dark');
-      }
+      const options = {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.5,
+      };
+
+      const callback = entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute('id');
+            console.log(sectionId);
+
+            if (darkSections.includes(sectionId)) {
+              connectBtn.classList.add('xl:text-accent');
+              connectBtn.classList.remove('xl:text-orange');
+              navBar.setAttribute('dark', true);
+            } else {
+              connectBtn.classList.add('xl:text-orange');
+              connectBtn.classList.remove('xl:text-accent');
+              navBar.removeAttribute('dark');
+            }
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+      sections.forEach(section => observer.observe(section));
+
       if (scrollHeight > 750) {
         setIsMenuOpen(false);
       } else {
