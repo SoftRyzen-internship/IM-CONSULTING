@@ -60,15 +60,14 @@ export const Header = () => {
     if (!isMobile && isHome) {
       const options = {
         root: null,
-        rootMargin: '50px',
-        threshold: 0.5,
+        rootMargin: '0px',
+        threshold: 0.2,
       };
 
       const callback = entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const sectionId = entry.target.getAttribute('id');
-            console.log(sectionId);
 
             if (darkSections.includes(sectionId)) {
               connectBtn.classList.add('xl:text-accent');
