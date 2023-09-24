@@ -37,7 +37,10 @@ export const PartnersSwiper = () => {
   };
 
   return (
-    <Swiper {...swiperParams} className="partners-swiper swiper-no-swiping">
+    <Swiper
+      {...swiperParams}
+      className="partners-swiper swiper-no-swiping max-w-[1700px] mx-auto"
+    >
       {data.partners.map(partner => (
         <SwiperSlide
           key={partner.alt}
