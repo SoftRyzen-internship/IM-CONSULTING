@@ -11,6 +11,10 @@ module.exports = {
       xl: '1280px',
     },
     extend: {
+      screens: {
+        tall: { raw: '(min-height: 970px) and (min-width: 1280px)' },
+      },
+
       container: {
         center: true,
         padding: {
