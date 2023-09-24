@@ -4,8 +4,10 @@ import { useState } from 'react';
 
 import { ConnectModal } from '../ConnectModal';
 import { Form } from '../Form';
+import { Title } from '../Title';
 import Icon from 'public/icons/consultation.svg';
 import data from '@/data/buttons.json';
+import form from '@/data/form.json';
 
 export const ButtonConsultation = ({ tabIdx }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +33,13 @@ export const ButtonConsultation = ({ tabIdx }) => {
 
       {isOpen && (
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
-          <Form />
+          <Title
+            tag="h2"
+            className="modal-title mb-[24px] md:mb-[36px] xl:mb-[48px] md:ml-[88px] xl:ml-[52px] w-[232px] md:w-[342px] xl:w-[500px]"
+          >
+            {form.title}
+          </Title>
+          <Form toggleModal={toggleModal} />
         </ConnectModal>
       )}
     </>
