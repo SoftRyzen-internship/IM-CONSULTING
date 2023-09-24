@@ -13,7 +13,6 @@ module.exports = {
     extend: {
       screens: {
         tall: { raw: '(min-height: 970px) and (min-width: 1280px)' },
-        // tall: { raw: '(min-height: 960px)' },
       },
 
       container: {
