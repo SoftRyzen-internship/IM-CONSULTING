@@ -20,7 +20,7 @@ export const ConnectModal = ({ toggleModal, isOpen, children }) => {
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-50 opacity-0"
             >
-              <Dialog.Panel className="bg-black mx-auto p-[24px] xl:p-[60px] max-w-[480px] md:max-w-[566px] xl:max-w-[724px] h-[647px] md:w-[566px] md:h-[826px] xl:w-[724px] xl:h-[978px]">
+              <Dialog.Panel className="bg-black mx-auto p-[24px] pb-[60px] md:pb-[80px] xl:pb-[130px] xl:p-[60px] max-w-[440px] md:max-w-[566px] xl:max-w-[724px] md:w-[566px] xl:w-[724px]">
                 <button
                   type="button"
                   aria-label="Кнопка закриття модального вікна"
