@@ -37,7 +37,7 @@ export const Header = () => {
       !showHeader &&
       (result += ' opacity-0 -translate-y-full ');
 
-    !isMobile && lastScrollTop < 620 && isMenuOpen
+    !isMobile && lastScrollTop < 620 && showHeader
       ? (result += ' xl:fixed ')
       : (result += ' xl:absolute ');
     return result;
@@ -56,10 +56,11 @@ export const Header = () => {
     setLastScrollTop(scrollHeight === 0 ? 0 : scrollHeight);
 
     if (!isMobile && isHome) {
+      const navbarHeight = navBar.getBoundingClientRect().top + scrollHeight;
       if (
-        scrollHeight < 350 ||
-        (scrollHeight > 2300 && scrollHeight < 2950) ||
-        scrollHeight > 7100
+        navbarHeight < 650 ||
+        (navbarHeight > 2550 && navbarHeight < 3220) ||
+        navbarHeight > 7400
       ) {
         connectBtn.classList.add('xl:text-accent');
         connectBtn.classList.remove('xl:text-orange');
@@ -70,9 +71,9 @@ export const Header = () => {
         navBar.removeAttribute('dark');
       }
       if (scrollHeight > 750) {
-        setIsMenuOpen(false);
+        setShowHeader(false);
       } else {
-        setIsMenuOpen(true);
+        setShowHeader(true);
       }
     }
   }, [lastScrollTop, isMobile, isHome]);
