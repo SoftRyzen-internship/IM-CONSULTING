@@ -37,7 +37,7 @@ export const Header = () => {
       !showHeader &&
       (result += ' opacity-0 -translate-y-full ');
 
-    !isMobile && lastScrollTop < 620 && isMenuOpen
+    !isMobile && lastScrollTop < 620 && showHeader
       ? (result += ' xl:fixed ')
       : (result += ' xl:absolute ');
     return result;
@@ -86,9 +86,9 @@ export const Header = () => {
       sections.forEach(section => observer.observe(section));
 
       if (scrollHeight > 750) {
-        setIsMenuOpen(false);
+        setShowHeader(false);
       } else {
-        setIsMenuOpen(true);
+        setShowHeader(true);
       }
     }
   }, [lastScrollTop, isMobile, isHome]);
