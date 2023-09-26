@@ -37,7 +37,7 @@ const formular = localFont({
   variable: '--font-formular',
 });
 
-export const BASE_URL = 'https://im-consulting.vercel.app/';
+export const BASE_URL = 'https://www.imconsulting.com.ua/';
 export const TITLE = 'IM Consulting';
 export const DESCRIPTION =
   'IM Consulting – ваш партнер у професійному тренінгу, консалтингу та коучингу. Наші експерти допомагають досягти успіху в бізнесі та особистому розвитку. Скористуйтесь нашими послугами для досягнення ваших цілей та потенціалу';
@@ -59,9 +59,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
   },
-  // alternates: {
-  //   canonical: BASE_URL,
-  // },
+  alternates: {
+    canonical: BASE_URL,
+  },
 };
 
 export default async function RootLayout({ children }) {

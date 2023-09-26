@@ -18,4 +18,5 @@ export const transporter = nodemailer.createTransport(config);
 export const mailOptions = {
   from: email,
   to: email,
+  subject: 'ЗАЯВКА З САЙТУ IM CONSULTING',
 };
