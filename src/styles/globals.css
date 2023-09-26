@@ -176,6 +176,18 @@
   @media screen and (min-width: 1535px) {
     .consulting-hero-bg {
       background-image: image-set(
+        url(/images/servicesHero/consulting-hero-bg-big.webp) type('image/webp')
+          1x,
+        url(/images/servicesHero/consulting-hero-bg-big@2x.webp)
+          type('image/webp') 2x,
+        url(/images/servicesHero/consulting-hero-bg-big.jpg) 1x,
+        url(/images/servicesHero/consulting-hero-bg-big@2x.jpg) 2x
+      );
+    }
+  }
+  @media screen and (min-width: 1920px) {
+    .consulting-hero-bg {
+      background-image: image-set(
         url(/images/servicesHero/consulting-hero-bg-large.webp)
           type('image/webp') 1x,
         url(/images/servicesHero/consulting-hero-bg-large@2x.webp)
@@ -221,6 +233,18 @@
   @media screen and (min-width: 1535px) {
     .trainings-hero-bg {
       background-image: image-set(
+        url(/images/servicesHero/trainings-hero-bg-big.webp) type('image/webp')
+          1x,
+        url(/images/servicesHero/trainings-hero-bg-big@2x.webp)
+          type('image/webp') 2x,
+        url(/images/servicesHero/trainings-hero-bg-big.jpg) 1x,
+        url(/images/servicesHero/trainings-hero-bg-big@2x.jpg) 2x
+      );
+    }
+  }
+  @media screen and (min-width: 1920px) {
+    .trainings-hero-bg {
+      background-image: image-set(
         url(/images/servicesHero/trainings-hero-bg-large.webp)
           type('image/webp') 1x,
         url(/images/servicesHero/trainings-hero-bg-large@2x.webp)
@@ -264,6 +288,18 @@
     @apply coaching-hero-bg-mob md:coaching-hero-bg-tab xl:coaching-hero-bg-desk relative bg-[#D9D9D9] bg-cover bg-center;
   }
   @media screen and (min-width: 1535px) {
+    .coaching-hero-bg {
+      background-image: image-set(
+        url(/images/servicesHero/couching-hero-bg-big.webp) type('image/webp')
+          1x,
+        url(/images/servicesHero/couching-hero-bg-big@2x.webp)
+          type('image/webp') 2x,
+        url(/images/servicesHero/couching-hero-bg-big.jpg) 1x,
+        url(/images/servicesHero/couching-hero-bg-big@2x.jpg) 2x
+      );
+    }
+  }
+  @media screen and (min-width: 1920px) {
     .coaching-hero-bg {
       background-image: image-set(
         url(/images/servicesHero/couching-hero-bg-large.webp) type('image/webp')
