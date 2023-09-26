@@ -1,11 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { usePathname } from 'next/navigation';
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
-
-import { routes } from 'routes';
 
 export const LinkNavBar = ({
   link,
@@ -14,8 +11,6 @@ export const LinkNavBar = ({
   isMobile = true,
 }) => {
   const [isDark, setIsDark] = useState(true);
-  const pathname = usePathname();
-  const isHome = pathname === routes.HOME || pathname === '/';
 
   const handleClick = e => {
     e.target.blur();
@@ -33,12 +28,12 @@ export const LinkNavBar = ({
   }, [isMobile]);
 
   useEffect(() => {
-    if (isMobile || !isHome) return;
+    if (isMobile) return;
     const navbarHeight = document
       .querySelector('nav')
       .getBoundingClientRect().top;
     if (navbarHeight > 650) setIsDark(false);
-  }, [isMobile, isHome]);
+  }, [isMobile]);
 
   useEffect(() => {
     if (isMobile) return;
