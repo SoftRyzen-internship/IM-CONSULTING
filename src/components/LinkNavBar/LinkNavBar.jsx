@@ -29,6 +29,14 @@ export const LinkNavBar = ({
 
   useEffect(() => {
     if (isMobile) return;
+    const navbarHeight = document
+      .querySelector('nav')
+      .getBoundingClientRect().top;
+    if (navbarHeight > 650) setIsDark(false);
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile) return;
     document.addEventListener('scroll', listenCallback);
     return () => {
       document.removeEventListener('scroll', listenCallback);
