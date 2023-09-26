@@ -27,7 +27,7 @@ export const HeroContent = () => {
         </div>
       </div>
       <div className="flex justify-between xl:justify-end items-end">
-        <div className="xl:absolute xl:left-[32px] xl:bottom-[65px] flex flex-col text-bgColor text-[8px] md:text-base leading-[17px] md:leading-[40px] xl:leading-[24px]">
+        <div className="xl:absolute xl:left-[32px] xl:bottom-[65px] flex flex-col text-bgColor text-[8px] md:text-base leading-[17px] md:leading-[40px] xl:leading-[24px] tall:hidden">
           <p>{stat1Text}</p>
           <span className="text-xs md:text-[28px] xl:text-[32px] md:leading-7 xl:leading-[32px] font-medium tracking-[0.1em]">
             {stat1Number}
@@ -48,9 +48,7 @@ export const HeroContent = () => {
           src={HeroImg}
           alt={`${name} ${surname}`}
           priority
-          width={625}
-          height={659}
-          quality={100}
+          quality={85}
           style={{ width: '100%', height: 'auto' }}
         />
       </div>

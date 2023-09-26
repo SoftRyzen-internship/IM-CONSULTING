@@ -33,7 +33,7 @@ export const ConnectButton = () => {
         <ConnectModal toggleModal={toggleModal} isOpen={isOpen}>
           <Title
             tag="h2"
-            className="modal-title mb-[24px] md:mb-[36px] xl:mb-[48px] w-[232px] md:w-[342px] xl:w-[500px]"
+            className="modal-title mb-[24px] md:mb-[36px] xl:mb-[48px] md:ml-[88px] xl:ml-[52px] w-[232px] md:w-[342px] xl:w-[500px]"
           >
             {form.title}
           </Title>
