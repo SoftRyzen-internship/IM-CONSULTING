@@ -37,7 +37,7 @@ export const Header = () => {
       !showHeader &&
       (result += ' opacity-0 -translate-y-full ');
 
-    !isMobile && lastScrollTop < 620 && showHeader
+    !isMobile && lastScrollTop < 620 && showHeader && isHome
       ? (result += ' xl:fixed ')
       : (result += ' xl:absolute ');
     return result;
