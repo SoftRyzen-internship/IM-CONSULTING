@@ -10,7 +10,7 @@ const { text: stat2Text, number: stat2Number } = stat2;
 export const HeroContent = () => {
   return (
     <>
-      <div className="flex justify-between mb-[26px] md:mb-[62px] xl:mb-[232px]">
+      <div className="flex justify-between mb-[26px] md:mb-[62px] xl:mb-[232px] small:mb-[160px] little:mb-[130px]">
         <p className="text-xs md:text-[28px] xl:text-[24px] text-accent max-w-[94px] md:max-w-[224px] xl:max-w-[270px] leading-[15px] md:leading-[28px] xl:leading-[24px]">
           {subtitle}
         </p>
@@ -26,8 +26,9 @@ export const HeroContent = () => {
           </p>
         </div>
       </div>
+
       <div className="flex justify-between xl:justify-end items-end">
-        <div className="xl:absolute xl:left-[32px] xl:bottom-[65px] flex flex-col text-bgColor text-[8px] md:text-base leading-[17px] md:leading-[40px] xl:leading-[24px] tall:hidden">
+        <div className="xl:absolute xl:left-[32px] xl:bottom-[65px] flex flex-col text-bgColor text-[8px] md:text-base leading-[17px] md:leading-[40px] xl:leading-[24px] tall:hidden small:absolute small:left-[32px] small:bottom-[135px] little:absolute little:left-[32px] little:bottom-[165px]">
           <p>{stat1Text}</p>
           <span className="text-xs md:text-[28px] xl:text-[32px] md:leading-7 xl:leading-[32px] font-medium tracking-[0.1em]">
             {stat1Number}
@@ -43,6 +44,7 @@ export const HeroContent = () => {
           </span>
         </div>
       </div>
+
       <div className="h-auto md:h-[403px] xl:h-[659px] max-md:w-[62%] md:w-[381px] xl:w-[625px] absolute bottom-[-7px] md:bottom-[-12px] xl:bottom-[-17px] left-1/2 md:left-[43%] xl:left-[52%] transform translate-x-[-50%] z-10 object-cover ">
         <Image
           src={HeroImg}
