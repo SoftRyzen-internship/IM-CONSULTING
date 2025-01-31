@@ -32,7 +32,7 @@ module.exports = {
       },
 
       fontFamily: {
-        formular: ['var(--font-formular)', ...fontFamily.serif],
+        inter: ['var(--font-inter)', ...fontFamily.serif],
       },
 
       colors: {
