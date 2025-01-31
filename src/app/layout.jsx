@@ -6,35 +6,35 @@ import { Footer } from '@/layout/Footer';
 
 import '../styles/globals.css';
 
-const formular = localFont({
+const inter = localFont({
   src: [
     {
-      path: './fonts/formular/Formular-Light.ttf',
+      path: './fonts/inter/Inter-Light.ttf',
       weight: '300',
       style: 'normal',
     },
     {
-      path: './fonts/formular/Formular.ttf',
+      path: './fonts/inter/Inter-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './fonts/formular/Formular-Medium.ttf',
+      path: './fonts/inter/Inter-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './fonts/formular/Formular-Bold.ttf',
+      path: './fonts/inter/Inter-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: './fonts/formular/Formular-Black.ttf',
+      path: './fonts/inter/Inter-Black.ttf',
       weight: '900',
       style: 'normal',
     },
   ],
-  variable: '--font-formular',
+  variable: '--font-inter',
 });
 
 export const BASE_URL = 'https://www.imconsulting.com.ua/';
@@ -67,7 +67,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="uk">
-      <body className={formular.variable}>
+      <body className={inter.variable}>
         <Header />
         <NavBar />
         <main className="flex flex-col items-center min-h-screen">
